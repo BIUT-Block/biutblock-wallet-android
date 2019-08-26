@@ -7,7 +7,6 @@ import android.view.View;
 /**
  * Filename		: ISimpleAdapterHelper.java
  * @Description	:
- * @Author		: 刘剑
  * @Version		 ：1.0
  * @Date	            ：2015年11月17日 上午10:43:56
  */

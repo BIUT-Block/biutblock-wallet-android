@@ -9,36 +9,42 @@
 
     <ImageView
         android:id="@+id/iv_rig_top"
-        android:layout_width="@dimen/dimen_60px"
-        android:layout_height="45px"
+        android:layout_width="40pt"
+        android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:layout_marginTop="@dimen/dimen_60px"
-        android:layout_marginRight="@dimen/dimen_50px"
+        android:layout_marginTop="24pt"
+        android:layout_marginRight="34pt"
+        android:layout_marginBottom="30pt"
         android:src="@drawable/icon_more_black"
         android:visibility="visible" />
 
+    <include
+        android:id="@+id/ll_no_net"
+        layout="@layout/layout_network_tip"
+        android:visibility="gone" />
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
 
-        <com.hualianzb.sec.views.AutoRecyclerViewPager
+        <com.hualianzb.biut.views.AutoRecyclerViewPager
             android:id="@+id/vp_ad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45px"
             android:clipToPadding="false"
-            android:paddingLeft="@dimen/dimen_50px"
-            android:paddingRight="@dimen/dimen_50px"
+            android:paddingLeft="34pt"
+            android:paddingRight="34pt"
             app:rvp_singlePageFling="true"
-            app:rvp_triggerOffset="0.2" />
+            app:rvp_triggerOffset="0.1" />
 
         <LinearLayout
             android:id="@+id/custom_space"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/vp_ad"
-            android:layout_marginTop="@dimen/dimen_60px"
-            android:layout_marginBottom="54px"
+            android:layout_marginTop="40pt"
+            android:layout_marginBottom="40pt"
             android:gravity="center"
             android:orientation="horizontal"></LinearLayout>
     </RelativeLayout>
@@ -47,10 +53,11 @@
         android:id="@+id/lv_property"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginRight="@dimen/dimen_50px"
+        android:layout_marginLeft="34pt"
+        android:layout_marginRight="34pt"
         android:background="@color/gray_background"
-        android:divider="@null"
-        android:paddingBottom="@dimen/dimen_150px"
+        android:divider="@color/gray_background"
+        android:dividerHeight="6pt"
+        android:paddingBottom="90pt"
         android:scrollbars="none"></ListView>
 </LinearLayout>

@@ -9,46 +9,91 @@
     <include layout="@layout/include_head_pic_right" />
 
     <TextView
-        android:id="@+id/tv_firt"
+        android:id="@+id/tv_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dimen_40px"
-        android:layout_marginTop="@dimen/dimen_30px"
-        android:layout_marginRight="@dimen/dimen_40px"
-        android:lineSpacingMultiplier="1.1"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="30pt"
+        android:text="Copy your wallet phrase"
+        android:textColor="#ff91a2aa"
+        android:textSize="22pt" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="36pt"
+        android:layout_marginRight="34pt"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The phrase is used to restore the wallet or "
+            android:textColor="@color/text_gray02"
+            android:textSize="22pt" />
+
+        <TextView
+            android:id="@+id/tv_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="reset the wallet"
+            android:textColor="#388EDA"
+            android:textSize="20pt" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30pt"
+        android:layout_marginRight="34pt"
+        android:gravity="left"
+        android:text=" password,copy it to paper accurately,and store it in a safe place "
         android:textColor="@color/text_gray02"
-        android:textSize="@dimen/dimen_32px"
-        android:textStyle="bold" />
+        android:textSize="22pt" />
+
+    <TextView
+        android:id="@+id/tv_five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30pt"
+        android:layout_marginRight="34pt"
+        android:gravity="left"
+        android:text=" that only you know."
+        android:textColor="@color/text_gray02"
+        android:textSize="22pt" />
 
     <TextView
         android:id="@+id/tv_my_mnemonics"
         android:layout_width="match_parent"
-        android:layout_height="260px"
+        android:layout_height="130pt"
         android:layout_gravity="center"
-        android:layout_marginLeft="@dimen/dimen_40px"
-        android:layout_marginTop="@dimen/dimen_120px"
-        android:layout_marginRight="@dimen/dimen_40px"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="80pt"
+        android:layout_marginRight="34pt"
         android:background="@drawable/bg_gray_radius20"
         android:gravity="center_vertical|left"
-        android:paddingLeft="@dimen/dimen_20px"
-        android:paddingTop="@dimen/dimen_30px"
-        android:paddingRight="@dimen/dimen_20px"
-        android:paddingBottom="@dimen/dimen_30px"
+        android:paddingLeft="18pt"
+        android:paddingTop="32pt"
+        android:paddingRight="18pt"
+        android:paddingBottom="32pt"
         android:textColor="#42535B"
-        android:textSize="@dimen/dimen_28px" />
+        android:textSize="18pt" />
 
     <TextView
         android:id="@+id/btn_next"
         android:layout_width="match_parent"
-        android:layout_height="130px"
+        android:layout_height="86pt"
         android:layout_gravity="center"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginTop="130px"
-        android:layout_marginRight="@dimen/dimen_50px"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="94pt"
+        android:layout_marginRight="34pt"
         android:background="@drawable/bg_btn"
         android:gravity="center"
         android:layerType="none"
-        android:text="Next step"
+        android:text="Next Step"
         android:textColor="@color/white"
-        android:textSize="@dimen/dimen_34px" />
+        android:textSize="22pt" />
 </LinearLayout>

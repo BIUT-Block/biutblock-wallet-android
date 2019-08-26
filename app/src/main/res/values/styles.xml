@@ -73,11 +73,11 @@
 
     <style name="rightButtonStyle">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">68px</item>
-        <item name="android:paddingRight">@dimen/dimen_40px</item>
-        <item name="android:paddingLeft">@dimen/dimen_40px</item>
+        <item name="android:layout_height">46pt</item>
+        <item name="android:paddingRight">40pt</item>
+        <item name="android:paddingLeft">40pt</item>
         <item name="android:background">@drawable/bg_btn_right_top</item>
-        <item name="android:textSize">@dimen/dimen_28px</item>
+        <item name="android:textSize">18pt</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/rightTopColor</item>
@@ -85,10 +85,17 @@
     <!-- 返回键的样式  -->
     <style name="back_btn">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">@dimen/dimen_60px</item>
+        <item name="android:layout_height">46pt</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_alignParentLeft">true</item>
-        <item name="android:paddingRight">@dimen/dimen_30px</item>
+        <item name="android:paddingRight">20pt</item>
+    </style>
+
+    <style name="back_btn_close">
+        <item name="android:layout_width">30pt</item>
+        <item name="android:layout_height">30pt</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
     </style>
     <!--自定义弹出框所有-->
     <style name="dialog" parent="@android:style/Theme.Dialog">
@@ -166,13 +173,13 @@
     </style>
     <!--左边弹出Dialog动画-->
     <style name="LeftDialog" parent="android:Animation">
-        <item name="@android:windowEnterAnimation">@anim/dialog_left_in</item>
-        <item name="@android:windowExitAnimation">@anim/dialog_left_out</item>
+        <item name="android:windowEnterAnimation">@anim/dialog_left_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_left_out</item>
     </style>
 
     <!--右边弹出Dialog动画-->
     <style name="RightDialog" parent="android:Animation">
-        <item name="@android:windowEnterAnimation">@anim/dialog_right_in</item>
-        <item name="@android:windowExitAnimation">@anim/dialog_right_out</item>
+        <item name="android:windowEnterAnimation">@anim/dialog_right_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_right_out</item>
     </style>
 </resources>

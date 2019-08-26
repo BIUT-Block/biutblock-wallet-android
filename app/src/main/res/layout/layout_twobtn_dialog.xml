@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="510pt"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_dialog_white"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingTop="@dimen/dimen_80px"
-    android:paddingBottom="@dimen/dimen_80px">
+    android:paddingTop="60pt"
+    android:paddingBottom="60pt">
 
     <ImageView
         android:id="@+id/iv_img"
@@ -18,31 +18,32 @@
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
-        android:layout_height="39px"
+        android:layout_height="36pt"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/px50"
+        android:layout_marginTop="24pt"
         android:gravity="center"
-        android:textColor="#388ED8"
-        android:textSize="32px" />
+        android:textColor="@color/selected_blue"
+        android:textSize="20pt"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="45px"
+        android:layout_marginTop="40pt"
         android:gravity="center"
         android:text="No Network Connection"
         android:textColor="@color/text_gray02"
-        android:textSize="@dimen/dimen_34px" />
+        android:textSize="22pt" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/dimen_100px"
-        android:paddingBottom="@dimen/px10">
+        android:paddingTop="56pt"
+        android:paddingBottom="20pt">
 
         <TextView
             android:id="@+id/tv_cancel"
@@ -51,10 +52,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginRight="@dimen/dimen_80px"
             android:background="@drawable/bg_normal_white_gray_10"
-            android:padding="@dimen/px15"
+            android:padding="15pt"
             android:text="Cancel"
             android:textColor="#91A2AA"
-            android:textSize="38px"
+            android:textSize="24pt"
             android:textStyle="bold" />
 
         <TextView
@@ -63,10 +64,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/bg_normal_white_gray_10"
-            android:padding="@dimen/px15"
+            android:padding="15pt"
             android:text="Sure"
             android:textColor="@color/text_selected_green"
-            android:textSize="38px"
+            android:textSize="24pt"
             android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

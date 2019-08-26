@@ -19,7 +19,6 @@ import com.hysd.android.platform_huanuo.utils.Logger;
  * Description : 图片统一加载管理
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-24 上午9:41:42
  **/

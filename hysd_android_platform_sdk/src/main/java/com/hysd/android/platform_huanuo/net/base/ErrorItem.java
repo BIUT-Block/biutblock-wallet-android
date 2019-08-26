@@ -5,7 +5,6 @@ package com.hysd.android.platform_huanuo.net.base;
  * Description : 错误对象
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-9 下午1:01:27
  **/

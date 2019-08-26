@@ -20,7 +20,6 @@ import android.webkit.MimeTypeMap;
  * Description : 文件和IO的操作帮助类
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-9 下午1:33:07
  **/

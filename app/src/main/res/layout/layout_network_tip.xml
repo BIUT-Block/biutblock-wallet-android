@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:background="@color/transparent">
+    android:layout_width="match_parent"
+    android:layout_height="80pt"
+    android:layout_marginLeft="34pt"
+    android:layout_marginRight="34pt"
+    android:background="@drawable/shape_no_net"
+    android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_120px"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginRight="@dimen/dimen_50px"
-        android:layout_marginTop="@dimen/dimen_120px"
-        android:background="@color/gray_background"
+    <ImageView
+        android:layout_width="46pt"
+        android:layout_height="46pt"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="40pt"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon_no_net" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="34pt"
         android:gravity="center"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="68px"
-            android:layout_height="68px"
-            android:layout_gravity="center_vertical"
-            android:scaleType="centerCrop"
-            android:src="@drawable/icon_no_net" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="52px"
-            android:gravity="center"
-            android:text="There is currently no network connection, please try again."
-            android:textColor="@color/text_blue"
-            android:textSize="@dimen/dimen_30px" />
-    </LinearLayout>
+        android:text="There is currently no network connection"
+        android:textColor="@color/text_blue"
+        android:textSize="22pt" />
 </LinearLayout>

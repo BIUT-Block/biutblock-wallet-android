@@ -7,7 +7,6 @@ import java.util.List;
  * Description : 请求返回的接口
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-8 下午5:00:06
  **/

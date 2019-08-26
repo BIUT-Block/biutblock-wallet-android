@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
 
-        <com.hualianzb.sec.views.StillViewPager
+        <com.hualianzb.biut.views.StillViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -24,6 +24,6 @@
         <include
             layout="@layout/layout_main_bottom"
             android:layout_width="match_parent"
-            android:layout_height="170px" />
+            android:layout_height="120pt" />
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

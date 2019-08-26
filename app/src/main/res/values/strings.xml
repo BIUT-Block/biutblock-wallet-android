@@ -1,14 +1,16 @@
 <resources>
-    <string name="app_name">SEC Wallet</string>
+    <string name="app_name">BIUT Wallet</string>
     <string name="loading">loading…</string>
     <string name="importing">Wallet Importing</string>
     <string name="wallet_name_null">Input Wallet Name</string>
     <string name="wallet_exists">Wallet Exists</string>
     <string name="input_password">Input Password</string>
     <string name="format_error">Format Error</string>
-    <string name="no_shot_tips">If someone gets your phrase, it will get your assets directly! \nPlease copy the \nphrase and store it in a safe place.</string>
+    <string name="num_input">0123456789.</string>
+    <string name="search_result">Found %s results for </string>
+    <string name="no_shot_tips">If someone gets your phrase, it will get your assets directly! \nPlease copy the phrase and store it in a safe place.</string>
     <string name="delete_chinese1">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
-    <string name="pass_hint">8-30 characters,numbers,contain at least two English letters and special characters </string>
+    <string name="pass_hint">8-30 characters,must contain at least 2 types of numbers,English letters,and special \ncharacters. </string>
     <string name="scan_error">scan error</string>
     <string name="net_work_err">Network response timeout</string>
     <string name="delete_chinese2">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
@@ -16,20 +18,20 @@
     <string name="patters_all">^(?![0-9]+$)(?![a-zA-Z]+$)(?![\\W]+$)[a-zA-Z0-9\\W]{8,30}$</string>
     <string name="keysytoreTest">{"version"3,"id":"b7467fcb-3c8b-41bebccf-73d43a08c1b7","address":"540f18196da5a533fa36577a81de55f0a2f4e751","Crypto"{"ciphertext":"78ed11b8b6bf29b00f52b42b8542df0e4a6ac078e626af7edcf885c3b68154a4","cipherparams"{"iv":"4516579601d96695fe30ace985a9066f"},"cipher":"aes-128ctr","kdf":"scrypt","kdfparams"{"dklen"32,"salt":"6276cfda7d40872352c801db5871e5a3368a8d0994cea39ed936760db78d1cdc", "n":1024,"r":8,"p":1},"mac":"d889a5dc609c3f312a41394c c47 640676d2612501a6f8c837ed5559815 8336db"}} </string>
     <string name="createwallet_tips">Password is used to protect private keys and transaction authorization,
-    strength is very important.SEC wallet not store passwords,nor help to get back the passwords.Please remember</string>
+    strength is very important.BIUT wallet not store passwords,nor help to get back the passwords.Please remember!</string>
     <string name="old_password_error">Password does not correct</string>
     <string name="password_error">Password does not conform to the rules</string>
     <string name="re_password_error">repeat password error</string>
     <string name="num_limit">The number of wallets exceeded the limit</string>
     <string name="creating">Wallet Creating</string>
-    <string name="mne_tips">Please click on the phrase in order to confirm that your backup phrase is correct.</string>
+    <string name="mne_tips">Please click on the phrase in order to confirm that your backup phrase is correct.Long pressing on the phrase chosen you will delete it.</string>
     <string name="no_shot_attention">Please make sure there are no people around and no cameras!Do not use a screenshot or photo to keep the Keystore file or the corresponding QR code.</string>
     <string name="save_offline">please copy and paste the keystore file to a safe,offline place to save.Don’t save to email,notepad,network,chatApp,it is very dangerous.</string>
-    <string name="no_save_on_net">Don’t transfer Keystore files through network tools.Once hacked,it will cause irreparable asset loss.to transfer offline devices by scanning the QR code.</string>
-    <string name="import_mn_hint">phrase,separated by spaces</string>
-    <string name="import_official_hint">Keystore text content</string>
-    <string name="import_privateKey_hint">clear text private key</string>
-    <string name="import_official_tip">Copy and paste the contents of SEC official wallet keystore file directly into the input box.</string>
+    <string name="no_save_on_net">Don’t transfer Keystore files through network tools.Once hacked,it will cause irreparable asset loss to transfer offline devices by scanning the QR code.</string>
+    <string name="import_mn_hint">Please separate phrases by space.</string>
+    <string name="import_keystore_hint">Input keystore</string>
+    <string name="import_privateKey_hint">Input private key</string>
+    <string name="import_official_tip">Copy and paste the contents of BIUT official wallet keystore file directly into the input box.</string>
     <string name="export_private_key_tips">Security Warning:The private key is not encrypted and the export is risky.Here recommend to backup with phrase and Keystore.</string>
     <string name="mmn_1">The phrase is another manifestation of the plaintext private key, first proposed by the BIP39 proposal, to help users remember complex private keys (64-bit hashes).</string>
     <string name="mmn_2">Phrases are generally composed of 12, 15, 18, 21 or 24 words. These words are taken from a fixed vocabulary. The order of generation is also based on a certain algorithm, So there is no need to worry about Generating an address by simply typing 12 words. Although both phrases and Keystore can be used as another form of private key, unlike Keystore, the phrase is an unencrypted private key, without any security, anyone who has received your phrase can take your assets without any hassle.</string>
@@ -37,16 +39,21 @@
     <string name="mmn_4">1. Use physical media backup as much as possible, such as using a pen to copy on paper, as far as possible not to take screenshots or take photos and put them on networked devices to prevent hackers from stealing</string>
     <string name="mmn_5">2. Verify that the backup phrase is correct multiple times. Once you have mistyped one or two words, it will bring great difficulties to the subsequent retrieval of the correct phrase; </string>
     <string name="mmn_6">3. Keep the backup phrases in a safe place and take anti-theft and anti-lost measure</string>
-    <string name="keystore_1">The Keystore file is a file format (JSON) in which the SEC wallet stores private keys. It uses user-defined password encryption to provide a degree of protection, and the degree of protection depends on the password strength of the user encrypting the wallet. If a password like 123456 is extremely insecure.</string>
+    <string name="keystore_1">The Keystore file is a file format (JSON) in which the BIUT wallet stores private keys. It uses user-defined password encryption to provide a degree of protection, and the degree of protection depends on the password strength of the user encrypting the wallet. If a password like 123456 is extremely insecure.</string>
     <string name="keystore_2">There are two notes when using Keystore:</string>
     <string name="keystore_3">1. Encrypt keystore files with passwords that are not commonly used and as complex as possible;</string>
-    <string name="keystore_4">2. Be sure to remember the password of the encrypted Keystore. Once you forget the password, you will lose the right to use the Keystore, and the SEC wallet will not be able to retrieve the password for you, so be sure to keep the Keystore and password.</string>
+    <string name="keystore_4">2. Be sure to remember the password of the encrypted Keystore. Once you forget the password, you will lose the right to use the Keystore, and the BIUT wallet will not be able to retrieve the password for you, so be sure to keep the Keystore and password.</string>
     <string name="keystore_5">Here is the style of the keystore:</string>
-    <string name="keystore_6">{\n “version":3, \n"id":"b7467fcb-3c8b-41be-bccf-73d43a08c1b7", \n"address":"540f18196da5a533fa36577 a81de55f0a2f4e751", \n"Crypto":{ \n"ciphertext":"78ed11b8b6bf29b00f52b42b8542df0e4a 6ac078e626af \n7edcf885c3b68154a4",\n"cipherparams":{ \n"iv":"4516579601d96695fe30ace985a9066f" \n}, \n"cipher":" aes -128-ctr", \n"kdf":"scrypt", \n"kdfparams":{ \n"dklen":32, \n"salt":"6276cfda7d40872352c801db5871e5a 33 68a8 \nd0994cea39ed936760db78d1cdc", \n"n":1024, \n"r":8, \n"p":1 \n}, \n"mac":"d889a5dc609c3f312a41394c c47 640676d2612501a6f8c837ed5559815 8336db" \n  }\n}</string>
+    <string name="keystore_6">"U2FsdGVkX1+pckN7K/jeQob8oJXMmoE29IxJjR9ypQwHXMY5eqQwr7kK9I20Ie4rZ5ibZKponKof+eQgc+HSEnpBtI8etYABvN7bX1Fre/qRpUy5qhDPauyUq8xNzvGW7vChqrNG5RPYg02trJwFfhQ0JFvnp8327EfE2jt3IWBl2EA3ZxddXsKkoZyX7Lrum2HQ8JdruVNDn8tysFPqPP6CmhkH68YfIMgYNbzM7NjQusyad33rMrVen7+0qmXHqQFAUyXcP1m2aRFDpJ3Vt2Fa2PwR92f1GwQywRwfolfPVljT9c9Av9K9R38yB1URGhg9Cpgwekepu8G/qDVJUQ1sH/GKI+CfwG+psLfYVYbf4DlcUz6+91ofMW3aYpjXr1Jo/1hLgAYUXM1/isGfVZnzSCBrmNwpSEkP4OuAvWq6HKvf0xxemn4S4+ksOO2njEK3AtrNjk+8yHqFX/4taNWhyQdRcXP2KVBYylgZet1Emi3Y9p3mCsgyjivRZLDVOwgrzpoQYG2tiihbGou/ilZ4Zlb+A2bb1HN0P9ybHNUyTsyaNhoDCJFEY6Fi0WHF9ekqEltHdjonWOQS3zVPgrOx4Y2/zKcVqE2j8tmpnIF/T2xrAsNuyoZPqskokrOxeltCDdGlBYVu4fePfWD+R+gu8AZGto8WD4ciWGb8+RCVPPW1bv7NaQgkUxm/cO+Vv4jCaIEPBrtbWv+glCrTCg=="</string>
     <string name="private_1">We often say that your control over the funds in your wallet depends on the ownership and control of the corresponding private key. In blockchain transactions, the private key is used to generate the signature necessary to pay the currency to prove ownership of the funds.</string>
     <string name="private_2">The private key must always be kept secret, because once it is leaked to a third one, the assets under the protection of the private key are also handed over. It is different from Keystore. Keystore is an encrypted private key file. As long as the password strength is strong enough, even if the hacker gets Keystore, The difficulty of cracking is also large enough.</string>
     <string name="private_3">The private keys stored in the user\'s wallet are completely independent and can be generated and managed by the user\'s wallet software without blockchain or network connection.</string>
     <string name="private_4">The user\'s wallet address is calculated by the public key via keccak256 and truncated by 40 bits + 0x. The private key is a 64-bit hexadecimal hash string, for \nexample: \n56f759ece75f0ab1b783893cbe390288978d4d4ff24dd233245b4285\nfcc31cf6</string>
-    <string name="are_you_sure">The order of the phrases \nyou backed up is verified correctly, \nwhether the phrase is \nremoved for the SEC</string>
+    <string name="are_you_sure">The order of the phrases \nyou backed up is verified correctly, \nwhether the phrase is \nremoved for the BIUT.</string>
     <string name="wallet_exist">The wallet already exists. Is it set to \na new password? \n(Please keep in mind the new password \nof the wallet)</string>
+    <string name="biu_not_enough">BIU isn\'t enough</string>
+    <string name="ex_re_pass">Ex :  ************************************ </string>
+    <string name="ex_promote">Ex :  Start name 3 letter </string>
+    <string name="frozen_tip">The amount of mortgage will be frozen for one year, and higher of the mortgage amount, and higher the profit of BIU token</string>
+    <string name="frozen_not_enough">At least 10000 BIUT is required to join the mine pool</string>
 </resources>

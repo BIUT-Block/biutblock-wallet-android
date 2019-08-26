@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray_background"
+    android:orientation="vertical"
+    android:padding="34pt">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80pt">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="30pt"
+            android:layout_height="30pt"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_close_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="加入矿池"
+            android:textSize="32pt" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="*挖矿抵押数量"
+        android:textSize="28pt" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100pt"
+        android:layout_marginTop="20pt"
+        android:background="@drawable/bg_gray_radius20">
+
+        <EditText
+            android:id="@+id/tv_frozen"
+            android:layout_width="0pt"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="1000.00"
+            android:paddingLeft="30pt"
+            android:textSize="28pt" />
+
+        <TextView
+            android:id="@+id/tv_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10pt"
+            android:padding="10pt"
+            android:text="全部"
+            android:textSize="28pt" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_enable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15pt"
+        android:layout_marginTop="20pt"
+        android:text="可用：999.00 BIUT"
+        android:textSize="28pt" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15pt"
+        android:layout_marginTop="20pt"
+        android:layout_marginRight="15pt"
+        android:text="抵押数量会被冻结一年，抵押数量越多，挖到BIU的收益越高哦！"
+        android:textColor="@color/bg_red"
+        android:textSize="28pt" />
+
+    <TextView
+        android:id="@+id/tv_jion"
+        android:layout_width="200pt"
+        android:layout_height="88pt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80pt"
+        android:background="@drawable/bg_btn_can_green"
+        android:gravity="center"
+        android:text="确认加入"
+        android:textColor="@color/white"
+        android:textSize="22pt" />
+
+    <TextView
+        android:id="@+id/tv_less"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15pt"
+        android:text="加入矿池最低数量为1000BIUT"
+        android:textColor="@color/bg_red"
+        android:textSize="26pt"
+        android:visibility="gone" />
+</LinearLayout>

@@ -16,7 +16,6 @@ import java.util.concurrent.Executors;
  * Description : 所有请求的调度者，调度请求给各个协议管理处理
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-8 上午10:25:26
  **/

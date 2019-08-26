@@ -8,26 +8,26 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="145px"
+        android:layout_height="96pt"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="67px"
-        android:paddingRight="75px">
+        android:paddingLeft="44pt"
+        android:paddingRight="44pt">
 
         <ImageView
             android:id="@+id/iv_avater"
-            android:layout_width="58px"
-            android:layout_height="58px"
+            android:layout_width="38pt"
+            android:layout_height="38pt"
             android:scaleType="centerInside" />
 
         <TextView
             android:id="@+id/tv_kind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="34px"
-            android:text="SEC"
+            android:layout_marginLeft="46pt"
+            android:text="BIUT"
             android:textColor="@color/text_blue"
-            android:textSize="@dimen/dimen_40px"
+            android:textSize="20pt"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:text="0"
                 android:textColor="@color/text_blue"
-                android:textSize="@dimen/dimen_40px" />
+                android:textSize="20pt" />
 
             <TextView
                 android:id="@+id/tv_cn_property"
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:text="≈￥0"
                 android:textColor="@color/text_gray"
-                android:textSize="@dimen/dimen_24px"
+                android:textSize="20pt"
                 android:visibility="gone" />
         </LinearLayout>
     </LinearLayout>

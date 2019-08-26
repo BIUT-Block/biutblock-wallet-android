@@ -8,7 +8,6 @@ import java.util.concurrent.Executors;
  * Description : 线程池工厂类
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-10 上午11:06:33
  **/

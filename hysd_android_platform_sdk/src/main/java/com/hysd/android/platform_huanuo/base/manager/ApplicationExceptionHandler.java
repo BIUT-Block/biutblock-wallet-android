@@ -17,7 +17,6 @@ import com.hysd.android.platform_huanuo.utils.Logger;
  * Description : 全局的异常处理
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2013-7-31 下午1:42:41
  **/

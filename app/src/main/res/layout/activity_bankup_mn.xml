@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     android:background="@color/white"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
@@ -10,12 +11,12 @@
 
     <ImageView
         android:id="@+id/iv_img"
-        android:layout_width="352px"
-        android:layout_height="296px"
+        android:layout_width="234pt"
+        android:layout_height="200pt"
         android:layout_below="@id/ll_title"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginTop="100px"
+        android:layout_marginTop="50pt"
         android:scaleType="centerInside"
         android:src="@drawable/icon_mn01" />
 
@@ -24,11 +25,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/iv_img"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="216px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="144pt"
         android:text="The last step"
         android:textColor="#29D893"
-        android:textSize="@dimen/dimen_28px" />
+        android:textSize="16pt" />
 
     <TextView
         android:id="@+id/second"
@@ -36,10 +37,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/first"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/sp12"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8pt"
         android:text="Backup your wallet now !"
         android:textColor="#596266"
-        android:textSize="@dimen/dimen_36px"
+        android:textSize="24pt"
         android:textStyle="bold" />
 
     <TextView
@@ -47,47 +49,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/second"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dimen_30px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4pt"
         android:gravity="center"
         android:textColor="@color/text_gray02"
-        android:textSize="@dimen/dimen_32px" />
+        android:textSize="20pt" />
 
     <TextView
         android:id="@+id/four"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_third"
         android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4pt"
         android:gravity="center"
         android:text="Don't save them on the web."
         android:textColor="@color/text_gray02"
-        android:textSize="@dimen/dimen_32px" />
+        android:textSize="20pt" />
 
     <TextView
         android:id="@+id/five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/four"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:text="Then try to transfer in and out of the small assets to start."
         android:textColor="@color/text_gray02"
-        android:textSize="@dimen/dimen_32px" />
+        android:textSize="20pt" />
 
     <TextView
         android:id="@+id/btn_bank_up"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_130px"
+        android:layout_height="86pt"
         android:layout_below="@id/five"
         android:layout_gravity="center"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginTop="@dimen/px160"
-        android:layout_marginRight="@dimen/dimen_50px"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="106pt"
+        android:layout_marginRight="34pt"
+        android:layout_marginBottom="200pt"
         android:background="@drawable/bg_btn"
         android:gravity="center"
-        android:text="Backup wallet"
+        android:text="Backup Wallet"
         android:textColor="@color/white"
-        android:textSize="@dimen/dimen_34px"
+        android:textSize="22pt"
         android:textStyle="bold" />
-</RelativeLayout>
+</LinearLayout>

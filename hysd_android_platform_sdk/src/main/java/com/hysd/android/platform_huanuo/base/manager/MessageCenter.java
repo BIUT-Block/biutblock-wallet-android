@@ -10,7 +10,6 @@ import java.util.Vector;
  * FileName    : MessageCenter.java
  * Description : 消息中心
  *
- * @author : 刘剑
  * @version : 1.0
  *          Create Date : 2014-4-8 上午11:31:15
  * @Copyright : hysdpower. All Rights Reserved

@@ -9,25 +9,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="152px"
+        android:layout_height="90pt"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/dimen_50px"
-        android:paddingRight="@dimen/dimen_50px">
+        android:paddingLeft="34pt"
+        android:paddingRight="34pt">
 
         <ImageView
             android:id="@+id/iv_logo"
-            android:layout_width="@dimen/dimen_80px"
-            android:layout_height="@dimen/dimen_80px"
+            android:layout_width="52pt"
+            android:layout_height="52pt"
             android:layout_gravity="center_vertical"
             android:scaleType="centerInside" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/dimen_40px"
-            android:layout_marginTop="@dimen/dimen_30px"
-            android:layout_marginBottom="@dimen/dimen_30px"
+            android:layout_marginLeft="28pt"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -45,18 +44,19 @@
                     android:gravity="left"
                     android:maxLines="1"
                     android:textColor="@color/text_blue"
-                    android:textSize="@dimen/dimen_34px"
+                    android:textSize="22pt"
                     android:textStyle="bold"
                     tools:ignore="EllipsizeMaxLines" />
 
                 <TextView
                     android:id="@+id/tv_date"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dimen_30px"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4pt"
                     android:gravity="center|left"
                     android:text="11:09"
                     android:textColor="@color/text_gray02"
-                    android:textSize="@dimen/dimen_28px" />
+                    android:textSize="16pt" />
             </LinearLayout>
 
             <LinearLayout
@@ -70,20 +70,21 @@
                     android:id="@+id/tv_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="4pt"
                     android:ellipsize="middle"
                     android:gravity="right|center_vertical"
                     android:maxLines="1"
                     android:textColor="@color/text_selected_green"
-                    android:textSize="@dimen/dimen_34px"
+                    android:textSize="22pt"
                     android:textStyle="bold"
                     tools:ignore="EllipsizeMaxLines" />
 
                 <TextView
                     android:id="@+id/tv_state"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dimen_34px"
+                    android:layout_height="wrap_content"
                     android:gravity="right|center_vertical"
-                    android:textSize="@dimen/dimen_28px"
+                    android:textSize="16pt"
                     android:visibility="visible" />
             </LinearLayout>
 
@@ -93,8 +94,8 @@
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="2px"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginRight="@dimen/dimen_50px"
+        android:layout_height="1pt"
+        android:layout_marginLeft="34pt"
+        android:layout_marginRight="34pt"
         android:background="@color/line_color" />
 </LinearLayout>

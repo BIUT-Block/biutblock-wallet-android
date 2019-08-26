@@ -8,7 +8,6 @@ import java.util.Date;
  * Description : 日期数据格式类
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-8 下午2:00:20
  **/

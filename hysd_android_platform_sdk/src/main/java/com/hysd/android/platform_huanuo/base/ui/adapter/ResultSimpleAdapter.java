@@ -15,7 +15,6 @@ import java.util.List;
 /**
  * Filename		: ResultSimpleAdapter.java
  * @Description	:
- * @Author		: 刘剑
  * @Version		 ：1.0
  * @Date	            ：2011-12-14 下午09:42:44
  */

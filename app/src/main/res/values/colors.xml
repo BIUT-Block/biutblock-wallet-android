@@ -12,6 +12,8 @@
     <color name="text_gray02">#91A2AA</color>
     <color name="main_color">#0190ff</color>
     <color name="selected_blue">#388ED9</color>
+    <color name="seekBarBlue">#FF4A90E2</color>
+    <color name="mineBlue">#FF4A90E2</color>
     <color name="bg_detail">#F7FBFA</color>
     <color name="text_black">#333333</color>
     <color name="text_color">#596266</color>
@@ -21,12 +23,14 @@
     <color name="btn_gray">#E3E3E3</color>
     <color name="mn_default">#B5C6D8</color>
     <color name="view_color">#E6E6E6</color>
-    <color name="text_yellow02">#F4AB35</color>
+    <color name="text_yellow02">#FFF5A623</color>
     <color name="text_black_home">#B0B0B0</color>
 
     <color name="bg_red">#EE1C38</color>
     <color name="text_error">#EE1C38</color>
     <color name="text_green_increase">#21A348</color>
+    <color name="success_green">#FF28D893</color>
+    <color name="text_green">#FF0DC5B7</color>
     <color name="rightTopColor">#0DC5B7</color>
     <color name="text_selected_green">#28D893</color>
     <color name="green_border">#0DC5B7</color>
@@ -38,4 +42,5 @@
     <color name="loading_color">#42535B</color>
     <color name="bg_text_gray">#BBBBBB</color>
     <color name="bg_dialog_showing">#ECECEC</color>
+    <color name="bg_tra_detail">#fff7fbfa</color>
 </resources>

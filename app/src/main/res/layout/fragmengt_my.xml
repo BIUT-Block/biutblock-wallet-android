@@ -8,186 +8,160 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tv_top"
         android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
+        android:layout_height="360pt"
         android:background="@drawable/pic_tip_bg"
         android:fitsSystemWindows="true"
-        android:paddingLeft="@dimen/dimen_50px"
-        android:paddingTop="@dimen/dimen_50px"
+        android:paddingLeft="32pt"
+        android:paddingTop="90pt"
         android:text="My Wallet"
-        android:textSize="@dimen/dimen_55px"
+        android:textSize="36pt"
         android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_height="242pt"
+        android:background="@color/white">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0px"
-            android:layout_weight="4"
-            android:background="@color/white">
-
-            <LinearLayout
-                android:layout_width="0px"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/ll_manage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_normal_white_gray_20"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="@dimen/px30">
-
-                    <ImageView
-                        android:layout_width="200px"
-                        android:layout_height="200px"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/icon_manage_wt" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_40px"
-                        android:text="Manage Wallet"
-                        android:textColor="@color/text_color"
-                        android:textSize="@dimen/dimen_35px"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="2px"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/dimen_30px"
-                android:layout_marginBottom="@dimen/dimen_30px"
-                android:background="@color/line_color" />
-
-            <LinearLayout
-                android:layout_width="0px"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/ll_transaction_record"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_normal_white_gray_20"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="@dimen/px30">
-
-                    <ImageView
-                        android:layout_width="200px"
-                        android:layout_height="200px"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/icon_trans_record" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_40px"
-                        android:text="Transaction Record"
-                        android:textColor="@color/text_color"
-                        android:textSize="@dimen/dimen_35px"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0px"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/ll_addressbook"
-            android:layout_width="match_parent"
-            android:layout_height="144px"
-            android:layout_marginLeft="@dimen/dimen_50px"
-            android:layout_marginRight="@dimen/dimen_50px"
-            android:background="@drawable/bg_white_gray_15"
-            android:gravity="center_vertical"
-            android:paddingLeft="@dimen/dimen_80px">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_book" />
-
-            <TextView
-                android:layout_width="0px"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dimen_70px"
-                android:layout_weight="1"
-                android:text="Address Book"
-                android:textColor="@color/text_black"
-                android:textSize="@dimen/dimen_30px" />
-
-            <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="@dimen/dimen_80px"
-                android:background="@drawable/icon_arrow_right" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/ll_check_update"
+                android:id="@+id/ll_manage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_normal_gray_white_20"
+                android:background="@drawable/bg_normal_white_gray_20"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="@dimen/dimen_30px">
+                android:padding="18pt">
+
+                <ImageView
+                    android:layout_width="60pt"
+                    android:layout_height="60pt"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_manage_wt" />
 
                 <TextView
-                    android:id="@+id/tv_version"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16px"
-                    android:text="V1.0.1"
-                    android:textColor="@color/text_gray02"
-                    android:textSize="33px" />
-
-                <TextView
-                    android:id="@+id/tv_update"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16px"
-                    android:text="New Version Update"
-                    android:textColor="@color/text_gray02"
-                    android:textSize="33px" />
+                    android:layout_marginTop="28pt"
+                    android:text="Manage Wallet"
+                    android:textColor="@color/text_color"
+                    android:textSize="24pt"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
+
+        <View
+            android:layout_width="2pt"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_30px"
+            android:layout_marginBottom="@dimen/dimen_30px"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_transaction_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_normal_white_gray_20"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="18pt">
+
+                <ImageView
+                    android:layout_width="60pt"
+                    android:layout_height="60pt"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_trans_record" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28pt"
+                    android:text="Transaction Record"
+                    android:textColor="@color/text_color"
+                    android:textSize="24pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/ll_addressbook"
+        android:layout_width="match_parent"
+        android:layout_height="96pt"
+        android:layout_marginLeft="32pt"
+        android:layout_marginTop="130pt"
+        android:layout_marginRight="32pt"
+        android:background="@drawable/bg_white_gray_15"
+        android:gravity="center_vertical"
+        android:paddingLeft="64pt">
+
+        <ImageView
+            android:layout_width="24pt"
+            android:layout_height="30pt"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_book" />
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60pt"
+            android:layout_weight="1"
+            android:text="Address Book"
+            android:textColor="@color/text_black"
+            android:textSize="22pt" />
+
+        <ImageView
+            android:layout_width="10pt"
+            android:layout_height="20pt"
+            android:layout_marginRight="64pt"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_arrow_right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_check_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60pt"
+        android:background="@drawable/bg_normal_gray_white_20"
+        android:orientation="vertical"
+        android:padding="40pt">
+
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="V1.0.1"
+            android:textColor="@color/text_gray02"
+            android:textSize="22pt" />
+
+        <TextView
+            android:id="@+id/tv_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10pt"
+            android:text="New Version Update"
+            android:textColor="@color/text_gray02"
+            android:textSize="22pt" />
+    </LinearLayout>
 </LinearLayout>

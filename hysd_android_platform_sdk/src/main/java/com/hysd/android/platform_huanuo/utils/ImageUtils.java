@@ -22,7 +22,6 @@ import android.provider.MediaStore.Images;
  * Description : 
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-10 下午2:14:37
  **/

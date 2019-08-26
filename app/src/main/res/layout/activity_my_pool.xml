@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="24pt"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back_top"
+            style="@style/back_btn"
+            android:clickable="true"
+            android:onClick="back"
+            android:src="@drawable/back_selector"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_rig_top"
+            android:layout_width="40pt"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20pt"
+            android:layout_marginRight="34pt"
+            android:src="@drawable/icon_more_black"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30pt"
+        android:layout_marginTop="54pt"
+        android:text="My pool"
+        android:textColor="@color/text_color"
+        android:textSize="38pt"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="16pt"
+        android:layout_marginBottom="42pt"
+        android:text="0x123ZDtdttrt122fffffff545"
+        android:textColor="@color/text_blue"
+        android:textSize="22pt" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingLeft="34pt"
+                    android:paddingRight="34pt">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="95pt"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_week_tip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Profit in last week"
+                            android:textColor="@color/text_blue"
+                            android:textSize="22pt" />
+
+                        <TextView
+                            android:id="@+id/tv_week_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="0.000000 BIU"
+                            android:textColor="@color/selected_blue"
+                            android:textSize="22pt"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1pt"
+                        android:background="@color/gray_background" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80pt"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_total_p_tip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Profit"
+                            android:textColor="@color/text_blue"
+                            android:textSize="22pt" />
+
+                        <TextView
+                            android:id="@+id/tv_total_p_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="0.000000 BIU"
+                            android:textColor="@color/selected_blue"
+                            android:textSize="22pt"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1pt"
+                        android:background="@color/gray_background" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80pt"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_frozen_tip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Frozen Assets In Mine Pool"
+                            android:textColor="@color/text_blue"
+                            android:textSize="22pt" />
+
+                        <TextView
+                            android:id="@+id/tv_frozen_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="0.000000 BIUT"
+                            android:textColor="#9B9B9B"
+                            android:textSize="22pt"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1pt"
+                        android:background="@color/gray_background" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100pt"
+                        android:paddingTop="26pt">
+
+                        <TextView
+                            android:id="@+id/tv_available_tip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Available Balance"
+                            android:textColor="@color/text_blue"
+                            android:textSize="22pt" />
+
+                        <TextView
+                            android:id="@+id/tv_available_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="0.000000 BIU"
+                            android:textColor="#9B9B9B"
+                            android:textSize="22pt"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14pt"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingLeft="34pt"
+                    android:paddingRight="34pt">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90pt"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_my_pool"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Mine Pool I Joined"
+                            android:textColor="#43535B"
+                            android:textSize="26pt"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_view_join"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="50pt"
+                            android:gravity="center"
+                            android:text="View All Mine Pools"
+                            android:textColor="@color/green_border"
+                            android:textSize="18pt"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1pt"
+                        android:background="@color/gray_background" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_joined"
+                        android:layout_width="match_parent"
+                        android:layout_height="160pt"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18pt">
+
+                            <TextView
+                                android:id="@+id/tv_pool_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Name"
+                                android:textColor="#9B9B9B"
+                                android:textSize="18pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_nissan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="208pt"
+                                android:text="Nissan"
+                                android:textColor="#9B9B9B"
+                                android:textSize="18pt"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:text="Source Han Sans"
+                                android:textColor="#43535B"
+                                android:textSize="22pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_day_profit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="208pt"
+                                android:gravity="center_vertical"
+                                android:maxLength="10"
+                                android:text="12345678.23"
+                                android:textColor="#43535B"
+                                android:textSize="22pt"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_join"
+                                android:layout_width="142pt"
+                                android:layout_height="58pt"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/bg_btn_cannot"
+                                android:gravity="center"
+                                android:text="Joined"
+                                android:textColor="@color/white"
+                                android:textSize="18pt"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_not_joined"
+                        android:layout_width="match_parent"
+                        android:layout_height="132pt"
+                        android:gravity="center"
+                        android:text="Haven't joined the mine pool yet"
+                        android:textColor="#B0B0B0"
+                        android:textSize="22pt"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_p_week"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90pt"
+                        android:layout_marginLeft="34pt"
+                        android:gravity="center_vertical"
+                        android:text="Profit in last week"
+                        android:textColor="#43535B"
+                        android:textSize="26pt"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1pt"
+                        android:layout_marginLeft="34pt"
+                        android:layout_marginRight="34pt"
+                        android:background="@color/gray_background" />
+
+                    <com.hualianzb.biut.views.AutoListView
+                        android:id="@+id/lv_profit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="34pt"
+                        android:layout_marginRight="34pt"
+                        android:divider="@color/gray_background"
+                        android:dividerHeight="1pt"
+                        android:scrollbars="none"></com.hualianzb.biut.views.AutoListView>
+
+                    <TextView
+                        android:id="@+id/tv_null"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="No records yet"
+                        android:textColor="#B0B0B0"
+                        android:textSize="22pt"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

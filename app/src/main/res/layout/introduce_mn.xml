@@ -17,81 +17,83 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="@dimen/dimen_50px"
-            android:paddingRight="@dimen/dimen_50px">
+            android:paddingLeft="32pt"
+            android:paddingRight="32pt">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="86px"
+                android:layout_marginTop="56pt"
                 android:text="The importance of Phrase"
                 android:textColor="@color/text_gray02"
-                android:textSize="32px" />
+                android:textSize="22pt" />
 
             <TextView
                 android:id="@+id/tv_content1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="46px"
+                android:layout_marginTop="30pt"
                 android:textColor="@color/text_gray02"
-                android:textSize="32px" />
+                android:textSize="22pt" />
 
             <TextView
                 android:id="@+id/tv_content2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="46px"
+                android:layout_marginTop="30pt"
                 android:textColor="@color/text_gray02"
-                android:textSize="32px" />
+                android:textSize="22pt" />
 
             <TextView
                 android:id="@+id/tv_content3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="46px"
+                android:layout_marginTop="30pt"
                 android:textColor="@color/text_gray02"
-                android:textSize="32px" />
+                android:textSize="22pt" />
 
             <TextView
                 android:id="@+id/tv_content4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="46px"
+                android:layout_marginTop="30pt"
                 android:textColor="@color/text_gray02"
-                android:textSize="32px" />
+                android:textSize="22pt" />
 
             <TextView
                 android:id="@+id/tv_content5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="46px"
+                android:layout_marginTop="30pt"
                 android:textColor="@color/text_gray02"
-                android:textSize="32px" />
+                android:textSize="22pt" />
 
             <TextView
                 android:id="@+id/tv_content6"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="46px"
+                android:layout_marginTop="30pt"
                 android:textColor="@color/text_gray02"
-                android:textSize="32px" />
+                android:textSize="22pt" />
 
             <TextView
+                android:id="@+id/tv_tip"
                 android:layout_width="16dp"
                 android:layout_height="11dp"
-                android:layout_marginTop="@dimen/dimen_100px"
+                android:layout_marginTop="54pt"
                 android:text="Tips"
                 android:textColor="#ffee1c38"
-                android:textSize="@dimen/dimen_28px" />
+                android:textSize="18pt" />
 
             <TextView
+                android:id="@+id/tv_tip_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/px10"
+                android:layout_marginTop="6pt"
                 android:layout_marginBottom="100dp"
-                android:text="Users can use the backup phrase to re-import the SEC wallet, generate a new Keystore with the new password, and modify the wallet password in this way."
+                android:text="Users can use the backup phrase to re-import the BIUT wallet, generate a new Keystore with the new password, and modify the wallet password in this way."
                 android:textColor="#ffee1c38"
-                android:textSize="@dimen/dimen_28px" />
+                android:textSize="18pt" />
         </LinearLayout>
     </ScrollView>
 

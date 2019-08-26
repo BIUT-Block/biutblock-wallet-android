@@ -5,7 +5,6 @@ package com.hysd.android.platform_huanuo.net.http;
  * Description : 响应的数据类型
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-8 下午3:20:04
  **/

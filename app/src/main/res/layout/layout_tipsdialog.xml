@@ -5,8 +5,8 @@
     android:background="@drawable/bg_dialog_white"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:paddingTop="@dimen/dimen_80px"
-    android:paddingBottom="@dimen/dimen_80px">
+    android:paddingTop="40pt"
+    android:paddingBottom="40pt">
 
     <ImageView
         android:id="@+id/iv_img"
@@ -20,32 +20,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/dimen_40px"
+        android:layout_marginTop="20pt"
         android:gravity="center"
-        android:textSize="@dimen/dimen_30px" />
+        android:textSize="22pt" />
 
     <TextView
         android:id="@+id/tv_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/sp14"
+        android:layout_marginTop="7pt"
         android:gravity="center"
         android:text=""
         android:textColor="@color/text_gray02"
-        android:textSize="@dimen/dimen_40px" />
+        android:textSize="22pt" />
 
     <TextView
         android:id="@+id/tv_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/dimen_70px"
+        android:layout_marginTop="35pt"
         android:background="@drawable/bg_normal_white_gray_10"
         android:gravity="center"
-        android:padding="@dimen/dimen_20px"
+        android:padding="20pt"
         android:text="OK"
         android:textColor="@color/selected_blue"
-        android:textSize="38px"
+        android:textSize="19pt"
         android:textStyle="bold" />
 </LinearLayout>

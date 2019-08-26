@@ -12,170 +12,191 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/px120"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginRight="@dimen/dimen_50px"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="Available"
-            android:textColor="@color/text_color"
-            android:textSize="38px" />
-
-        <TextView
-            android:id="@+id/tv_available"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_vertical|right"
-            android:text="0"
-            android:textColor="@color/text_selected_green"
-            android:textSize="38px" />
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2px"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginRight="@dimen/dimen_50px"
-        android:background="@color/line_color" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_120px"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginRight="@dimen/dimen_50px"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="Frozen"
-            android:textColor="@color/text_color"
-            android:textSize="38px" />
-
-        <TextView
-            android:id="@+id/tv_frozen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="center|right"
-            android:text="0"
-            android:textColor="@color/text_selected_green"
-            android:textSize="38px" />
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2px"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginRight="@dimen/dimen_50px"
-        android:background="@color/line_color" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_120px"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginRight="@dimen/dimen_50px"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="Amount"
-            android:textColor="@color/text_color"
-            android:textSize="38px" />
-
-        <TextView
-            android:id="@+id/tv_can"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="center|right"
-            android:textColor="@color/text_selected_green"
-            android:textSize="38px" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_none"
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:visibility="visible">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:scaleType="centerInside"
-            android:src="@drawable/pic_no_recorder" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="82pt"
+            android:layout_marginLeft="34pt"
+            android:layout_marginRight="34pt"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="61px"
-            android:text="No Transaction Record"
-            android:textColor="@color/text_black_home"
-            android:textSize="@dimen/dimen_34px" />
+            <TextView
+                android:id="@+id/tv_available_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Available"
+                android:textColor="@color/text_color"
+                android:textSize="24pt" />
+
+            <TextView
+                android:id="@+id/tv_available"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|right"
+                android:text="0"
+                android:textColor="@color/text_selected_green"
+                android:textSize="24pt" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginLeft="34pt"
+            android:layout_marginRight="34pt"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="82pt"
+            android:layout_marginLeft="34pt"
+            android:layout_marginRight="34pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_frozen_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Frozen"
+                android:textColor="@color/text_color"
+                android:textSize="24pt" />
+
+            <TextView
+                android:id="@+id/tv_frozen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center|right"
+                android:text="0"
+                android:textColor="@color/text_selected_green"
+                android:textSize="24pt" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginLeft="34pt"
+            android:layout_marginRight="34pt"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="82pt"
+            android:layout_marginLeft="34pt"
+            android:layout_marginRight="34pt"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_all_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Amount"
+                android:textColor="@color/text_color"
+                android:textSize="24pt" />
+
+            <TextView
+                android:id="@+id/tv_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center|right"
+                android:textColor="@color/text_selected_green"
+                android:textSize="24pt" />
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_data"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="1"
-        android:visibility="gone">
+        android:layout_weight="1">
 
-        <com.scwang.smartrefresh.layout.SmartRefreshLayout
-            android:id="@+id/refreshLayout"
+        <LinearLayout
+            android:id="@+id/ll_none"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
 
-            <LinearLayout
+            <ImageView
+                android:layout_width="160pt"
+                android:layout_height="160pt"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/pic_no_recorder" />
+
+            <TextView
+                android:id="@+id/tv_empty_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44pt"
+                android:text="No Transaction Record"
+                android:textColor="@color/text_black_home"
+                android:textSize="20pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refreshLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="1">
 
-                <TextView
-                    android:id="@+id/tv_key_content"
-                    android:layout_width="wrap_content"
-                    android:layout_height="80px"
-                    android:layout_marginLeft="@dimen/dimen_40px"
-                    android:gravity="center_vertical"
-                    android:text="Recent transction record"
-                    android:textColor="#91A2AA"
-                    android:textSize="@dimen/dimen_34px"
-                    android:textStyle="bold"
-                    android:visibility="visible" />
-
-                <com.hualianzb.sec.views.AutoListView
-                    android:id="@+id/lv_record"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:divider="@null"
-                    android:paddingBottom="@dimen/dimen_150px"
-                    android:scrollbars="none"
-                    android:visibility="visible"></com.hualianzb.sec.views.AutoListView>
-            </LinearLayout>
-        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-    </LinearLayout>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_key_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60pt"
+                        android:layout_marginLeft="34pt"
+                        android:gravity="center_vertical"
+                        android:text="Recent Transaction Record"
+                        android:textColor="#91A2AA"
+                        android:textSize="20pt"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="none">
+
+                        <com.hualianzb.biut.views.AutoListView
+                            android:id="@+id/lv_record"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:divider="@null"
+                            android:paddingBottom="60pt"
+                            android:scrollbars="none"
+                            android:visibility="visible"></com.hualianzb.biut.views.AutoListView>
+                    </ScrollView>
+                </LinearLayout>
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_100px"
-        android:layout_marginLeft="@dimen/dimen_40px"
-        android:layout_marginRight="@dimen/dimen_40px"
-        android:layout_marginBottom="@dimen/dimen_40px"
+        android:layout_height="86pt"
+        android:layout_marginLeft="34pt"
+        android:layout_marginRight="34pt"
+        android:layout_marginBottom="54pt"
         android:weightSum="2">
 
         <TextView
@@ -187,20 +208,20 @@
             android:gravity="center"
             android:text="Transfer"
             android:textColor="@color/white"
-            android:textSize="@dimen/dimen_34px"
+            android:textSize="22pt"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_receipt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="23px"
+            android:layout_marginLeft="18pt"
             android:layout_weight="1"
             android:background="@drawable/bg_btn_blue"
             android:gravity="center"
             android:text="Receipt"
             android:textColor="@color/white"
-            android:textSize="@dimen/dimen_34px"
+            android:textSize="22pt"
             android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

@@ -5,7 +5,6 @@ package com.hysd.android.platform_huanuo.net.base;
  * Description : 网络请求的协议类型
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-8 上午10:28:33
  **/

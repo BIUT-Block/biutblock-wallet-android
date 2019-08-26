@@ -1,77 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/px160"
-    android:background="@color/white"
-    android:orientation="vertical">
+    android:layout_height="114pt"
+    android:background="@drawable/bg_normal_gray_white_20"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="30pt"
+    android:paddingRight="30pt">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="34pt"
+        android:background="@drawable/icon_wallet_gray" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/px160"
-        android:background="@drawable/bg_normal_gray_white_20"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="42px"
-        android:paddingRight="42px">
+        android:orientation="vertical">
 
-        <ImageView
+        <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="45px"
-            android:background="@drawable/icon_wallet_gray" />
-
-        <LinearLayout
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="44px"
-                android:gravity="center_vertical"
-                android:textColor="@color/text_blue"
-                android:textSize="@dimen/dimen_36px"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_money"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:textColor="@color/text_green_increase"
-                android:textSize="24px" />
-
-            <TextView
-                android:id="@+id/tv_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:textSize="24px" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:text="@string/app_name"
+            android:textColor="@color/text_blue"
+            android:textSize="26pt"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_backup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Backup"
-                android:textColor="@color/text_green_increase"
-                android:textSize="@dimen/dimen_30px" />
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="1000"
+            android:textColor="@color/text_green_increase"
+            android:textSize="18pt" />
 
-            <ImageView
-                android:layout_width="16px"
-                android:layout_height="@dimen/px30"
-                android:layout_marginLeft="@dimen/dimen_50px"
-                android:src="@drawable/icon_arrow_right" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="aaaaaaaaaaaaaaaa"
+            android:textSize="18pt" />
+
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_backup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Backup"
+            android:textColor="@color/text_green_increase"
+            android:textSize="22pt" />
+
+        <ImageView
+            android:layout_width="10pt"
+            android:layout_height="20pt"
+            android:layout_marginLeft="34pt"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_arrow_right" />
+    </LinearLayout>
 </LinearLayout>

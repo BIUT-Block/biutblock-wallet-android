@@ -9,7 +9,6 @@ import com.hysd.android.platform_huanuo.base.config.PlatformConfig;
  * Description : application处理
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-10 下午10:40:48
  **/

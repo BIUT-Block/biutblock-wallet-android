@@ -7,7 +7,6 @@ import com.hysd.android.platform_huanuo.net.RequestDispatcher;
  * Description : 网络请求项的基类
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-8 下午2:30:10
  **/

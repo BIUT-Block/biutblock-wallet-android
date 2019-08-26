@@ -10,7 +10,6 @@ import java.util.concurrent.ConcurrentHashMap;
  * Description : 请求管理
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-25 下午5:38:25
  **/

@@ -55,14 +55,14 @@
                         android:textSize="@dimen/dimen_36px" />
                 </LinearLayout>
 
-                <com.hualianzb.sec.views.AutoListView
+                <com.hualianzb.biut.views.AutoListView
                     android:id="@+id/lv_kind"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:divider="@color/line_color"
                     android:dividerHeight="2px"
                     android:footerDividersEnabled="true"
-                    android:headerDividersEnabled="false"></com.hualianzb.sec.views.AutoListView>
+                    android:headerDividersEnabled="false"></com.hualianzb.biut.views.AutoListView>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.hualianzb.sec.views.SwipeListLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.hualianzb.biut.views.SwipeListLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/sll_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,14 +14,14 @@
 
         <LinearLayout
             android:id="@+id/ll_delete"
-            android:layout_width="198px"
+            android:layout_width="132pt"
             android:layout_height="match_parent"
             android:background="@color/bg_red"
             android:gravity="center">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="54pt"
+                android:layout_height="54pt"
                 android:gravity="center"
                 android:scaleType="centerInside"
                 android:src="@drawable/icon_delete" />
@@ -32,57 +32,55 @@
     <RelativeLayout
         android:id="@+id/rl_item"
         android:layout_width="match_parent"
-        android:layout_height="175px"
-        android:gravity="center_vertical"
-        android:paddingLeft="@dimen/px50">
+        android:layout_height="116pt"
+        android:gravity="center_vertical">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/dimen_30px"
+            android:layout_marginLeft="60pt"
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_48px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dimen_40px"
+                    android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:text="姓名"
                     android:textColor="@color/text_blue"
-                    android:textSize="@dimen/dimen_34px"
+                    android:textSize="22pt"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_phone"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dimen_40px"
-                    android:layout_marginLeft="@dimen/dimen_30px"
+                    android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/tv_name"
                     android:gravity="center_vertical"
                     android:text="13359637383"
                     android:textColor="@color/text_blue"
-                    android:textSize="@dimen/dimen_34px"
+                    android:textSize="22pt"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_address"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/dimen_34px"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_name"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="8px"
                 android:gravity="center_vertical"
                 android:text="0x123456...12345678"
                 android:textColor="#A6A4A4"
-                android:textSize="@dimen/dimen_28px" />
+                android:textSize="18pt" />
         </LinearLayout>
 
         <RelativeLayout
@@ -91,14 +89,15 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="44px"
+            android:layout_marginRight="60pt"
             android:background="@drawable/bg_normal_gray_white_10">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/px20"
-                android:background="@drawable/icon_edit" />
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_margin="20pt"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_edit" />
         </RelativeLayout>
     </RelativeLayout>
 
@@ -108,4 +107,4 @@
         android:layout_height="2px"
         android:background="@color/line_color" />
 
-</com.hualianzb.sec.views.SwipeListLayout>
+</com.hualianzb.biut.views.SwipeListLayout>

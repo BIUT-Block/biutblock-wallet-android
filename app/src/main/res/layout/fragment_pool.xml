@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="24pt"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/gray_background"
+            android:text="0x123456...12345678"
+            android:textColor="@color/text_green"
+            android:textSize="38pt"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_rig_top"
+            android:layout_width="40pt"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20pt"
+            android:layout_marginRight="34pt"
+            android:src="@drawable/icon_more_black"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48pt">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="196pt"
+            android:src="@drawable/icon_pool_bg"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="58pt"
+            android:text="The BIUT mine pool is officially online"
+            android:textColor="#FFE5EAF0"
+            android:textSize="28pt" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100pt"
+            android:layout_marginLeft="34pt"
+            android:layout_marginTop="38pt"
+            android:layout_marginRight="34pt"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mine Pool"
+                android:textColor="@color/text_color"
+                android:textSize="30pt"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/rl_search"
+                android:layout_width="208pt"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_normal_gray_white_10"
+                android:padding="20pt">
+
+                <TextView
+                    android:id="@+id/tv_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Search"
+                    android:textColor="#ff9b9b9b"
+                    android:textSize="20pt" />
+
+                <ImageView
+                    android:layout_width="26pt"
+                    android:layout_height="26pt"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_search" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:background="@color/gray_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="34pt"
+            android:layout_marginTop="18pt"
+            android:layout_marginBottom="18pt"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_pool_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="Name"
+                android:textColor="@color/text_color"
+                android:textSize="18pt"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_nissan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="334pt"
+                android:text="Nissan"
+                android:textSize="18pt"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <ListView
+            android:id="@+id/lv_pool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="34pt"
+            android:layout_marginRight="34pt"
+            android:scrollbars="none"
+            android:visibility="visible"></ListView>
+    </LinearLayout>
+
+</LinearLayout>

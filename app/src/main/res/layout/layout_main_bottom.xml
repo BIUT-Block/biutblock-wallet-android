@@ -1,70 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="170px"
+    android:layout_height="120pt"
     android:background="@color/white"
     android:fitsSystemWindows="true"
     android:gravity="center"
     android:orientation="horizontal">
 
     <LinearLayout
-        android:id="@+id/ll_discovery"
-        android:layout_width="wrap_content"
-        android:layout_height="190px"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <ImageView
-            android:layout_width="@dimen/dimen_70px"
-            android:layout_height="@dimen/dimen_70px"
-            android:layout_marginTop="@dimen/dimen_40px"
-            android:scaleType="centerInside"
-            android:src="@drawable/discovery_selected" />
-
-        <TextView
-            android:id="@+id/tv_discovery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="11px"
-            android:text="Discovery"
-            android:textColor="@color/home_text_color"
-            android:textSize="@dimen/dimen_20px"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/ll_property"
         android:layout_width="wrap_content"
-        android:layout_height="190px"
+        android:layout_height="120pt"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="@dimen/dimen_70px"
-            android:layout_height="@dimen/dimen_70px"
+            android:layout_width="36pt"
+            android:layout_height="36pt"
             android:scaleType="centerInside"
             android:src="@drawable/home_selected" />
 
         <TextView
             android:id="@+id/tv_property"
             android:layout_width="wrap_content"
-            android:layout_height="24px"
-            android:layout_marginTop="11px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6pt"
             android:text="Home"
             android:textColor="@color/home_text_color"
-            android:textSize="@dimen/dimen_20px"
+            android:textSize="14pt"
             android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_pool"
+        android:layout_width="0px"
+        android:layout_height="120pt"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_pool"
+                android:layout_width="36pt"
+                android:layout_height="36pt"
+                android:scaleType="centerInside"
+                android:src="@drawable/my_selected" />
+
+            <TextView
+                android:id="@+id/tv_pool"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6pt"
+                android:gravity="center_horizontal"
+                android:text="Pool"
+                android:textColor="@color/home_text_color"
+                android:textSize="14pt"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll_my"
         android:layout_width="0px"
-        android:layout_height="190px"
+        android:layout_height="120pt"
         android:layout_weight="1"
         android:gravity="center">
 
@@ -76,20 +81,20 @@
 
             <ImageView
                 android:id="@+id/iv_my"
-                android:layout_width="@dimen/dimen_70px"
-                android:layout_height="@dimen/dimen_70px"
+                android:layout_width="36pt"
+                android:layout_height="36pt"
                 android:scaleType="centerInside"
                 android:src="@drawable/my_selected" />
 
             <TextView
                 android:id="@+id/tv_my"
                 android:layout_width="wrap_content"
-                android:layout_height="24px"
-                android:layout_marginTop="@dimen/dimen_10px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6pt"
                 android:gravity="center_horizontal"
                 android:text="My"
                 android:textColor="@color/home_text_color"
-                android:textSize="@dimen/dimen_20px"
+                android:textSize="14pt"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>

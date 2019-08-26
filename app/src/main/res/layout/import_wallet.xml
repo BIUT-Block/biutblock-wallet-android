@@ -12,15 +12,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_80px"
-        android:layout_marginLeft="@dimen/dimen_40px"
-        android:layout_marginRight="@dimen/dimen_40px"
+        android:layout_height="50pt"
+        android:layout_marginLeft="36pt"
+        android:layout_marginRight="36pt"
         android:orientation="horizontal"
         android:weightSum="3">
 
         <RelativeLayout
             android:id="@+id/re_mn"
-            android:layout_width="0px"
+            android:layout_width="0pt"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
@@ -32,25 +32,25 @@
                 android:layout_centerVertical="true"
                 android:text="Phrase"
                 android:textColor="@color/text_selected_green"
-                android:textSize="38px" />
+                android:textSize="26pt" />
 
             <View
                 android:id="@+id/line1"
                 android:layout_width="match_parent"
-                android:layout_height="4px"
+                android:layout_height="3pt"
                 android:layout_alignParentBottom="true"
                 android:background="@color/text_selected_green" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1px"
+                android:layout_height="1pt"
                 android:layout_alignParentBottom="true"
                 android:background="@color/line_color" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/rl_official_w"
-            android:layout_width="0px"
+            android:layout_width="0pt"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
@@ -59,28 +59,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Official wallet"
+                android:text="Keystore"
                 android:textColor="@color/text_gray"
-                android:textSize="38px" />
+                android:textSize="26pt" />
 
             <View
                 android:id="@+id/line2"
                 android:layout_width="match_parent"
-                android:layout_height="4px"
+                android:layout_height="3pt"
                 android:layout_alignParentBottom="true"
                 android:background="@color/text_selected_green"
                 android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1px"
+                android:layout_height="1pt"
                 android:layout_alignParentBottom="true"
                 android:background="@color/line_color" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/rl_private_key"
-            android:layout_width="0px"
+            android:layout_width="0pt"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
@@ -89,21 +89,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Private key"
+                android:text="Private Key"
                 android:textColor="@color/text_gray"
-                android:textSize="38px" />
+                android:textSize="26pt" />
 
             <View
                 android:id="@+id/line3"
                 android:layout_width="match_parent"
-                android:layout_height="4px"
+                android:layout_height="3pt"
                 android:layout_alignParentBottom="true"
                 android:background="@color/text_selected_green"
                 android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1px"
+                android:layout_height="1pt"
                 android:layout_alignParentBottom="true"
                 android:background="@color/line_color" />
         </RelativeLayout>
@@ -124,58 +124,59 @@
                 android:id="@+id/tv_official_tips"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dimen_40px"
-                android:layout_marginTop="@dimen/dimen_60px"
-                android:layout_marginRight="@dimen/dimen_40px"
-                android:layout_marginBottom="@dimen/dimen_60px"
+                android:layout_marginLeft="36pt"
+                android:layout_marginTop="40pt"
+                android:layout_marginRight="36pt"
+                android:layout_marginBottom="20pt"
                 android:lineSpacingMultiplier="1.2"
                 android:text="@string/import_official_tip"
                 android:textColor="@color/text_gray02"
-                android:textSize="@dimen/dimen_28px"
+                android:textSize="22pt"
                 android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tv_edit_top_error"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_20px"
                 android:gravity="right"
-                android:paddingRight="@dimen/dimen_40px"
+                android:paddingRight="36pt"
+                android:layout_marginTop="20pt"
                 android:textColor="@color/text_error"
-                android:textSize="@dimen/dimen_28px"
+                android:textSize="18pt"
+                android:text=""
                 android:visibility="gone" />
 
             <EditText
                 android:id="@+id/ed_top"
                 android:layout_width="match_parent"
-                android:layout_height="360px"
+                android:layout_height="260pt"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="@dimen/dimen_40px"
-                android:layout_marginTop="@dimen/dimen_20px"
-                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginLeft="36pt"
+                android:layout_marginTop="36pt"
+                android:layout_marginRight="36pt"
                 android:background="@drawable/bg_edit_gray"
                 android:gravity="left"
                 android:hint="@string/import_mn_hint"
-                android:paddingLeft="@dimen/dimen_30px"
-                android:paddingTop="@dimen/dimen_40px"
-                android:paddingRight="@dimen/dimen_30px"
-                android:paddingBottom="@dimen/dimen_40px"
+                android:paddingLeft="34pt"
+                android:paddingTop="36pt"
+                android:paddingRight="34pt"
+                android:paddingBottom="36pt"
                 android:textColor="@color/text_black"
-                android:textSize="@dimen/dimen_28px" />
+                android:textSize="18pt" />
 
             <LinearLayout
                 android:id="@+id/ll_middle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dimen_40px"
-                android:layout_marginTop="@dimen/dimen_20px"
-                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginLeft="36pt"
+                android:layout_marginTop="24pt"
+                android:layout_marginRight="36pt"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_20px"
+                    android:layout_marginTop="20pt"
                     android:orientation="horizontal">
 
                     <TextView
@@ -184,17 +185,16 @@
                         android:layout_height="wrap_content"
                         android:text="Password "
                         android:textColor="@color/text_black"
-                        android:textSize="32px"
+                        android:textSize="18pt"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tv_pass_star"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/tv_pass"
                         android:text="*"
                         android:textColor="@color/text_error"
-                        android:textSize="@dimen/dimen_28px"
+                        android:textSize="18pt"
                         android:textStyle="bold" />
 
                     <RelativeLayout
@@ -202,29 +202,29 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/dimen_50px"
+                        android:layout_marginLeft="50pt"
                         android:layout_toRightOf="@+id/tv_pass_star"
                         android:visibility="gone">
 
                         <ImageView
                             android:id="@+id/iv_red"
-                            android:layout_width="@dimen/dimen_30px"
+                            android:layout_width="30pt"
                             android:layout_height="wrap_content"
                             android:src="@drawable/level_red"></ImageView>
 
                         <ImageView
                             android:id="@+id/iv_yellow"
-                            android:layout_width="@dimen/dimen_30px"
+                            android:layout_width="30pt"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dimen_28px"
+                            android:layout_marginLeft="28pt"
                             android:src="@drawable/bg_level_yellow"></ImageView>
 
                         <ImageView
                             android:id="@+id/iv_blue"
-                            android:layout_width="@dimen/dimen_30px"
+                            android:layout_width="30pt"
                             android:layout_height="wrap_content"
                             android:layout_alignLeft="@id/iv_yellow"
-                            android:layout_marginLeft="@dimen/dimen_28px"
+                            android:layout_marginLeft="28pt"
                             android:src="@drawable/bg_level_blue"></ImageView>
                     </RelativeLayout>
 
@@ -235,47 +235,70 @@
                         android:gravity="center_vertical|right"
                         android:text="@string/password_error"
                         android:textColor="@color/text_error"
-                        android:textSize="@dimen/dimen_28px"
+                        android:textSize="18pt"
                         android:visibility="gone" />
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/ed_pass"
+                <LinearLayout
+                    android:id="@+id/ll_edPass"
                     android:layout_width="match_parent"
-                    android:layout_height="122px"
-                    android:layout_marginTop="@dimen/dimen_20px"
+                    android:layout_height="82pt"
+                    android:layout_marginTop="20pt"
                     android:background="@drawable/bg_edit_gray"
-                    android:hint="@string/pass_hint"
-                    android:inputType="textPassword"
-                    android:maxLength="30"
-                    android:maxLines="1"
-                    android:paddingLeft="@dimen/dimen_20px"
-                    android:textSize="@dimen/dimen_28px" />
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/ed_pass"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/trans"
+                        android:hint="@string/pass_hint"
+                        android:inputType="textPassword"
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:paddingLeft="20pt"
+                        android:paddingRight="20pt"
+                        android:singleLine="true"
+                        android:textColorHint="#D2D2D2"
+                        android:textSize="16pt" />
+
+                    <ImageView
+                        android:id="@+id/iv_clear1"
+                        android:layout_width="26pt"
+                        android:layout_height="26pt"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="16pt"
+                        android:layout_marginRight="16pt"
+                        android:background="@drawable/icon_clear"
+                        android:visibility="gone" />
+                </LinearLayout>
 
                 <RelativeLayout
                     android:id="@+id/rl_re_pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_30px"
+                    android:layout_marginTop="24pt"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/tv_re_pass"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Repeat the Password "
+                        android:text="Repeat The Password "
                         android:textColor="@color/text_black"
-                        android:textSize="32px"
+                        android:textSize="18pt"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tv_re_pass_star"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/tv_re_pass"
                         android:text="*"
                         android:textColor="@color/text_error"
-                        android:textSize="32px"
+                        android:textSize="18pt"
                         android:textStyle="bold" />
 
                     <TextView
@@ -286,50 +309,75 @@
                         android:gravity="center"
                         android:text="@string/re_password_error"
                         android:textColor="@color/text_error"
-                        android:textSize="32px"
+                        android:textSize="18pt"
                         android:visibility="gone" />
 
-                    <EditText
-                        android:id="@+id/ed_repass"
+                    <LinearLayout
+                        android:id="@+id/ll_rePass"
                         android:layout_width="match_parent"
-                        android:layout_height="122px"
+                        android:layout_height="82pt"
                         android:layout_below="@id/tv_re_pass"
-                        android:layout_marginTop="@dimen/dimen_20px"
+                        android:layout_marginTop="20pt"
                         android:background="@drawable/bg_edit_gray"
-                        android:hint="@string/pass_hint"
-                        android:inputType="textPassword"
-                        android:maxLength="30"
-                        android:maxLines="1"
-                        android:paddingLeft="@dimen/dimen_20px"
-                        android:textSize="@dimen/dimen_28px" />
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/ed_repass"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/trans"
+                            android:hint="@string/ex_re_pass"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:paddingLeft="20pt"
+                            android:paddingRight="20pt"
+                            android:singleLine="true"
+                            android:textColorHint="#D2D2D2"
+                            android:textSize="16pt" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear2"
+                            android:layout_width="26pt"
+                            android:layout_height="26pt"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="16pt"
+                            android:layout_marginRight="16pt"
+                            android:background="@drawable/icon_clear"
+                            android:visibility="gone" />
+                    </LinearLayout>
                 </RelativeLayout>
 
                 <LinearLayout
                     android:id="@+id/ll_prompt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_20px"
+                    android:layout_marginTop="24pt"
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_prompt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Password prompt"
+                        android:text="Password Prompt"
                         android:textColor="@color/text_black"
-                        android:textSize="32px" />
+                        android:textSize="18pt"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/ed_pass_reminder"
                         android:layout_width="match_parent"
-                        android:layout_height="122px"
-                        android:layout_marginTop="@dimen/dimen_20px"
+                        android:layout_height="82pt"
+                        android:layout_marginTop="20pt"
                         android:background="@drawable/bg_edit_gray"
                         android:hint="Ex:start name 3rd letter"
-                        android:maxLength="20"
+                        android:maxLength="12"
                         android:maxLines="1"
-                        android:paddingLeft="@dimen/dimen_20px"
+                        android:paddingLeft="20pt"
                         android:singleLine="true"
-                        android:textSize="@dimen/dimen_28px" />
+                        android:textSize="16pt" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -338,10 +386,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="94px"
+                android:layout_marginTop="93pt"
                 android:text="@string/num_limit"
                 android:textColor="@color/text_error"
-                android:textSize="@dimen/dimen_25px"
+                android:textSize="18pt"
                 android:textStyle="bold"
                 android:visibility="gone" />
 
@@ -349,11 +397,11 @@
                 android:id="@+id/ll_agreemt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_40px"
-                android:layout_marginRight="@dimen/dimen_40px"
+                android:layout_marginTop="36pt"
+                android:layout_marginRight="36pt"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="@dimen/dimen_40px"
+                android:paddingLeft="36pt"
                 android:visibility="gone">
 
                 <ImageView
@@ -368,10 +416,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dimen_20px"
+                    android:layout_marginLeft="20pt"
                     android:text="I have read and agreed to"
                     android:textColor="@color/text_black"
-                    android:textSize="@dimen/dimen_20px"
+                    android:textSize="20pt"
                     android:textStyle="bold" />
 
                 <TextView
@@ -380,24 +428,24 @@
                     android:layout_height="wrap_content"
                     android:text=" the Service and privacy Policy "
                     android:textColor="@color/selected_blue"
-                    android:textSize="@dimen/dimen_20px"
+                    android:textSize="20pt"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_start_import"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_120px"
-                android:layout_marginLeft="@dimen/dimen_40px"
-                android:layout_marginTop="@dimen/dimen_40px"
-                android:layout_marginRight="@dimen/dimen_40px"
-                android:layout_marginBottom="@dimen/px50"
+                android:layout_height="80pt"
+                android:layout_marginLeft="36pt"
+                android:layout_marginTop="36pt"
+                android:layout_marginRight="36pt"
+                android:layout_marginBottom="96pt"
                 android:background="@drawable/bg_btn_cannot"
                 android:enabled="false"
                 android:gravity="center"
                 android:text="Start Importing"
                 android:textColor="@color/white"
-                android:textSize="@dimen/px30"
+                android:textSize="20pt"
                 android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>

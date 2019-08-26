@@ -8,47 +8,26 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="800px"
+        android:layout_height="wrap_content"
         android:background="@color/bg_detail"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/iv_back_top"
-            android:layout_width="wrap_content"
-            android:layout_height="68px"
-            android:layout_marginLeft="@dimen/dimen_50px"
-            android:clickable="true"
-            android:layout_marginTop="@dimen/dimen_50px"
-            android:onClick="back"
-            android:paddingRight="@dimen/dimen_50px"
-            android:src="@drawable/back_selector" />
-
-        <TextView
-            android:id="@+id/tv_theme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/iv_back_top"
-            android:layout_marginLeft="@dimen/px50"
-            android:layout_marginTop="91px"
-            android:gravity="left|center_vertical"
-            android:text="Transaction Record"
-            android:textColor="@color/text_blue"
-            android:textSize="@dimen/dimen_55px"
-            android:textStyle="bold" />
+        <include layout="@layout/include_head_pic_right" />
 
         <ImageView
             android:id="@+id/iv_avater"
-            android:layout_width="166px"
-            android:layout_height="172px"
+            android:layout_width="144pt"
+            android:layout_height="144pt"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="100px"
-            android:scaleType="centerInside" />
+            android:layout_marginTop="48pt"
+            android:scaleType="fitCenter" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dimen_60px"
+            android:layout_marginTop="32pt"
+            android:layout_marginBottom="48pt"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -67,26 +46,29 @@
                 android:layout_height="wrap_content"
                 android:gravity="bottom"
                 android:text="transfer Pending"
-                android:textSize="@dimen/dimen_28px" />
+                android:textSize="18pt" />
         </LinearLayout>
     </LinearLayout>
 
+
     <LinearLayout
+        android:id="@+id/ll_normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/dimen_50px"
-        android:paddingRight="@dimen/dimen_50px"
-        android:paddingBottom="@dimen/dimen_50px">
+        android:paddingLeft="34pt"
+        android:paddingTop="@dimen/dimen_40px"
+        android:paddingRight="34pt"
+        android:paddingBottom="@dimen/dimen_40px">
 
         <TextView
+            android:id="@+id/tv_from"
             android:layout_width="wrap_content"
             android:layout_height="41px"
-            android:layout_marginTop="@dimen/dimen_50px"
-            android:text="Sent"
+            android:text="From Address"
             android:textColor="@color/text_blue"
-            android:textSize="@dimen/dimen_34px"
+            android:textSize="22pt"
             android:textStyle="bold" />
 
         <TextView
@@ -94,17 +76,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5px"
-            android:text="ebosdsdwr02938sfjksfu9khwe23423423"
+            android:gravity="left"
             android:textColor="#B0B0B0"
-            android:textSize="@dimen/dimen_28px" />
+            android:textSize="18pt" />
 
         <TextView
+            android:id="@+id/tv_to"
             android:layout_width="wrap_content"
             android:layout_height="41px"
             android:layout_marginTop="@dimen/dimen_25px"
-            android:text="Receive"
+            android:text="To Address"
             android:textColor="@color/text_blue"
-            android:textSize="@dimen/dimen_34px"
+            android:textSize="22pt"
             android:textStyle="bold" />
 
         <TextView
@@ -112,17 +95,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5px"
-            android:text="ebosdsdwr02938sfjksfu9khwe23423423"
+            android:gravity="left"
             android:textColor="#B0B0B0"
-            android:textSize="@dimen/dimen_28px" />
+            android:textSize="18pt" />
 
         <TextView
+            android:id="@+id/tv_fee"
             android:layout_width="wrap_content"
             android:layout_height="41px"
             android:layout_marginTop="@dimen/dimen_24px"
-            android:text="Miner cost"
+            android:text="Fee"
             android:textColor="@color/text_blue"
-            android:textSize="@dimen/dimen_34px"
+            android:textSize="22pt"
             android:textStyle="bold" />
 
         <TextView
@@ -130,9 +114,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5px"
-            android:text="0SEC"
+            android:text="0 BIU"
             android:textColor="#B0B0B0"
-            android:textSize="@dimen/dimen_28px" />
+            android:textSize="18pt" />
 
         <LinearLayout
             android:id="@+id/ll_remark"
@@ -142,11 +126,12 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_remark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Remarks"
                 android:textColor="@color/text_blue"
-                android:textSize="@dimen/dimen_34px"
+                android:textSize="22pt"
                 android:textStyle="bold" />
 
             <TextView
@@ -155,90 +140,208 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5px"
                 android:textColor="#B0B0B0"
-                android:textSize="@dimen/dimen_28px" />
+                android:textSize="18pt" />
         </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_mined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="34pt"
+        android:paddingRight="34pt">
+
+        <TextView
+            android:id="@+id/tv_block_hash_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="41px"
+            android:layout_marginTop="34pt"
+            android:text="Block Hash"
+            android:textColor="@color/text_blue"
+            android:textSize="22pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_block_hash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:gravity="left"
+            android:text="ebosdsdwr02938sfjksfu9khwe23423423"
+            android:textColor="#B0B0B0"
+            android:textSize="18pt" />
+
+        <TextView
+            android:id="@+id/tv_block_top"
+            android:layout_width="wrap_content"
+            android:layout_height="41px"
+            android:layout_marginTop="@dimen/dimen_25px"
+            android:text="Blocks"
+            android:textColor="@color/text_blue"
+            android:textSize="22pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_blocks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:gravity="left"
+            android:text="3422222"
+            android:textColor="#B0B0B0"
+            android:textSize="18pt" />
+
+        <TextView
+            android:id="@+id/tv_mined_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="41px"
+            android:layout_marginTop="@dimen/dimen_24px"
+            android:text="Mined by"
+            android:textColor="@color/text_blue"
+            android:textSize="22pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_mined_by"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:text="0x35f61dfb08ada13eba64bf156b80df3d5b3a738d"
+            android:textColor="#B0B0B0"
+            android:textSize="18pt" />
+
+        <TextView
+            android:id="@+id/tv_mined_time_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="41px"
+            android:layout_marginTop="@dimen/dimen_24px"
+            android:text="Mined Time"
+            android:textColor="@color/text_blue"
+            android:textSize="22pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_mined_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:text="2019/01/24 16:25:08 UTC +8"
+            android:textColor="#B0B0B0"
+            android:textSize="18pt" />
+
+        <TextView
+            android:id="@+id/tv_reward_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="41px"
+            android:layout_marginTop="@dimen/dimen_24px"
+            android:text="Reward"
+            android:textColor="@color/text_blue"
+            android:textSize="22pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_reward"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:text="+ 0.005 BIU"
+            android:textColor="#B0B0B0"
+            android:textSize="18pt" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F5F5F5"
-        android:orientation="vertical"
-        android:paddingLeft="@dimen/dimen_50px"
-        android:paddingTop="58px"
-        android:paddingRight="@dimen/dimen_50px">
+        android:background="@color/gray_background">
 
         <LinearLayout
+            android:id="@+id/ll_bottom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="34pt"
+            android:paddingTop="34pt"
+            android:paddingRight="34pt">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Transaction number"
-                android:textColor="@color/text_blue"
-                android:textSize="@dimen/dimen_34px"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_trade_num"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:textColor="#91A2AA"
-                android:textSize="@dimen/dimen_34px" />
-        </LinearLayout>
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_50px"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_trans_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transaction Number"
+                    android:textColor="@color/text_blue"
+                    android:textSize="22pt"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Block"
-                android:textColor="@color/text_blue"
-                android:textSize="@dimen/dimen_34px"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_trade_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="#91A2AA"
+                    android:textSize="22pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_block"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="333444555"
-                android:textColor="#91A2AA"
-                android:textSize="@dimen/dimen_34px" />
-        </LinearLayout>
+                android:layout_marginTop="34pt"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_50px"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_block_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Block"
+                    android:textColor="@color/text_blue"
+                    android:textSize="22pt"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Transaction Time"
-                android:textColor="@color/text_blue"
-                android:textSize="@dimen/dimen_34px"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_block"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text=""
+                    android:textColor="#91A2AA"
+                    android:textSize="22pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_date"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:textColor="#91A2AA"
-                android:textSize="@dimen/dimen_34px" />
+                android:layout_marginTop="34pt"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_trans_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transaction Time"
+                    android:textColor="@color/text_blue"
+                    android:textSize="22pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="#91A2AA"
+                    android:textSize="22pt" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -246,27 +349,31 @@
             android:id="@+id/ll_toWeb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dimen_60px"
-            android:layout_marginBottom="@dimen/dimen_50px"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40pt"
             android:background="@drawable/bg_normal_gray_white_10"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="@dimen/dimen_20px">
+            android:padding="10pt">
 
             <ImageView
-                android:layout_width="@dimen/dimen_36px"
-                android:layout_height="@dimen/dimen_36px"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_sec" />
+                android:id="@+id/iv_logo"
+                android:layout_width="32pt"
+                android:layout_height="32pt"
+                android:layout_gravity="center_vertical"
+                android:scaleType="centerInside" />
 
             <TextView
+                android:id="@+id/tv_web_net"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dimen_28px"
-                android:text="Enter SECBlock for more details"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18pt"
                 android:textColor="#ff388ed8"
-                android:textSize="@dimen/dimen_26px" />
+                android:textSize="18pt" />
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
+
+
 </LinearLayout>

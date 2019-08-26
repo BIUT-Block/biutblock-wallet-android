@@ -6,10 +6,10 @@
     android:background="@color/white"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/px50"
-    android:paddingTop="82px"
-    android:paddingRight="@dimen/px50"
-    android:paddingBottom="@dimen/dimen_80px">
+    android:paddingLeft="34pt"
+    android:paddingTop="54pt"
+    android:paddingRight="34pt"
+    android:paddingBottom="48pt">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,126 +17,158 @@
 
         <ImageView
             android:id="@+id/iv_close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="36pt"
+            android:layout_height="36pt"
             android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
             android:src="@drawable/icon_close_black" />
 
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Transaction Details"
-            android:textColor="#388ED8"
-            android:textSize="38px" />
+            android:textColor="#FF43535B"
+            android:textSize="30pt"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="146px"
+        android:layout_marginTop="108pt"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tv_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="Order infomation"
-            android:textColor="#FFB0AFAF"
-            android:textSize="@dimen/dimen_34px" />
+            android:text="Order information"
+            android:textColor="#FF949292"
+            android:textSize="20pt" />
 
         <TextView
+            android:id="@+id/kind"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right|center_vertical"
-            android:text="Transfer"
-            android:textColor="#43535B"
-            android:textSize="@dimen/dimen_34px" />
+            android:text="Sent"
+            android:textColor="#FF43535B"
+            android:textSize="20pt" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55px"
+        android:layout_marginTop="28pt"
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tv_to_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="To Address"
-            android:textColor="#FFB0AFAF"
-            android:textSize="@dimen/dimen_34px" />
+            android:textColor="#FF949292"
+            android:textSize="20pt" />
 
         <TextView
             android:id="@+id/tv_to"
-            android:layout_width="550px"
+            android:layout_width="406pt"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:gravity="right|center_vertical"
-            android:textColor="#43535B"
-            android:textSize="@dimen/dimen_34px" />
+            android:textColor="#FF43535B"
+            android:textSize="20pt" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55px"
+        android:layout_marginTop="28pt"
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tv_from_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Payment Address"
-            android:textColor="#FFB0AFAF"
-            android:textSize="@dimen/dimen_34px" />
+            android:text="From Address"
+            android:textColor="#FF949292"
+            android:textSize="20pt" />
 
         <TextView
             android:id="@+id/tv_from"
-            android:layout_width="550px"
+            android:layout_width="406pt"
             android:layout_height="wrap_content"
             android:gravity="right|center_vertical"
-            android:textColor="#43535B"
-            android:textSize="@dimen/dimen_34px" />
+            android:textColor="#FF43535B"
+            android:textSize="20pt" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55px"
+        android:layout_marginTop="28pt"
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tv_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:text="Amount"
             android:textColor="#FFB0AFAF"
-            android:textSize="@dimen/dimen_34px" />
+            android:textSize="20pt" />
 
         <TextView
             android:id="@+id/tv_money"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right|center_vertical"
-            android:textColor="#43535B"
-            android:textSize="@dimen/dimen_34px" />
+            android:textColor="#FF43535B"
+            android:textSize="20pt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28pt"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_fee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="Fee"
+            android:textColor="#FFB0AFAF"
+            android:textSize="20pt" />
+
+        <TextView
+            android:id="@+id/tv_gas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right|center_vertical"
+            android:textColor="#FF43535B"
+            android:textSize="20pt" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/tv_sure"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_104px"
-        android:layout_marginTop="100px"
+        android:layout_height="86pt"
+        android:layout_marginTop="52pt"
         android:background="@drawable/bg_btn"
         android:gravity="center"
-        android:text="Next"
+        android:text="Confirm"
         android:textColor="@color/white"
-        android:textSize="@dimen/dimen_25px"
+        android:textSize="20pt"
         android:textStyle="bold" />
 
 </LinearLayout>

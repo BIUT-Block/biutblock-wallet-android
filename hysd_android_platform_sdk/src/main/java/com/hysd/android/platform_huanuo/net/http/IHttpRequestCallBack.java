@@ -7,7 +7,6 @@ import com.hysd.android.platform_huanuo.net.base.IRequestItem;
  * Description : 网络请求的callBack
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-8 上午10:49:51
  **/

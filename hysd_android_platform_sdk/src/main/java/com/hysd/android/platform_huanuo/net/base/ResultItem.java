@@ -22,7 +22,6 @@ import java.util.Map;
  * FileName    : ResultItem.java
  * Description : 一个工动态bean的处理类
  *
- * @author : 刘剑
  * @version : 1.0
  *          Create Date : 2014-4-9 下午2:16:27
  * @Copyright : hysdpower. All Rights Reserved

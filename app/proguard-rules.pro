@@ -84,3 +84,4 @@
 -keep class com.fasterxml.**
 -keep class com.kenai.**
 -keep class okio.**
+-keep class com.google.code.gson.**

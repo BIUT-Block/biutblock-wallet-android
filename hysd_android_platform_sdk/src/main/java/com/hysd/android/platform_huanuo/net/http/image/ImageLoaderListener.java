@@ -8,7 +8,6 @@ import android.widget.ImageView;
  * Description : 图片加载的监听器
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-24 上午10:36:12
  **/

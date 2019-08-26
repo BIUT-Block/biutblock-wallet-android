@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.hualianzb.sec">
+    package="com.hualianzb.biut">
 
     <!-- 增加权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
         tools:ignore="ProtectedPermissions" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS"
@@ -24,7 +23,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name="com.hualianzb.sec.application.SECApplication"
+        android:name="com.hualianzb.biut.application.BIUTApplication"
         android:allowBackup="true"
         android:icon="@mipmap/icon_logo"
         android:label="@string/app_name"
@@ -38,11 +37,11 @@
         <!-- 配置APP ID -->
         <meta-data
             android:name="BUGLY_APPID"
-            android:value="4a36d819cd" />
+            android:value="153bee2f5a" />
         <!--配置APP版本号 -->
         <meta-data
             android:name="BUGLY_APP_VERSION"
-            android:value="101" />
+            android:value="144" />
 
         <!-- 配置APP渠道号 -->
         <meta-data
@@ -61,7 +60,7 @@
             android:value="1920"></meta-data>
 
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.GuidePage"
+            android:name="com.hualianzb.biut.ui.activitys.GuidePage"
             android:screenOrientation="portrait"
             android:theme="@style/SplashStyle">
             <intent-filter>
@@ -72,110 +71,120 @@
         </activity>
         <!--GuidePage-->
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.CreateInsertWalletActivity"
+            android:name="com.hualianzb.biut.ui.activitys.CreateInsertWalletActivity"
             android:label="CreateInsertWalletActivity"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.CreateWalletActivity"
+            android:name="com.hualianzb.biut.ui.activitys.CreateWalletActivity"
             android:label="CreateWalletActivity"
             android:windowSoftInputMode="adjustPan|stateVisible"></activity>
 
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.BackupMnemonicsOneActy"
+            android:name="com.hualianzb.biut.ui.activitys.BackupMnemonicsOneActy"
             android:label="BackupMnemonicsActy1"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.BackupMnemonicsTwoActy"
+            android:name="com.hualianzb.biut.ui.activitys.BackupMnemonicsTwoActy"
             android:label="BackupMnemonicsActy2"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.BackupMnemonicsThreeActy"
+            android:name="com.hualianzb.biut.ui.activitys.BackupMnemonicsThreeActy"
             android:label="BackupMnemonicsActy3"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.HomePageActivity"
+            android:name="com.hualianzb.biut.ui.activitys.HomePageActivity"
             android:label="HomePageActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.ImportWalletActivity"
+            android:name="com.hualianzb.biut.ui.activitys.ImportWalletActivity"
             android:label="ImportWalletActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.ManagerWalletActy"
+            android:name="com.hualianzb.biut.ui.activitys.ManagerWalletActy"
             android:label="ManagerWalletActy"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.MakeMoneyActicity"
+            android:name="com.hualianzb.biut.ui.activitys.MakeMoneyActicity"
             android:label="MakeMoneyActicity"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.ChangePassActy"
+            android:name="com.hualianzb.biut.ui.activitys.ChangePassActy"
             android:label="ChangePassActy"
             android:screenOrientation="portrait"></activity>
 
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.TransactionRecordActy"
+            android:name="com.hualianzb.biut.ui.activitys.TransactionRecordActy"
             android:label="TransactionRecordActy"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.ChangeWalletActivity"
+            android:name="com.hualianzb.biut.ui.activitys.ChangeWalletActivity"
             android:label="ChangeWalletRecordActy"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.TransferActivity"
+            android:name="com.hualianzb.biut.ui.activitys.TransferActivity"
             android:label="TransferActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateVisible" />
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.MakeCodeActivity"
+            android:name="com.hualianzb.biut.ui.activitys.MakeCodeActivity"
             android:label="MakeCodeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.IntroduceMnActy"
+            android:name="com.hualianzb.biut.ui.activitys.IntroduceMnActy"
             android:label="IntroduceMnActy"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.IntroduceKeystoreAcy"
+            android:name="com.hualianzb.biut.ui.activitys.IntroduceKeystoreAcy"
             android:label="IntroduceKeystoreAcy"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.IntroducePrivatekeyAcy"
+            android:name="com.hualianzb.biut.ui.activitys.IntroducePrivatekeyAcy"
             android:label="IntroducePrivatekeyAcy"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.TransactionRecordDetailAllActivity"
+            android:name="com.hualianzb.biut.ui.activitys.TransactionRecordDetailAllActivity"
             android:label="TransactionRecordDetailAllActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.AddressBookActivity"
+            android:name="com.hualianzb.biut.ui.activitys.AddressBookActivity"
             android:label="AddressBookActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.AddAddressActivity"
+            android:name="com.hualianzb.biut.ui.activitys.AddAddressActivity"
             android:label="AddAddressActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.ChangeAddressActivity"
+            android:name="com.hualianzb.biut.ui.activitys.ChangeAddressActivity"
             android:label="ChangeAddressActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.hualianzb.sec.ui.activitys.WebActivity"
+            android:name="com.hualianzb.biut.ui.activitys.WebActivity"
             android:label="WebActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.activitys.TransactionRecordSecActivity" />
+        <activity android:name="com.hualianzb.biut.ui.activitys.TransactionRecordBiutActivity" />
         <activity
-            android:name=".ui.activitys.CheckPassActivity"
+            android:name="com.hualianzb.biut.ui.activitys.CheckPassActivity"
             android:label="CheckPassActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".ui.activitys.MyPoolActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activitys.PoolSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activitys.JoinPoolActivity"
+            android:screenOrientation="portrait" />
 
-        <receiver android:name="com.hualianzb.sec.utils.NetBroadcastReceiver">
+        <receiver android:name="com.hualianzb.biut.utils.NetBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.NET.conn.CONNECTIVITY_CHANGE" />
                 <action android:name="android.Net.wifi.WIFI_STATE_CHANGED" />

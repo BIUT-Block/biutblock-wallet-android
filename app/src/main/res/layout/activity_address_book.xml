@@ -19,32 +19,33 @@
         android:visibility="gone">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="172pt"
+            android:layout_height="172pt"
             android:scaleType="centerInside"
             android:src="@drawable/icon_nobody" />
 
         <TextView
+            android:id="@+id/tv_empty"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dimen_50px"
-            android:layout_marginTop="@dimen/dimen_50px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34pt"
             android:text="No Contact Yet"
             android:textColor="@color/text_black_home"
-            android:textSize="38px"
+            android:textSize="26pt"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_add_man"
-            android:layout_width="590px"
-            android:layout_height="@dimen/dimen_130px"
-            android:layout_marginTop="300px"
-            android:layout_marginBottom="@dimen/px20"
+            android:layout_width="400pt"
+            android:layout_height="86pt"
+            android:layout_marginTop="200pt"
+            android:layout_marginBottom="20pt"
             android:background="@drawable/bg_btn"
             android:clickable="false"
             android:gravity="center"
-            android:text="Click to Add"
+            android:text="Click To Add"
             android:textColor="@color/white"
-            android:textSize="@dimen/dimen_34px"
+            android:textSize="22pt"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -58,24 +59,24 @@
             android:id="@+id/lv_man"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dimen_50px"
-            android:layout_marginTop="@dimen/dimen_130px"
-            android:layout_marginRight="@dimen/dimen_50px"
-            android:layout_marginBottom="200px"
+            android:layout_marginLeft="34pt"
+            android:layout_marginTop="30pt"
+            android:layout_marginRight="34pt"
+            android:layout_marginBottom="100pt"
             android:background="@color/white"
             android:divider="@color/white"
-            android:dividerHeight="2px"></ListView>
+            android:dividerHeight="2pt"></ListView>
 
         <TextView
             android:id="@+id/tv_add"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_130px"
+            android:layout_height="86pt"
             android:layout_alignParentBottom="true"
-            android:layout_margin="@dimen/dimen_50px"
+            android:layout_margin="34pt"
             android:background="@drawable/bg_btn"
             android:gravity="center"
-            android:text="Click to Add"
+            android:text="Click To Add"
             android:textColor="@color/white"
-            android:textSize="@dimen/dimen_34px"></TextView>
+            android:textSize="22pt"></TextView>
     </RelativeLayout>
 </LinearLayout>

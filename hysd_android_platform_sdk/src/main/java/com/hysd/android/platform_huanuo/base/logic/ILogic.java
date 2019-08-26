@@ -7,7 +7,6 @@ import android.os.Handler;
  * Description : 业务逻辑的统一接口定义
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-8 上午10:44:03
  **/

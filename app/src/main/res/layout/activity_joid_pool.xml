@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_head_pic_right" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="40pt"
+        android:layout_marginRight="34pt"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mortgage amount"
+            android:textColor="#43535B"
+            android:textSize="22pt"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_name"
+            android:text="*"
+            android:textColor="@color/text_error"
+            android:textSize="22pt" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80pt"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="18pt"
+        android:layout_marginRight="34pt"
+        android:background="@drawable/bg_edit_gray"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ed_money"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:digits="@string/num_input"
+            android:hint="10000.00"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingLeft="20pt"
+            android:paddingRight="20pt"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textColorHint="#D2D2D2"
+            android:textSize="22pt" />
+
+        <TextView
+            android:id="@+id/tv_flag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="40pt"
+            android:gravity="center_vertical"
+            android:text="BIUT"
+            android:textColor="#ff9b9b9b"
+            android:textSize="22pt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="18pt"
+        android:layout_marginRight="34pt"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Balance 1234.5678"
+            android:textColor="@color/text_blue"
+            android:textSize="18pt" />
+
+        <TextView
+            android:id="@+id/tv_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16pt"
+            android:text="ALL"
+            android:textColor="@color/text_selected_green"
+            android:textSize="18pt"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="32pt"
+        android:layout_marginRight="34pt"
+        android:text="@string/frozen_tip"
+        android:textColor="@color/text_gray02"
+        android:textSize="18pt" />
+
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="76pt"
+        android:layout_marginRight="34pt"
+        android:gravity="center"
+        android:text="@string/frozen_not_enough"
+        android:textColor="@color/text_error"
+        android:textSize="18pt" />
+
+    <TextView
+        android:id="@+id/tv_next"
+        android:layout_width="match_parent"
+        android:layout_height="86pt"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="46pt"
+        android:layout_marginRight="34pt"
+        android:layout_marginBottom="220pt"
+        android:background="@drawable/bg_btn_cannot"
+        android:gravity="center"
+        android:text="Join Now"
+        android:textColor="@color/white"
+        android:textSize="22pt"
+        android:textStyle="bold" />
+</LinearLayout>

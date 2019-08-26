@@ -18,7 +18,6 @@ import com.hysd.android.platform_huanuo.base.manager.MessageCenter;
  * Description : Fragment基类
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-14 下午1:58:06
  **/

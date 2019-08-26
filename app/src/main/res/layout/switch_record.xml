@@ -10,22 +10,14 @@
 
     <include layout="@layout/include_head_pic_right" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dimen_40px"
-        android:paddingBottom="@dimen/dimen_40px"
-        android:text="Switch Wallet"
-        android:textColor="@color/text_black"
-        android:textSize="@dimen/dimen_40px"
-        android:textStyle="bold" />
-
     <ListView
         android:id="@+id/lv_wallet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30pt"
         android:background="@color/white"
         android:divider="@color/white"
-        android:dividerHeight="10px"
+        android:dividerHeight="16pt"
+        android:paddingBottom="30pt"
         android:scrollbars="none"></ListView>
 </LinearLayout>

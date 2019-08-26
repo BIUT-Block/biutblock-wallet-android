@@ -60,7 +60,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/dimen_10px"
         android:gravity="center"
-        android:text="removed for the SEC "
+        android:text="removed for the BIUT "
         android:textColor="@color/text_gray02"
         android:textSize="@dimen/dimen_30px" />
 

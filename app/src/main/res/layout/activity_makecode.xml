@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_background"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
@@ -12,8 +12,8 @@
         android:id="@+id/iv_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginTop="@dimen/dimen_30px"
+        android:layout_marginLeft="34pt"
+        android:layout_marginTop="30pt"
         android:background="@drawable/icon_close_black"
         android:clickable="true"
         android:onClick="back" />
@@ -21,20 +21,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/dimen_150px"
-        android:layout_marginTop="110px"
-        android:layout_marginRight="@dimen/dimen_150px"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/px50"
-            android:text="SEC Receipt"
+            android:layout_marginTop="76pt"
+            android:text="BIUT Receipt"
             android:textColor="@color/text_blue"
-            android:textSize="@dimen/dimen_55px"
+            android:textSize="36pt"
             android:textStyle="bold" />
 
         <TextView
@@ -42,35 +40,55 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="225px"
+            android:layout_marginLeft="112pt"
+            android:layout_marginTop="150pt"
+            android:layout_marginRight="112pt"
             android:gravity="center"
             android:lineSpacingMultiplier="1.2"
             android:textColor="@color/text_gray02"
-            android:textSize="@dimen/dimen_34px" />
+            android:textSize="22pt" />
+
+        <EditText
+            android:id="@+id/tv_money"
+            android:layout_width="match_parent"
+            android:layout_height="82pt"
+            android:layout_marginLeft="112pt"
+            android:layout_marginTop="34pt"
+            android:layout_marginRight="112pt"
+            android:background="@drawable/bg_edit_gray"
+            android:gravity="center_vertical|left"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:paddingLeft="20pt"
+            android:paddingRight="20pt"
+            android:textColor="#FF596266"
+            android:textSize="22pt" />
 
         <RelativeLayout
-            android:layout_width="524px"
-            android:layout_height="524px"
-            android:layout_marginTop="@dimen/dimen_40px"
+            android:layout_width="350pt"
+            android:layout_height="350pt"
+            android:layout_marginTop="32pt"
             android:background="@color/white">
 
             <ImageView
                 android:id="@+id/iv_code_pic"
-                android:layout_width="460px"
-                android:layout_height="460px"
+                android:layout_width="300pt"
+                android:layout_height="300pt"
                 android:layout_centerInParent="true" />
         </RelativeLayout>
 
         <TextView
             android:id="@+id/tv_copy"
-            android:layout_width="590px"
-            android:layout_height="@dimen/dimen_130px"
+            android:layout_width="match_parent"
+            android:layout_height="86pt"
             android:layout_gravity="center"
-            android:layout_marginTop="152px"
+            android:layout_marginLeft="164pt"
+            android:layout_marginTop="102pt"
+            android:layout_marginRight="164pt"
             android:background="@drawable/bg_btn"
             android:gravity="center"
             android:text="Copy Payment Address"
             android:textColor="@color/white"
-            android:textSize="34px" />
+            android:textSize="22pt" />
     </LinearLayout>
 </LinearLayout>

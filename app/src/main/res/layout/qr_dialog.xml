@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:paddingTop="@dimen/px50">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_close"
-        style="@style/rightButtonStyle"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="right"
-        android:layout_marginTop="@dimen/px50"
-        android:layout_marginRight="@dimen/dimen_50px"
-        android:text="Close" />
-
+    <include layout="@layout/include_head_pic_right" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/dimen_20px">
+        android:layout_marginTop="162pt"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,56 +18,57 @@
             android:layout_gravity="center_horizontal"
             android:text="QR CODE"
             android:textColor="@color/text_blue"
-            android:textSize="@dimen/dimen_40px"
+            android:textSize="30pt"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/iv_code_pic"
-            android:layout_width="200px"
-            android:layout_height="200px"
+            android:layout_width="310pt"
+            android:layout_height="310pt"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dimen_100px" />
+            android:layout_marginTop="22pt" />
 
         <TextView
+            android:id="@+id/tv_add_top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dimen_40px"
-            android:layout_marginTop="@dimen/px50"
+            android:layout_marginLeft="38pt"
+            android:layout_marginTop="62pt"
             android:text="Wallet Address"
             android:textColor="@color/text_black"
-            android:textSize="32px" />
+            android:textSize="22pt" />
 
         <TextView
             android:id="@+id/tv_address"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/px160"
-            android:layout_marginLeft="@dimen/dimen_40px"
-            android:layout_marginTop="@dimen/dimen_40px"
-            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_height="110pt"
+            android:layout_marginLeft="32pt"
+            android:layout_marginTop="26pt"
+            android:layout_marginRight="32pt"
             android:background="@drawable/bg_gray_radius20"
             android:gravity="center_vertical|left"
             android:lineSpacingMultiplier="1.1"
-            android:paddingLeft="@dimen/dimen_20px"
-            android:paddingTop="@dimen/dimen_10px"
-            android:paddingRight="@dimen/dimen_20px"
-            android:paddingBottom="@dimen/dimen_10px"
+            android:paddingLeft="30pt"
+            android:paddingTop="10pt"
+            android:paddingRight="30pt"
+            android:paddingBottom="10pt"
             android:textColor="@color/text_black"
-            android:textSize="32px"
+            android:textSize="20pt"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_copy"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_130px"
-            android:layout_marginLeft="@dimen/dimen_40px"
-            android:layout_marginTop="68px"
-            android:layout_marginRight="@dimen/dimen_40px"
+            android:layout_height="86pt"
+            android:layout_marginLeft="32pt"
+            android:layout_marginTop="46pt"
+            android:layout_marginRight="32pt"
             android:background="@drawable/bg_btn"
             android:gravity="center"
             android:text="Copy"
             android:textColor="@color/white"
-            android:textSize="@dimen/dimen_34px"
+            android:textSize="26pt"
             android:textStyle="bold" />
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

@@ -24,7 +24,6 @@ import android.util.Log;
  * Description : 日志输出
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-8 下午2:01:52
  **/

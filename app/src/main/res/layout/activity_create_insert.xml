@@ -8,97 +8,102 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/ll_create"
         android:layout_width="match_parent"
-        android:layout_height="0px"
+        android:layout_height="0pt"
         android:layout_weight="1"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
-            android:layout_height="67px"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100pt"
             android:gravity="center"
-            android:text="SEC Light Wallet"
+            android:text="BIUT Light Wallet"
             android:textColor="@color/text_color"
-            android:textSize="@dimen/dimen_55px"
+            android:textSize="36pt"
             android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="180px"
+            android:id="@+id/ll_create"
+            android:layout_width="260pt"
+            android:layout_height="260pt"
+            android:layout_marginTop="140pt"
             android:background="@drawable/bg_normal_gray_white_20"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="@dimen/dimen_40px">
+            android:padding="30pt">
 
             <ImageView
-                android:layout_width="144px"
-                android:layout_height="134px"
+                android:layout_width="90pt"
+                android:layout_height="90pt"
                 android:src="@drawable/icon_create_wallet" />
 
             <TextView
+                android:id="@+id/tv_c_top"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_40px"
+                android:layout_marginTop="28pt"
                 android:text="Create Wallet"
                 android:textColor="@color/text_selected_green"
-                android:textSize="38px"
-                android:textStyle="bold" />
+                android:textSize="24pt" />
 
             <TextView
+                android:id="@+id/tv_c_bottom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_20px"
+                android:layout_marginTop="6pt"
                 android:gravity="center"
-                android:text="Create a new SEC wallet"
+                android:text="Create a new BIUT wallet"
                 android:textColor="@color/text_gray"
-                android:textSize="@dimen/sp26" />
+                android:textSize="14pt" />
         </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_import"
         android:layout_width="match_parent"
-        android:layout_height="0px"
+        android:layout_height="0pt"
+        android:layout_marginTop="80pt"
         android:layout_weight="1"
         android:background="@color/white"
         android:gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/ll_import"
+            android:layout_width="260pt"
+            android:layout_height="260pt"
+            android:layout_gravity="center"
             android:background="@drawable/bg_normal_white_gray_20"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="@dimen/dimen_40px">
+            android:padding="30pt">
 
             <ImageView
-                android:layout_width="136px"
-                android:layout_height="136px"
+                android:layout_width="90pt"
+                android:layout_height="90pt"
                 android:src="@drawable/icon_import_wallet" />
 
             <TextView
+                android:id="@+id/tv_i_top"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_40px"
+                android:layout_marginTop="28pt"
                 android:text="Import Wallet"
                 android:textColor="#43535B"
-                android:textSize="38px"
-                android:textStyle="bold" />
+                android:textSize="24pt" />
 
             <TextView
+                android:id="@+id/tv_i_bottom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_20px"
+                android:layout_marginTop="6pt"
                 android:gravity="center"
-                android:text="Import an existing SEC wallet"
+                android:text="Import an existing BIUT wallet"
                 android:textColor="@color/text_gray"
-                android:textSize="@dimen/sp26" />
+                android:textSize="14pt" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -50,7 +50,6 @@ import com.hysd.android.platform_huanuo.utils.Logger;
  * Description : http请求管理
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-9 上午9:37:05
  **/
@@ -481,8 +480,7 @@ public class HttpRequestTask extends BaseRequestTask {
 	/**
 	 * 采用X509的证书信息机制
 	 * 
-	 * @author 刘剑
-	 * 
+	 *
 	 */
 	private class MyTrustManager implements X509TrustManager {
 		public X509Certificate[] getAcceptedIssuers() {

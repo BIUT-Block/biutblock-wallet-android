@@ -15,9 +15,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88px"
-        android:paddingLeft="@dimen/dimen_50px"
-        android:paddingRight="@dimen/dimen_50px">
+        android:paddingLeft="34pt"
+        android:paddingRight="34pt">
 
         <TextView
             android:id="@+id/name"
@@ -25,26 +24,26 @@
             android:layout_height="wrap_content"
             android:text="Wallet Name"
             android:textColor="#D2D2D2"
-            android:textSize="@dimen/dimen_28px" />
+            android:textSize="18pt" />
 
         <TextView
             android:id="@+id/tv_wallet_name"
             android:layout_width="wrap_content"
             android:layout_height="55px"
             android:layout_below="@id/name"
-            android:layout_marginTop="16px"
-            android:layout_marginBottom="4px"
+            android:layout_marginTop="16pt"
+            android:layout_marginBottom="4pt"
             android:gravity="center"
             android:textColor="@color/text_green_increase"
-            android:textSize="@dimen/dimen_36px"
+            android:textSize="24pt"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_change_wallet"
             style="@style/rightButtonStyle"
-            android:layout_height="68px"
+            android:layout_height="46pt"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="@dimen/dimen_10px"
+            android:layout_marginTop="20pt"
             android:gravity="center"
             android:text="Switch Wallet" />
     </RelativeLayout>
@@ -52,8 +51,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dimen_50px"
-        android:layout_marginRight="@dimen/dimen_50px">
+        android:layout_marginLeft="34pt"
+        android:layout_marginRight="34pt">
 
         <View
             android:layout_width="match_parent"
@@ -64,57 +63,69 @@
         <RelativeLayout
             android:id="@+id/line_wallet"
             android:layout_width="200dp"
-            android:layout_height="4px"
-            android:layout_marginBottom="2px" />
+            android:layout_height="4pt"
+            android:layout_marginBottom="2pt" />
     </RelativeLayout>
 
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
-        android:id="@+id/refreshLayout"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/ll_none"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
 
-            <LinearLayout
-                android:id="@+id/ll_none"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:visibility="visible">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/icon_no_record" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_28px"
-                    android:text="No Record Found"
-                    android:textColor="@color/text_black_home"
-                    android:textSize="@dimen/dimen_35px"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <ListView
-                android:id="@+id/lv_record"
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_90px"
-                android:background="@color/white"
-                android:divider="@color/white"
-                android:dividerHeight="14px"
-                android:paddingLeft="@dimen/dimen_50px"
-                android:paddingRight="@dimen/dimen_50px"
-                android:scrollbars="none"
-                android:visibility="gone"></ListView>
+                android:layout_gravity="center"
+                android:src="@drawable/icon_no_record" />
+
+            <TextView
+                android:id="@+id/tv_no_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34pt"
+                android:text="No Record Found"
+                android:textColor="@color/text_black_home"
+                android:textSize="26pt"
+                android:textStyle="bold" />
         </LinearLayout>
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none">
+
+                    <com.hualianzb.biut.views.AutoListView
+                        android:id="@+id/lv_record"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="30pt"
+                        android:background="@color/white"
+                        android:divider="@color/white"
+                        android:dividerHeight="12pt"
+                        android:paddingLeft="34pt"
+                        android:paddingRight="34pt"
+                        android:paddingBottom="150pt"
+                        android:scrollbars="none"></com.hualianzb.biut.views.AutoListView>
+                </ScrollView>
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

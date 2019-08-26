@@ -9,7 +9,6 @@ import com.hysd.android.platform_huanuo.utils.Logger;
  * Description : IRequestTask的基类
  * @Copyright  : hysdpower. All Rights Reserved
  * @Company    :  
- * @author     : 刘剑
  * @version    : 1.0
  * Create Date : 2014-4-25 下午6:33:14
  **/
