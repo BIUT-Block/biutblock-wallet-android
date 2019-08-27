@@ -66,6 +66,18 @@ public class SECBlockJavascriptAPI {
         return Tx.toString();
     }
 
+    public String biuTxSign(String _Tx) {
+        jsContext.evaluateScript("var Tx = SECSDK.biuTxSign(\'" + _Tx + "\')");
+        final JSValue Tx = jsContext.property("Tx");
+        return Tx.toString();
+    }
+
+    public String biutTxSign(String _Tx) {
+        jsContext.evaluateScript("var Tx = SECSDK.biutTxSign(\'" + _Tx + "\')");
+        final JSValue Tx = jsContext.property("Tx");
+        return Tx.toString();
+    }
+
     private String loadJSCode(Context applicationContext) throws IOException {
         String str;
         StringBuffer buf = new StringBuffer();

@@ -2,7 +2,18 @@ apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
 android {
     signingConfigs {
-
+        release {
+            keyAlias 'secblock'
+            keyPassword 'wty123456'
+            storeFile file('D://sec.jks')
+            storePassword 'wty123456'
+        }
+//        debug {
+//            keyAlias 'secblock'
+//            keyPassword 'wty123456'
+//            storeFile file('D://sec.jks')
+//            storePassword 'wty123456'
+//        }
     }
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
@@ -16,12 +27,12 @@ android {
         minSdkVersion 18
         targetSdkVersion 28
         versionCode 1
-        versionName "2.0.0"
+        versionName "1.4.4"
         multiDexEnabled true
         lintOptions {
             disable "ResourceType"
         }
-//        signingConfig signingConfigs.release
+        signingConfig signingConfigs.release
     }
     buildTypes {
         release {
@@ -29,7 +40,7 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debuggable true
-//            signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
         }
 //        debug {
 //            minifyEnabled true
