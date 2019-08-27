@@ -145,7 +145,7 @@ public class HomePageActivity extends BasicActivity implements
         }
         propertyFragment = new PropertyFragment();
         listF.add(propertyFragment);
-        listF.add(new PoolFragment());
+//        listF.add(new PoolFragment());
         listF.add(new MyFragment());
         viewPageAdapter = new ViewPageAdapter(getSupportFragmentManager(), listF);
         viewPager.setAdapter(viewPageAdapter);
@@ -187,6 +187,7 @@ public class HomePageActivity extends BasicActivity implements
     }
 
     private void initView() {
+        llPool.setVisibility(View.GONE);
         tabSelected(llProperty);
         upDateDialog = DialogUtil.upDateDialog(this);
         dataChange = isNetOk -> dataChange.setDataChange(isNetOk);
