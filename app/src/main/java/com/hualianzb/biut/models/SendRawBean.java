@@ -78,6 +78,7 @@ public class SendRawBean implements Serializable {
         private String inputData;
         private DataBean data;
         private String txFee;
+        private String nonce;
 
         public long getTimestamp() {
             return timestamp;
@@ -157,6 +158,14 @@ public class SendRawBean implements Serializable {
 
         public void setTxFee(String txFee) {
             this.txFee = txFee;
+        }
+
+        public String getNonce() {
+            return nonce;
+        }
+
+        public void setNonce(String nonce) {
+            this.nonce = nonce;
         }
 
         public static class DataBean {

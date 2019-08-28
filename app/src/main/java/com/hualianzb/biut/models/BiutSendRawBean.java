@@ -83,8 +83,16 @@ public class BiutSendRawBean implements Serializable {
         private String inputData;
         //        private String contractAddress;
         private DataBean data;
+        private String nonce;
 
-//        public String getContractAddress() {
+        public String getNonce() {
+            return nonce;
+        }
+
+        public void setNonce(String nonce) {
+            this.nonce = nonce;
+        }
+        //        public String getContractAddress() {
 //            return contractAddress;
 //        }
 //

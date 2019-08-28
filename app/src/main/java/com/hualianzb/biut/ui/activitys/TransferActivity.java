@@ -34,6 +34,8 @@ import com.hualianzb.biut.commons.constants.Constant;
 import com.hualianzb.biut.commons.constants.RequestHost;
 import com.hualianzb.biut.models.BIUTTransResponseBean;
 import com.hualianzb.biut.models.BiutSendRawBean;
+import com.hualianzb.biut.models.NonceBean;
+import com.hualianzb.biut.models.NonceResult;
 import com.hualianzb.biut.models.ReceiptBean;
 import com.hualianzb.biut.models.RemembBIUT;
 import com.hualianzb.biut.models.SendRawBean;
@@ -127,7 +129,6 @@ public class TransferActivity extends BasicActivity {
     private boolean isTypeOk = true;
     private Dialog dialog;
     private String address;
-
     private List<RemembBIUT> remembBIUTList;
 
 
@@ -142,6 +143,7 @@ public class TransferActivity extends BasicActivity {
     private int type;//0--BIUT 1--BIU
     private double gas = 0;
     private String numGas = "0";
+    private String nonce;//签名和转账时候的参数，需获取
     /**
      * 屏幕宽度
      */
@@ -183,18 +185,69 @@ public class TransferActivity extends BasicActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        initView();
-        initData();
-    }
-
-    private void initData() {
-        tokenValue = Util.getStringFromSN(8, tokenValue);
-        tvBalance.setText("Balance " + tokenValue);
         if (title.toLowerCase().equals("biut")) {
             type = 0;
         } else {
             type = 1;
         }
+        getNonce();
+        initView();
+        initData();
+    }
+
+    private void getNonce() {
+        NonceBean nonceBean = new NonceBean();
+        nonceBean.setId("1");
+        nonceBean.setJsonrpc("2.0");
+        nonceBean.setMethod("sec_getNonce");
+        List listParams = new ArrayList();
+        listParams.add(address);
+        nonceBean.setParams(listParams);
+
+        String url;
+        if (type == 0) {
+            url = RequestHost.biut_url;
+        } else {
+            url = RequestHost.biu_url;
+        }
+        RequestParams params = new RequestParams(url);
+        params.setAsJsonContent(true);
+        String json = JSON.toJSONString(nonceBean);
+        params.setBodyContent(json);
+        x.http().post(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String string) {
+                NonceResult nonceResult = JSON.parseObject(string, NonceResult.class);
+                if (null != nonceResult) {
+                    NonceResult.ResultBean resultBean = nonceResult.getResult();
+                    if (null != resultBean) {
+                        if (resultBean.getInfo().equals("OK") && resultBean.getStatus().equals("1")) {
+                            nonce = resultBean.getNonce();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onError(Throwable throwable, boolean b) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException e) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
+
+    private void initData() {
+        tokenValue = Util.getStringFromSN(8, tokenValue);
+        tvBalance.setText("Balance " + tokenValue);
         edToadress.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -557,8 +610,14 @@ public class TransferActivity extends BasicActivity {
         signDataBean.setTo(edToadress.getText().toString().trim().substring(2));
         signDataBean.setValue(edSenMoney.getText().toString());
         signDataBean.setInputData(edRemark.getText().toString().trim());
+        signDataBean.setNonce(nonce);
         String jsonDataStr = JSON.toJSONString(signDataBean);
-        return secJsApi.TxSign(jsonDataStr);
+        Log.e("web33", "tx:   \n" + jsonDataStr);
+        if (type == 0) {
+            return secJsApi.biutTxSign(jsonDataStr);
+        } else {
+            return secJsApi.biuTxSign(jsonDataStr);
+        }
     }
 
     @Override
@@ -608,6 +667,7 @@ public class TransferActivity extends BasicActivity {
                         isCheckedPass = data.getExtras().getBoolean("isCheckedPass");
                         if (isCheckedPass) {
                             dialog.dismiss();
+                            //密码校验成功，开始转账的一系列操作
                             biutFront();
                         }
                     }
@@ -708,8 +768,9 @@ public class TransferActivity extends BasicActivity {
 
     private void biutFront() {
         dialogLoading.show();
-        String tx = getSign();
-        paramsBean = JSON.parseObject(tx, BiutSendRawBean.ParamsBean.class);
+        String txResult = getSign();
+        Log.e("web33", txResult);
+        paramsBean = JSON.parseObject(txResult, BiutSendRawBean.ParamsBean.class);
         try {
             tranBiut();
         } catch (Exception e) {
@@ -730,6 +791,7 @@ public class TransferActivity extends BasicActivity {
         paramsBean2.setGas(paramsBean.getGas());
         paramsBean2.setTxFee(numGas);
         paramsBean2.setValue(paramsBean.getValue());
+        paramsBean2.setNonce(paramsBean.getNonce());
         List<SendRawBean.ParamsBean> list = new ArrayList<>();
         list.add(paramsBean2);
         SendRawBean bean = new SendRawBean();
@@ -747,11 +809,9 @@ public class TransferActivity extends BasicActivity {
         RequestParams params = new RequestParams(url);
         params.setAsJsonContent(true);
         params.setBodyContent(json);
-        Log.e("web33", json);
-        new Thread(() -> x.http().post(params, new Callback.CommonCallback<String>() {
+        x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                Log.e("web33", result);
                 if (!StringUtils.isEmpty(result)) {
                     BIUTTransResponseBean transResponseBean = JSON.parseObject(result, BIUTTransResponseBean.class);
                     if (null != transResponseBean) {
@@ -805,7 +865,7 @@ public class TransferActivity extends BasicActivity {
             public void onFinished() {
                 Log.e("web3", "onFinished");
             }
-        })).start();
+        });
 
     }
 }
