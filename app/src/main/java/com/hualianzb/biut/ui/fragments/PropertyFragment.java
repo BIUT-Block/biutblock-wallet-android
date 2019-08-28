@@ -31,7 +31,6 @@ import com.hualianzb.biut.ui.adapters.AdapterWallet;
 import com.hualianzb.biut.ui.adapters.PagerRecyclerAdapter;
 import com.hualianzb.biut.ui.basic.BasicFragment;
 import com.hualianzb.biut.utils.DialogUtil;
-import com.hualianzb.biut.utils.NetUtil;
 import com.hualianzb.biut.utils.StringUtils;
 import com.hualianzb.biut.utils.UiHelper;
 import com.hualianzb.biut.utils.Util;
@@ -42,8 +41,6 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -494,7 +491,6 @@ public class PropertyFragment extends BasicFragment implements HomePageActivity.
 
             @Override
             public void onFinished() {
-                Log.e("web3", "onFinished");
                 dialogDialog.dismiss();
             }
         });

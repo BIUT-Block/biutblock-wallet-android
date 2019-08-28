@@ -108,7 +108,6 @@ public class TransactionRecordBiutActivity extends BasicActivity {
     private double gas = 0;
     private List<ResultInChainBeanOrPool> listDate;
 
-
     @Override
     protected void getIntentForBundle() {
         super.getIntentForBundle();
@@ -262,6 +261,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
         bean.setParams(list);
         list.add(address.substring(2));//address
         String json = JSON.toJSONString(bean);
+        Log.e("web3", json);
         String url;
         if (type.equals("0")) {
             url = RequestHost.biut_url;

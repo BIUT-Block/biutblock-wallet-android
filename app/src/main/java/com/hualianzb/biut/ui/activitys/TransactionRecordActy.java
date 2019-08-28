@@ -251,8 +251,9 @@ public class TransactionRecordActy extends BasicActivity {
         bean.setMethod("sec_getTransactions");
         bean.setParams(list);
         list.add(nowAddress.substring(2));//address
-        list.add("latest");
+//        list.add("latest");
         json = JSON.toJSONString(bean);
+        Log.e("web3", json);
         requestUrl = RequestHost.biut_url;
         setParams(requestUrl, json, 0);
     }
@@ -261,7 +262,7 @@ public class TransactionRecordActy extends BasicActivity {
         RequestParams params = new RequestParams(url);
         params.setAsJsonContent(true);
         params.setBodyContent(json);
-        new Thread(() -> x.http().post(params, new Callback.CommonCallback<String>() {
+        x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 Message message = new Message();
@@ -288,9 +289,7 @@ public class TransactionRecordActy extends BasicActivity {
             public void onFinished() {
                 Log.e("web3", "onFinished");
             }
-        })
-        ) {
-        }.start();
+        });
     }
 
     @OnClick({R.id.tv_change_wallet, R.id.iv_back_top})
