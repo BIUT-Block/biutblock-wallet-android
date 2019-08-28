@@ -6,7 +6,14 @@ bugly {
     appKey = 'e29fb803-a48c-4b4b-855e-3e49c49c26cc' // 注册时分配的App Key
 }
 android {
-
+    signingConfigs {
+//        release {
+//            keyAlias 'secblock'
+//            keyPassword 'wty123456'
+//            storeFile file('D://sec.jks')
+//            storePassword 'wty123456'
+//        }
+    }
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
     sourceSets {
