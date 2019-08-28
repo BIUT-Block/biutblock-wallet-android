@@ -6,9 +6,6 @@ bugly {
     appKey = 'e29fb803-a48c-4b4b-855e-3e49c49c26cc' // 注册时分配的App Key
 }
 android {
-    signingConfigs {
-
-    }
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
     sourceSets {
@@ -26,23 +23,8 @@ android {
         lintOptions {
             disable "ResourceType"
         }
-//        signingConfig signingConfigs.release
     }
     buildTypes {
-        release {
-            minifyEnabled true
-            shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            debuggable true
-//            signingConfig signingConfigs.release
-        }
-//        debug {
-//            minifyEnabled true
-//            shrinkResources true
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            debuggable true
-//            signingConfig signingConfigs.release
-//        }
     }
     dexOptions {
         javaMaxHeapSize "4g"
