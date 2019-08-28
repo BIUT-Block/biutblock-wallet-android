@@ -284,7 +284,6 @@ public class TransactionRecordActy extends BasicActivity {
 
             @Override
             public void onFinished() {
-//                Log.e("web3", "onFinished");
             }
         });
     }
