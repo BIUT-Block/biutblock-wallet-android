@@ -478,7 +478,6 @@ public class PropertyFragment extends BasicFragment implements HomePageActivity.
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                Log.e("web3", ex.toString());
                 listToken = BIUTApplication.tokenBeanDao.queryBuilder().where(TokenBeanDao.Properties.Address.eq(address)).list();
                 pageAdapter.setData(listWallet);
                 dialogDialog.dismiss();

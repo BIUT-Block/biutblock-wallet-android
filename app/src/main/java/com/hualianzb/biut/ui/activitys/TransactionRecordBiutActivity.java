@@ -261,7 +261,6 @@ public class TransactionRecordBiutActivity extends BasicActivity {
         bean.setParams(list);
         list.add(address.substring(2));//address
         String json = JSON.toJSONString(bean);
-        Log.e("web3", json);
         String url;
         if (type.equals("0")) {
             url = RequestHost.biut_url;
@@ -274,13 +273,12 @@ public class TransactionRecordBiutActivity extends BasicActivity {
         new Thread(() -> x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                Log.e("web3", "result" + result);
                 sendMessage(ContainMessage, result);
             }
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                Log.e("web3", ex.toString());
+//                Log.e("web3", ex.toString());
                 sendEmptyMessage(GlobalMessageType.MessgeCode.CANCELORERROR);
             }
 
@@ -291,7 +289,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
 
             @Override
             public void onFinished() {
-                Log.e("web3", "onFinished");
+//                Log.e("web3", "onFinished");
             }
         })
         ) {

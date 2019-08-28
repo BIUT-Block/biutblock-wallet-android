@@ -102,7 +102,6 @@ public class TransactionRecordActy extends BasicActivity {
                     break;
                 case 003:
                     String resultData = (String) msg.obj;
-                    Log.e("web3", resultData);
                     int type = msg.getData().getInt("type");
                     BiutTransactionBean biutTransactionBean = JSON.parseObject(resultData, BiutTransactionBean.class);
                     if (null != biutTransactionBean) {
@@ -253,7 +252,6 @@ public class TransactionRecordActy extends BasicActivity {
         list.add(nowAddress.substring(2));//address
 //        list.add("latest");
         json = JSON.toJSONString(bean);
-        Log.e("web3", json);
         requestUrl = RequestHost.biut_url;
         setParams(requestUrl, json, 0);
     }
@@ -276,7 +274,6 @@ public class TransactionRecordActy extends BasicActivity {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                Log.e("web3", ex.toString());
                 handler.sendEmptyMessage(002);
             }
 
@@ -287,7 +284,7 @@ public class TransactionRecordActy extends BasicActivity {
 
             @Override
             public void onFinished() {
-                Log.e("web3", "onFinished");
+//                Log.e("web3", "onFinished");
             }
         });
     }

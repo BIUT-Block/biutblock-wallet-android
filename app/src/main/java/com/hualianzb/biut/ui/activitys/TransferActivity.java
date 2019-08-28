@@ -612,7 +612,6 @@ public class TransferActivity extends BasicActivity {
         signDataBean.setInputData(edRemark.getText().toString().trim());
         signDataBean.setNonce(nonce);
         String jsonDataStr = JSON.toJSONString(signDataBean);
-        Log.e("web33", "tx:   \n" + jsonDataStr);
         if (type == 0) {
             return secJsApi.biutTxSign(jsonDataStr);
         } else {
@@ -769,7 +768,6 @@ public class TransferActivity extends BasicActivity {
     private void biutFront() {
         dialogLoading.show();
         String txResult = getSign();
-        Log.e("web33", txResult);
         paramsBean = JSON.parseObject(txResult, BiutSendRawBean.ParamsBean.class);
         try {
             tranBiut();
@@ -852,7 +850,6 @@ public class TransferActivity extends BasicActivity {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                Log.e("web3", ex.toString());
                 dialogLoading.dismiss();
                 DialogUtil.showErrorDialog(TransferActivity.this, "transfer failed");
             }
@@ -863,7 +860,7 @@ public class TransferActivity extends BasicActivity {
 
             @Override
             public void onFinished() {
-                Log.e("web3", "onFinished");
+//                Log.e("web3", "onFinished");
             }
         });
 
