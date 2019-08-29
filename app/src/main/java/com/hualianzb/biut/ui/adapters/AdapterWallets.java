@@ -101,7 +101,7 @@ public class AdapterWallets extends BaseAdapter {
                 //当前的钱包改为选中
                 RemembBIUT newReme = list.get(position);
                 newReme.setIsNow(true);
-                BIUTApplication.daoSession.getRemembBIUTDao().update(old);
+                BIUTApplication.daoSession.getRemembBIUTDao().update(newReme);
                 if (StringUtils.isEmpty(pool)) {
                     context.finish();
                 } else {
