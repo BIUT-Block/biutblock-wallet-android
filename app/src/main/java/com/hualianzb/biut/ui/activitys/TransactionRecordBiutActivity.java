@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,8 +33,6 @@ import com.hualianzb.biut.views.AutoListView;
 import com.hualianzb.biut.views.PullDownHeader;
 import com.hualianzb.biut.views.PullUpFooter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -263,6 +260,8 @@ public class TransactionRecordBiutActivity extends BasicActivity {
             biutRecordRequest();
         });
     }
+
+    boolean isNoMore;
 
     private void biutRecordRequest() {
         //首次加载或者刷新
