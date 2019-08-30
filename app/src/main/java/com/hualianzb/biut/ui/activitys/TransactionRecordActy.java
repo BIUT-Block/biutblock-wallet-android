@@ -212,7 +212,6 @@ public class TransactionRecordActy extends BasicActivity {
         adapter.setData(lastListCache, address);
         refreshLayout.setRefreshHeader(new PullDownHeader(this));
         refreshLayout.setRefreshFooter(new PullUpFooter(this));
-//        refreshLayout.autoRefresh();
         myDates = BIUTApplication.dao_remeb.loadAll();
         for (RemembBIUT remembe : myDates) {
             if (remembe.getIsNow()) {
@@ -223,13 +222,12 @@ public class TransactionRecordActy extends BasicActivity {
         }
         tvWalletName.setText(walletBean.getWalletName());
         //下拉刷新
-        refreshLayout.setOnRefreshListener(refreshlayout -> {
-            clearLList();
+        refreshLayout.setOnRefreshListener(refreshlay -> {
             getData(address);
         });
+        lv.setOnItemClickListener((parent, view, position, id) -> UiHelper.startTransaAllActivity(TransactionRecordActy.this, address, listGet.get(position).getId()));
         //上拉加载
-        refreshLayout.setOnLoadmoreListener(refreshlayout -> refreshLayout.finishLoadmore(2000));
-        lv.setOnItemClickListener((parent, view, position, id) -> UiHelper.startTransaAllActivity(TransactionRecordActy.this, address, listGetMy.get(position).getId()));
+        refreshLayout.setOnLoadmoreListener(refreshlay -> refreshLayout.finishLoadmore(2000));
     }
 
     private void setFontStyle() {
@@ -250,7 +248,6 @@ public class TransactionRecordActy extends BasicActivity {
         bean.setMethod("sec_getTransactions");
         bean.setParams(list);
         list.add(nowAddress.substring(2));//address
-//        list.add("latest");
         json = JSON.toJSONString(bean);
         requestUrl = RequestHost.biut_url;
         setParams(requestUrl, json, 0);
@@ -346,39 +343,44 @@ public class TransactionRecordActy extends BasicActivity {
 
     private void setDataResult() {
         dialogLoading.dismiss();
-        if (listGet.size() > 0) {
-            BIUTApplication.recordResulttDao.deleteAll();
-            for (ResultInChainBeanOrPool pool : listGet) {
-                BIUTApplication.recordResulttDao.save(pool);
-            }
-        }
-
-        listGetMy = BIUTApplication.recordResulttDao.queryBuilder()
-                .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).list();
         //清除收款方pengding状态的记录
-        if (listGetMy.size() > 0) {
-            for (ResultInChainBeanOrPool bean : listGetMy) {
-                if (bean.getTxReceiptStatus().equals("pending") && bean.getTxTo().equals(address.substring(2))) {
-                    listGetMy.remove(bean);
+        try {
+            if (listGet.size() > 0) {
+                for (ResultInChainBeanOrPool bean : listGet) {
+                    if (bean.getTxReceiptStatus().equals("pending") && bean.getTxTo().equals(address.substring(2))) {
+                        listGet.remove(bean);
+                    }
                 }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        if (listGetMy.size() == 0) {
+        lastListCache = BIUTApplication.recordResulttDao.queryBuilder()
+                .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).list();
+        lastSize = lastListCache.size();
+        if (listGet.size() == 0) {
             if (lastListCache.size() == 0) {
                 dialogLoading.dismiss();
                 refreshLayout.finishRefresh();
                 ll_data.setVisibility(View.GONE);
                 llNone.setVisibility(View.VISIBLE);
             } else {
-                adapter.setData(listGetMy, address);
+                adapter.setData(lastListCache, address);
             }
         } else {
-            if (listGetMy.size() > lastSize) {
-                DialogUtil.showErrorDialog(this, (listGetMy.size() - lastSize) + " data have been updated…");
+            if (listGet.size() > lastSize) {
+                DialogUtil.showErrorDialog(this, (listGet.size() - lastSize) + " data have been updated…");
             }
+            //删除本地址钱包的交易记录，然后重新存储
+            BIUTApplication.recordResulttDao.queryBuilder().where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).buildDelete().executeDeleteWithoutDetachingEntities();
 
-            adapter.setData(listGetMy, address);
+            for (ResultInChainBeanOrPool pool : listGet) {
+                BIUTApplication.recordResulttDao.save(pool);
+            }
+            lastListCache = BIUTApplication.recordResulttDao.queryBuilder()
+                    .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).list();
+            adapter.setData(lastListCache, address);
             refreshLayout.finishRefresh();
             ll_data.setVisibility(View.VISIBLE);
             llNone.setVisibility(View.GONE);

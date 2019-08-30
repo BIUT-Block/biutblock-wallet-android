@@ -166,7 +166,9 @@ public class PropertyFragment extends BasicFragment implements HomePageActivity.
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 pageAdapter.notifyDataSetChanged();
-                adapterWallet.notifyDataSetChanged();
+                if (null != adapterWallet) {
+                    adapterWallet.notifyDataSetChanged();
+                }
             }
 
             @Override

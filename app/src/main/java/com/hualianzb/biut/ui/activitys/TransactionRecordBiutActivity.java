@@ -34,6 +34,8 @@ import com.hualianzb.biut.views.AutoListView;
 import com.hualianzb.biut.views.PullDownHeader;
 import com.hualianzb.biut.views.PullUpFooter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -107,6 +109,11 @@ public class TransactionRecordBiutActivity extends BasicActivity {
     private String type;
     private double gas = 0;
     private List<ResultInChainBeanOrPool> listDate;
+    private String tag;
+    List<ResultInChainBeanOrPool> listLLL = new ArrayList<>();
+    int pageSize = 1;
+    private static String ADDMORE = "ADDMORE";
+    private static String FRESH = "FRESH";
 
     @Override
     protected void getIntentForBundle() {
@@ -151,7 +158,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
 
                             listGet.addAll(listChain);
                             listGet.addAll(listPoor);
-                            setDataResult();
+                            setDataResult();//此处是获所有数据
                         } else {
                             dialogLoading.dismiss();
                             refreshLayout.finishRefresh();
@@ -225,7 +232,6 @@ public class TransactionRecordBiutActivity extends BasicActivity {
                 .where(ResultInChainBeanOrPoolDao.Properties.Type.eq(type)).list();
         adapter.setData(listDate);
 
-
         if (null != listDate && listDate.size() > 0) {
             adapter.setData(listDate);
             llData.setVisibility(View.VISIBLE);
@@ -240,60 +246,70 @@ public class TransactionRecordBiutActivity extends BasicActivity {
             long theId = listDate.get(position).getId();
             UiHelper.startTransaAllActivity(TransactionRecordBiutActivity.this, address, theId);
         });
+        //首次请求
+        biutRecordRequest();
         //下拉刷新
         refreshLayout.setOnRefreshListener(refreshlayout -> {
+            tag = FRESH;
+            pageSize = 1;
             clearList();
             biutRecordRequest();
             refreshLayout.finishRefresh();
         });
-        refreshLayout.autoRefresh();
         //上拉加载
-        refreshLayout.setOnLoadmoreListener(refreshlayout -> refreshLayout.finishLoadmore(2000));
+        refreshLayout.setOnLoadmoreListener(refreshlayout -> {
+            tag = ADDMORE;
+            pageSize++;
+            biutRecordRequest();
+        });
     }
 
     private void biutRecordRequest() {
-        dialogLoading.show();
-        TransRecordTimeRequestBean bean = new TransRecordTimeRequestBean();
-        List<Object> list = new ArrayList<>();
-        bean.setId(1);
-        bean.setJsonrpc("2.0");
-        bean.setMethod("sec_getTransactions");
-        bean.setParams(list);
-        list.add(address.substring(2));//address
-        String json = JSON.toJSONString(bean);
-        String url;
-        if (type.equals("0")) {
-            url = RequestHost.biut_url;
-        } else {
-            url = RequestHost.biu_url;
-        }
-        RequestParams params = new RequestParams(url);
-        params.setAsJsonContent(true);
-        params.setBodyContent(json);
-        new Thread(() -> x.http().post(params, new Callback.CommonCallback<String>() {
-            @Override
-            public void onSuccess(String result) {
-                sendMessage(ContainMessage, result);
+        //首次加载或者刷新
+        if (StringUtils.isEmpty(tag) || tag.equals(FRESH)) {
+            dialogLoading.show();
+            TransRecordTimeRequestBean bean = new TransRecordTimeRequestBean();
+            List<Object> list = new ArrayList<>();
+            bean.setId(1);
+            bean.setJsonrpc("2.0");
+            bean.setMethod("sec_getTransactions");
+            bean.setParams(list);
+            list.add(address.substring(2));//address
+            String json = JSON.toJSONString(bean);
+            String url;
+            if (type.equals("0")) {
+                url = RequestHost.biut_url;
+            } else {
+                url = RequestHost.biu_url;
             }
+            RequestParams params = new RequestParams(url);
+            params.setAsJsonContent(true);
+            params.setBodyContent(json);
+            x.http().post(params, new Callback.CommonCallback<String>() {
+                @Override
+                public void onSuccess(String result) {
+                    sendMessage(ContainMessage, result);
+                }
 
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
+                @Override
+                public void onError(Throwable ex, boolean isOnCallback) {
 //                Log.e("web3", ex.toString());
-                sendEmptyMessage(GlobalMessageType.MessgeCode.CANCELORERROR);
-            }
+                    sendEmptyMessage(GlobalMessageType.MessgeCode.CANCELORERROR);
+                }
 
-            @Override
-            public void onCancelled(CancelledException cex) {
-                sendEmptyMessage(GlobalMessageType.MessgeCode.CANCELORERROR);
-            }
+                @Override
+                public void onCancelled(CancelledException cex) {
+                    sendEmptyMessage(GlobalMessageType.MessgeCode.CANCELORERROR);
+                }
 
-            @Override
-            public void onFinished() {
+                @Override
+                public void onFinished() {
 //                Log.e("web3", "onFinished");
-            }
-        })
-        ) {
-        }.start();
+                }
+            });
+        } else {
+            setListDatdToAdapter();
+        }
     }
 
     private void clearList() {
@@ -345,7 +361,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
                 frozen += Double.parseDouble(theList.get(i).getValue());
             }
         }
-        adapter.setData(theList);
+//        adapter.setData(theList);
         setTextMoney(tvFrozen, frozen + "");
         setTextMoney(tvAvailable, money);
         String allmoney = (Double.parseDouble(money) + frozen) + "";
@@ -449,10 +465,31 @@ public class TransactionRecordBiutActivity extends BasicActivity {
             if (listDate.size() > lastSize) {
                 DialogUtil.showErrorDialog(this, (listDate.size() - lastSize) + " data have been updated…");
             }
-            refreshLayout.finishRefresh();
             llData.setVisibility(View.VISIBLE);
             ll_none.setVisibility(View.GONE);
+            setListDatdToAdapter();
         }
     }
+
+    private void setListDatdToAdapter() {
+        if (StringUtils.isEmpty(tag) || tag.equals(FRESH)) {
+            if (listDate.size() > 7) {
+                listLLL = listDate.subList(0, 7);
+            } else {
+                listLLL = listDate;
+            }
+            adapter.setData(listLLL);
+            refreshLayout.finishRefresh();
+        } else {
+            if (listDate.size() > (7 * pageSize)) {
+                listLLL = listDate.subList(0, 7 * pageSize);
+            } else {
+                listLLL = listDate;
+            }
+            adapter.setData(listLLL);
+            refreshLayout.finishLoadmore();
+        }
+    }
+
 
 }

@@ -203,7 +203,6 @@ public class TransferActivity extends BasicActivity {
         List listParams = new ArrayList();
         listParams.add(address);
         nonceBean.setParams(listParams);
-
         String url;
         if (type == 0) {
             url = RequestHost.biut_url;

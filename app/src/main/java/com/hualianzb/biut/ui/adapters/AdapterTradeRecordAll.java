@@ -79,7 +79,7 @@ public class AdapterTradeRecordAll extends BaseAdapter {
             } else {
                 holder.tvAddress.setText(("0x" + to).substring(0, 10) + "…" + ("0x" + to).substring(32, 42));
             }
-            switch (status) {
+            switch (status.toLowerCase()) {
                 case "pending":
                     tvStringStatus = "(Pending)";
                     holder.tv_state.setTextColor(context.getResources().getColor(R.color.text_yellow02));
@@ -88,6 +88,7 @@ public class AdapterTradeRecordAll extends BaseAdapter {
                     if (from.equals(address.substring(2))) {
                         holder.tvBalance.setText("- " + money);
                     }
+                    holder.tv_state.setVisibility(View.VISIBLE);
                     break;
                 case "success":
                     holder.tv_state.setVisibility(View.GONE);
@@ -105,12 +106,14 @@ public class AdapterTradeRecordAll extends BaseAdapter {
                     holder.tv_state.setTextColor(context.getResources().getColor(R.color.text_error));
                     holder.tvBalance.setTextColor(context.getResources().getColor(R.color.text_error));
                     holder.tv_state.setText(tvStringStatus);
+                    holder.tv_state.setVisibility(View.VISIBLE);
                     break;
                 case "mine":
                     tvStringStatus = "Mined";
                     holder.tvBalance.setTextColor(context.getResources().getColor(R.color.mineBlue));
                     holder.tv_state.setTextColor(context.getResources().getColor(R.color.mineBlue));
                     holder.tv_state.setText(tvStringStatus);
+                    holder.tv_state.setVisibility(View.VISIBLE);
                     break;
             }
             if (to.equals(address.substring(2))) {
