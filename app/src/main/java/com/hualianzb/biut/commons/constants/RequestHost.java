@@ -6,7 +6,8 @@ package com.hualianzb.biut.commons.constants;
 public class RequestHost {
 
     public static String mainUrl = "http://scan.biut.io:";
-    public static String testUrl = "18.179.198.60";
+    //    public static String testUrl = "http://18.179.198.60";
+    public static String testUrl = "http://test.biut.io:";
     public static String url = "http://scan.secblock.io/publishversionapi";//服务器
     public static String webUrl = mainUrl + "///search?search=";
     public static String biut_url = mainUrl + "3002/";

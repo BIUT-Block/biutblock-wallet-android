@@ -2,21 +2,18 @@ package com.hualianzb.biut.ui.basic;
 
 import android.app.Dialog;
 import android.content.IntentFilter;
-import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
-import android.widget.TextView;
 
 import com.gyf.barlibrary.ImmersionBar;
-import com.hualianzb.biut.R;
 import com.hualianzb.biut.application.BIUTApplication;
 import com.hualianzb.biut.commons.interfaces.GlobalMessageType;
-import com.hualianzb.biut.utils.NetBroadcastReceiver;
 import com.hualianzb.biut.ui.base.BaseActivity;
 import com.hualianzb.biut.utils.DialogUtil;
+import com.hualianzb.biut.utils.NetBroadcastReceiver;
 import com.hysd.android.platform_huanuo.base.manager.MessageCenter;
 
 import java.util.Set;

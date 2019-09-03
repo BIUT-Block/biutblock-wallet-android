@@ -387,15 +387,15 @@ public class TransferActivity extends BasicActivity {
     }
 
     private void checkMoney(String money) {
-        float moneyD = 0;
+        Double moneyD = 0.0;
         if (type == 0) {
             if (!StringUtils.isEmpty(money)) {
                 if (money.equals(".")) {
                     money = "0" + money;
                 }
-                moneyD = Float.parseFloat(money);
+                moneyD = Double.parseDouble(money);
             } else {
-                moneyD = 0.0F;
+                moneyD = 0.0;
                 if (Double.parseDouble(numGas) > Double.parseDouble(biuAmount)) {
                     tvBiuError.setVisibility(View.VISIBLE);
                 } else {
@@ -438,9 +438,9 @@ public class TransferActivity extends BasicActivity {
                 if (money.equals(".")) {
                     money = "0" + money;
                 }
-                moneyD = Float.parseFloat(money);
+                moneyD = Double.parseDouble(money);
             } else {
-                moneyD = 0.0F;
+                moneyD = 0.0;
                 if (Double.parseDouble(numGas) > Double.parseDouble(biuAmount)) {
                     tvBiuError.setVisibility(View.VISIBLE);
                 } else {

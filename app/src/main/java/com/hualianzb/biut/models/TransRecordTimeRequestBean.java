@@ -56,28 +56,4 @@ public class TransRecordTimeRequestBean implements Serializable {
         this.id = id;
     }
 
-//    public static class Data implements Serializable {
-//        public Data() {
-//        }
-//
-//        String pp;
-//        boolean isT;
-//
-//        public boolean isT() {
-//            return isT;
-//        }
-//
-//        public void setT(boolean t) {
-//            isT = t;
-//        }
-//
-//        public String getPp() {
-//            return pp;
-//        }
-//
-//        public void setPp(String pp) {
-//            this.pp = pp;
-//        }
-//    }
-
 }

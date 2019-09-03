@@ -58,13 +58,11 @@ public abstract class BasicFragment extends BaseFragment implements View.OnClick
     @Override
     public void onResume() {
         super.onResume();
-//        MobclickAgent.onResume(getActivity());
     }
 
     @Override
     public void onPause() {
         super.onPause();
-//        MobclickAgent.onPause(getActivity());
     }
 
     public boolean isNetworkAvailable(Activity activity) {

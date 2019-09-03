@@ -4,20 +4,17 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.PixelFormat;
-import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.hualianzb.biut.R;
 import com.hualianzb.biut.interfaces.DialogControl;
@@ -59,7 +56,6 @@ public class BaseActivity extends AutoLayoutActivity implements DialogControl {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);//forbidden shotting screen
         spUtils = new SharedPreferencesUtils(this, "user_info.spf");
         userModule = spUtils.getObject("user_module.spf");
         _isVisible = true;

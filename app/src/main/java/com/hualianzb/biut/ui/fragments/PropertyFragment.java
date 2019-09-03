@@ -356,7 +356,6 @@ public class PropertyFragment extends BasicFragment implements HomePageActivity.
         } else {
             tokenBean.setName("BIU");
         }
-//        QueryBuilder queryBuilder = BIUTApplication.tokenBeanDao.queryBuilder();
         List<TokenBean> listTokenBean = BIUTApplication.tokenBeanDao.loadAll();
         TokenBean tokenBeanBiut = null;
         if (type == 0) {
@@ -374,27 +373,9 @@ public class PropertyFragment extends BasicFragment implements HomePageActivity.
             } else {
                 BIUTApplication.tokenBeanDao.insert(tokenBean);
             }
-//            queryBuilder.where(queryBuilder.and(TokenBeanDao.Properties.Address.eq(address), TokenBeanDao.Properties.Name.eq("BIUT")));
-//            TokenBean tokenBeanBiut = (TokenBean) queryBuilder.unique();
-//            //biut
-//            if (null != tokenBeanBiut) {
-//                tokenBeanBiut.setToken(tokenBean.getToken());
-//                BIUTApplication.tokenBeanDao.update(tokenBeanBiut);
-//            } else {
-//                BIUTApplication.tokenBeanDao.insert(tokenBean);
-//            }
             requestUrl = RequestHost.biu_url;
             setParams(requestUrl, json);
         } else {
-//            queryBuilder.where(queryBuilder.and(TokenBeanDao.Properties.Address.eq(address), TokenBeanDao.Properties.Name.eq("BIU")));
-//            TokenBean tokenBeanBiu = (TokenBean) queryBuilder.unique();
-//            if (null != tokenBeanBiu) {
-//                tokenBeanBiu.setToken(tokenBean.getToken());
-//                BIUTApplication.tokenBeanDao.update(tokenBeanBiu);
-//            } else {
-//                BIUTApplication.tokenBeanDao.insert(tokenBean);
-//            }
-
             if (null != listTokenBean) {
                 for (TokenBean bean : listTokenBean) {
                     if (bean.getAddress().equals(address) && bean.getName().equals(tokenBean.getName())) {
@@ -434,11 +415,11 @@ public class PropertyFragment extends BasicFragment implements HomePageActivity.
         bean.setMethod("sec_getBalance");
         bean.setParams(list);
         list.add(address);//address
-        list.add("latest");
+//        list.add("latest");
         json = JSON.toJSONString(bean);
         requestUrl = RequestHost.biut_url;
         setParams(requestUrl, json);
-        Log.e("+++", json);
+        Log.e("web33", json);
     }
 
     private void setParams(String url, String json) {
@@ -449,7 +430,7 @@ public class PropertyFragment extends BasicFragment implements HomePageActivity.
             @Override
             public void onSuccess(String result) {
                 if (!StringUtils.isEmpty(result)) {
-                    Log.e("+++", result);
+                    Log.e("web33", result);
                     String money = null;
                     BalanceResultBean balanceResultBean = JSON.parseObject(result, BalanceResultBean.class);
                     if (null != balanceResultBean) {

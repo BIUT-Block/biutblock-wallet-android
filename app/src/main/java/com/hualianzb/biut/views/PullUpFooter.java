@@ -32,7 +32,7 @@ public class PullUpFooter extends LinearLayout implements RefreshFooter {
     private static final String REFRESH_BOTTOM_PULLUP = "Pull-up Load More";
     private static final String REFRESH_BOTTOM_RELEASE = "Release immediate loading";
     private static final String REFRESH_BOTTOM_LOADING = "Loading...";
-
+    private static final String NOMODATA = "no more data...";
     private TextView mBottomText;
     private ImageView mProgressView;
     private ProgressDrawable mProgressDrawable;
@@ -163,6 +163,7 @@ public class PullUpFooter extends LinearLayout implements RefreshFooter {
         switch (newState) {
             case None:
                 restoreRefreshLayoutBackground();
+                mBottomText.setText(NOMODATA);
             case PullToUpLoad:
                 mBottomText.setText(REFRESH_BOTTOM_PULLUP);
                 break;

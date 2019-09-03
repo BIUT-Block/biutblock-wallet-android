@@ -3,6 +3,7 @@ package com.hualianzb.biut.ui.activitys;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.gyf.barlibrary.ImmersionBar;
@@ -77,6 +78,7 @@ public class BackupMnemonicsTwoActy extends BasicActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);//本界面不可截屏
         initView();
         initData();
     }

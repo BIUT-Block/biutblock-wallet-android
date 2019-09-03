@@ -165,7 +165,7 @@ public class ManagerWalletActy extends BasicActivity {
         bean.setMethod("sec_getBalance");
         bean.setParams(listRequestData);
         listRequestData.add(list.get(position).getAddress().substring(2));//address
-        listRequestData.add("latest");
+//        listRequestData.add("latest");
         String json = JSON.toJSONString(bean);
         RequestParams params = new RequestParams(RequestHost.biut_url);
         params.setAsJsonContent(true);
