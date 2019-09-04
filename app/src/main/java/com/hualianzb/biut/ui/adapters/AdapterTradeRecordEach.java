@@ -82,9 +82,9 @@ public class AdapterTradeRecordEach extends BaseAdapter {
             long time_Stamp = bean.getTimeStamp();
             String tvStringStatus;
             if (from.equals(address.substring(2))) {
-                holder.tvAddress.setText("0x" + to.substring(0, 10) + "…" + to.substring(30, 40));
+                holder.tvAddress.setText("0x" + to.substring(0, 10) + "…" + to.substring((to.length() - 10), to.length()));
             } else {
-                holder.tvAddress.setText("0x" + from.substring(0, 10) + "…" + from.substring(30, 40));
+                holder.tvAddress.setText("0x" + from.substring(0, 10) + "…" + from.substring((from.length() - 10), from.length()));
             }
             switch (status) {
                 case "pending":
@@ -101,7 +101,6 @@ public class AdapterTradeRecordEach extends BaseAdapter {
                     holder.tvBalance.setTextColor(context.getResources().getColor(R.color.text_selected_green));
                     if (from.contains("000000000000")) {//挖矿
                         tvStringStatus = "Mined";
-                        Log.e("web", "/n" + JSON.toJSONString(bean));
                         holder.tvBalance.setTextColor(context.getResources().getColor(R.color.mineBlue));
                         holder.tv_state.setTextColor(context.getResources().getColor(R.color.mineBlue));
                         holder.tv_state.setText(tvStringStatus);

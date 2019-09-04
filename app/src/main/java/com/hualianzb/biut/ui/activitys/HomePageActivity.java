@@ -304,7 +304,6 @@ public class HomePageActivity extends BasicActivity implements
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-//                Log.e("web3", ex.toString());
             }
 
             @Override
@@ -313,7 +312,6 @@ public class HomePageActivity extends BasicActivity implements
 
             @Override
             public void onFinished() {
-//                Log.e("web3", "onFinished");
             }
         });
     }

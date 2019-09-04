@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hualianzb.biut.R;
@@ -41,8 +42,8 @@ public class CheckPassActivity extends BasicActivity {
     TextView tvSure;
     @BindView(R.id.ed_pass)
     EditText edPass;
-    @BindView(R.id.iv_clear1)
-    ImageView ivClear1;
+    @BindView(R.id.ll_clear1)
+    LinearLayout llClear1;
     @BindView(R.id.tv_theme)
     TextView tvTheme;
     @BindView(R.id.tv_pass)
@@ -104,7 +105,7 @@ public class CheckPassActivity extends BasicActivity {
                     edPass.setSelection(start);
                 }
                 if (!StringUtils.isEmpty(input)) {
-                    ivClear1.setVisibility(View.VISIBLE);
+                    llClear1.setVisibility(View.VISIBLE);
                     if (input.length() < 8) {
                         tvSure.setClickable(false);
                         tvSure.setBackground(getResources().getDrawable(R.drawable.bg_btn_cannot));
@@ -113,7 +114,7 @@ public class CheckPassActivity extends BasicActivity {
                         tvSure.setBackground(getResources().getDrawable(R.drawable.bg_btn));
                     }
                 } else {
-                    ivClear1.setVisibility(View.GONE);
+                    llClear1.setVisibility(View.GONE);
                     tvSure.setClickable(false);
                     tvSure.setBackground(getResources().getDrawable(R.drawable.bg_btn_cannot));
                 }
@@ -134,7 +135,7 @@ public class CheckPassActivity extends BasicActivity {
         Util.setFontType(this, tvSure, 1, LATO_BOLD_TTF);
     }
 
-    @OnClick({R.id.tv_sure, R.id.tv_right, R.id.iv_clear1})
+    @OnClick({R.id.tv_sure, R.id.tv_right, R.id.ll_clear1})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_sure:
@@ -184,7 +185,7 @@ public class CheckPassActivity extends BasicActivity {
                     }
                 }
                 break;
-            case R.id.iv_clear1:
+            case R.id.ll_clear1:
                 edPass.setText("");
                 tvSure.setClickable(false);
                 tvSure.setBackground(getResources().getDrawable(R.drawable.bg_btn_cannot));

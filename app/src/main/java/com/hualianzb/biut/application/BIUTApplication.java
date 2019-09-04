@@ -9,6 +9,8 @@ import com.hualianzb.biut.BuildConfig;
 import com.hualianzb.biut.biutUtil.SECBlockJavascriptAPI;
 import com.hualianzb.biut.commons.constants.Constant;
 import com.hualianzb.biut.commons.constants.RequestHost;
+import com.hualianzb.biut.models.AddressBookBean;
+import com.hualianzb.biut.models.AddressBookBeanDao;
 import com.hualianzb.biut.models.DaoMaster;
 import com.hualianzb.biut.models.DaoSession;
 import com.hualianzb.biut.models.PropertyBean;
@@ -55,6 +57,10 @@ public class BIUTApplication extends BaseApplication {
     //交易记录相关
     public static ResultInChainBeanOrPoolDao recordResulttDao;
     public static Query<ResultInChainBeanOrPool> queryRecord;
+
+    //联系人相关
+    public static AddressBookBeanDao addressBookBeanDao;
+    public static Query<AddressBookBean> queryContact;
 
     //设计图标注的宽度
     public static float designWidth = 720;
@@ -110,6 +116,9 @@ public class BIUTApplication extends BaseApplication {
         recordResulttDao = daoSession.getResultInChainBeanOrPoolDao();
         queryRecord = recordResulttDao.queryBuilder().build();
 
+        //初始化数据信息--联系人
+        addressBookBeanDao = daoSession.getAddressBookBeanDao();
+        queryContact = addressBookBeanDao.queryBuilder().build();
     }
 
     @Override

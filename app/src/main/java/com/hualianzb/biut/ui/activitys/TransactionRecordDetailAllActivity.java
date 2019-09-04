@@ -258,10 +258,10 @@ public class TransactionRecordDetailAllActivity extends BasicActivity {
         tvSendAddress.setText("0x" + from);
         tvGetAddress.setText("0x" + to);
         tvGas.setText(txFee + " BIU");
-        tvTradeNum.setText("0x" + transNumber.substring(0, 8) + "…" + transNumber.substring(30, 40));
+        tvTradeNum.setText("0x" + transNumber.substring(0, 8) + "…" + transNumber.substring((transNumber.length() - 10), transNumber.length()));
         tvBlock.setText(block.equals("0") || StringUtils.isEmpty(block) ? "Not in Block yet" : block);
 
-        if (StringUtils.isEmpty(remarks)) {
+        if (StringUtils.isEmpty(remarks) || remarks.length() > 15) {
             llRemark.setVisibility(View.GONE);
         } else {
             tvRemarks.setText(remarks);

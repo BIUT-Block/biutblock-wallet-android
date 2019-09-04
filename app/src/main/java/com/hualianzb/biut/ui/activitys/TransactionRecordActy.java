@@ -225,7 +225,7 @@ public class TransactionRecordActy extends BasicActivity {
         refreshLayout.setOnRefreshListener(refreshlay -> {
             getData(address);
         });
-        lv.setOnItemClickListener((parent, view, position, id) -> UiHelper.startTransaAllActivity(TransactionRecordActy.this, address, listGet.get(position).getId()));
+        lv.setOnItemClickListener((parent, view, position, id) -> UiHelper.startTransaAllActivity(TransactionRecordActy.this, address, lastListCache.get(position).getId()));
         //上拉加载
         refreshLayout.setOnLoadmoreListener(refreshlay -> refreshLayout.finishLoadmore(2000));
     }

@@ -75,9 +75,9 @@ public class AdapterTradeRecordAll extends BaseAdapter {
             long time_Stamp = bean.getTimeStamp();
             String tvStringStatus;
             if (to.equals(address.substring(2))) {
-                holder.tvAddress.setText(("0x" + from).substring(0, 10) + "…" + ("0x" + from).substring(32, 42));
+                holder.tvAddress.setText("0x" + (from).substring(0, 10) + "…" + from.substring((to.length() - 10), from.length()));
             } else {
-                holder.tvAddress.setText(("0x" + to).substring(0, 10) + "…" + ("0x" + to).substring(32, 42));
+                holder.tvAddress.setText("0x" + (to).substring(0, 10) + "…" + to.substring((to.length() - 10), to.length()));
             }
             switch (status.toLowerCase()) {
                 case "pending":

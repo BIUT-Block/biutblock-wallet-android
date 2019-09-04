@@ -147,14 +147,15 @@ public class AddressBookActivity extends BasicActivity {
     }
 
     private void getData() {
-        list = PlatformConfig.getList(this, Constant.SpConstant.ADDRESSBOOK);
+        list = BIUTApplication.addressBookBeanDao.loadAll();
+//        list = PlatformConfig.getList(this, Constant.SpConstant.ADDRESSBOOK);
         if (null == list || list.size() <= 0) {
             llEmpty.setVisibility(View.VISIBLE);
             rLData.setVisibility(View.GONE);
         } else {
             rLData.setVisibility(View.VISIBLE);
             llEmpty.setVisibility(View.GONE);
-            list = Util.listAddressBookSort(list);
+//            list = Util.listAddressBookSort(list);
             adapter.setList(list);
         }
     }

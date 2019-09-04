@@ -87,15 +87,20 @@
                         android:textColor="@color/text_gray"
                         android:textSize="18pt" />
 
-                    <ImageView
-                        android:id="@+id/iv_clear1"
-                        android:layout_width="26pt"
-                        android:layout_height="26pt"
+                    <LinearLayout
+                        android:id="@+id/ll_clear1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:layout_gravity="center_vertical"
-                        android:background="@drawable/icon_clear"
-                        android:visibility="gone" />
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="26pt"
+                            android:layout_height="26pt"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/icon_clear" />
+                    </LinearLayout>
                 </RelativeLayout>
             </LinearLayout>
 
@@ -201,15 +206,20 @@
                     android:textColor="@color/text_gray"
                     android:textSize="18pt" />
 
-                <ImageView
-                    android:id="@+id/iv_clear2"
-                    android:layout_width="26pt"
-                    android:layout_height="26pt"
+                <LinearLayout
+                    android:id="@+id/ll_clear2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/icon_clear"
-                    android:visibility="gone" />
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="26pt"
+                        android:layout_height="26pt"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/icon_clear" />
+                </LinearLayout>
             </RelativeLayout>
 
             <TextView
@@ -274,15 +284,20 @@
                     android:textColor="@color/text_gray"
                     android:textSize="18pt" />
 
-                <ImageView
-                    android:id="@+id/iv_clear3"
-                    android:layout_width="26pt"
-                    android:layout_height="26pt"
+                <LinearLayout
+                    android:id="@+id/ll_clear3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/icon_clear"
-                    android:visibility="gone" />
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="26pt"
+                        android:layout_height="26pt"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/icon_clear" />
+                </LinearLayout>
             </RelativeLayout>
 
             <RelativeLayout

@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hualianzb.biut.R;
+import com.hualianzb.biut.application.BIUTApplication;
 import com.hualianzb.biut.commons.constants.Constant;
 import com.hualianzb.biut.commons.interfaces.GlobalMessageType;
 import com.hualianzb.biut.models.AddressBookBean;
@@ -97,13 +98,15 @@ public class AdapterAddressBook extends BaseAdapter {
         }
         holder.ll_delete.setOnClickListener(v -> {
             list.remove(position);
-            PlatformConfig.putList(Constant.SpConstant.ADDRESSBOOK, list);
-            handler.sendEmptyMessage(GlobalMessageType.MessgeCode.NOTIFYBOOKLIST);
+            BIUTApplication.addressBookBeanDao.deleteByKey(bean.getId());
+            notifyDataSetChanged();
+//            PlatformConfig.putList(Constant.SpConstant.ADDRESSBOOK, list);
+//            handler.sendEmptyMessage(GlobalMessageType.MessgeCode.NOTIFYBOOKLIST);
         });
         holder.rl_change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UiHelper.startChangeAddressBookActys(context, position);
+                UiHelper.startChangeAddressBookActys(context, bean.getId());
             }
         });
         holder.rl_item.setOnClickListener(new View.OnClickListener() {

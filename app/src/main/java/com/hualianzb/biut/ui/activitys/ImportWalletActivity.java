@@ -110,10 +110,10 @@ public class ImportWalletActivity extends BasicActivity {
     ImageView ivYellow;
     @BindView(R.id.iv_blue)
     ImageView ivBlue;
-    @BindView(R.id.iv_clear1)
-    ImageView ivClear1;
-    @BindView(R.id.iv_clear2)
-    ImageView ivClear2;
+    @BindView(R.id.ll_clear1)
+    LinearLayout llClear1;
+    @BindView(R.id.ll_clear2)
+    LinearLayout llClear2;
     @BindView(R.id.rl_level)
     RelativeLayout rlLevel;
     @BindView(R.id.tv_pass)
@@ -239,12 +239,12 @@ public class ImportWalletActivity extends BasicActivity {
                     checkPassStrength(pass);
                 }
                 if (StringUtils.isEmpty(pass)) {
-                    ivClear1.setVisibility(View.GONE);
+                    llClear1.setVisibility(View.GONE);
                     tvPassError.setText("Input Password");
                     tvPassError.setVisibility(View.VISIBLE);
                     rlLevel.setVisibility(View.GONE);
                 } else {
-                    ivClear1.setVisibility(View.VISIBLE);
+                    llClear1.setVisibility(View.VISIBLE);
                 }
                 checkPassword(pass);
                 setBtnClickable();
@@ -274,10 +274,10 @@ public class ImportWalletActivity extends BasicActivity {
                     edRepass.setSelection(start);
                 }
                 if (!StringUtils.isEmpty(rePass)) {
-                    ivClear2.setVisibility(View.VISIBLE);
+                    llClear2.setVisibility(View.VISIBLE);
                     tvRePassError.setText("");
                 } else {
-                    ivClear2.setVisibility(View.GONE);
+                    llClear2.setVisibility(View.GONE);
                 }
                 if (isPassOk) {
                     checkRePassword(rePass);
@@ -457,7 +457,7 @@ public class ImportWalletActivity extends BasicActivity {
         }
     }
 
-    @OnClick({R.id.re_mn, R.id.rl_official_w, R.id.rl_private_key, R.id.tv_right, R.id.tv_agreement, R.id.iv_clear1, R.id.iv_clear2, R.id.tv_start_import})
+    @OnClick({R.id.re_mn, R.id.rl_official_w, R.id.rl_private_key, R.id.tv_right, R.id.tv_agreement, R.id.ll_clear1, R.id.ll_clear2, R.id.tv_start_import})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.re_mn:
@@ -645,7 +645,6 @@ public class ImportWalletActivity extends BasicActivity {
 
                         } catch (Exception e) {
                             dialogLoading.dismiss();
-                            Log.e("web3", e.toString());
                             DialogUtil.showErrorDialog(this, "Password error");
                         }
                         break;
@@ -706,17 +705,16 @@ public class ImportWalletActivity extends BasicActivity {
                             }
                         } catch (Exception e) {
                             dialogLoading.dismiss();
-                            Log.e("web3", e.toString());
                             DialogUtil.showErrorDialog(this, "password error");
                             e.printStackTrace();
                         }
                 }
                 break;
-            case R.id.iv_clear1:
+            case R.id.ll_clear1:
                 edPass.setText("");
                 rlLevel.setVisibility(View.GONE);
                 break;
-            case R.id.iv_clear2:
+            case R.id.ll_clear2:
                 edRepass.setText("");
                 break;
         }

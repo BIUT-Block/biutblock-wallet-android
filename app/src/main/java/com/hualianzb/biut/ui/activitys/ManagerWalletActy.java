@@ -210,7 +210,6 @@ public class ManagerWalletActy extends BasicActivity {
 
             @Override
             public void onFinished() {
-//                Log.e("web3", "onFinished");
             }
         });
     }

@@ -100,7 +100,8 @@ public class AddAddressActivity extends BasicActivity {
         setFontStyle();
         tvTheme.setText("Address Contact");
         ImmersionBar.with(this).statusBarColor(R.color.white).init();
-        list = PlatformConfig.getList(this, Constant.SpConstant.ADDRESSBOOK);
+        list = BIUTApplication.addressBookBeanDao.loadAll();
+//        list = PlatformConfig.getList(this, Constant.SpConstant.ADDRESSBOOK);
         tvRight.setVisibility(View.GONE);
     }
 
@@ -261,8 +262,9 @@ public class AddAddressActivity extends BasicActivity {
                         bean.setEmail(mail);
                         bean.setRemarks(remark);
                         bean.setCreatTime(TimeUtil.getDate());
-                        list.add(bean);
-                        PlatformConfig.putList(Constant.SpConstant.ADDRESSBOOK, list);
+//                        list.add(bean);
+                        BIUTApplication.addressBookBeanDao.save(bean);
+//                        PlatformConfig.putList(Constant.SpConstant.ADDRESSBOOK, list);
                         finish();
                     }
 
@@ -274,9 +276,10 @@ public class AddAddressActivity extends BasicActivity {
                     bean.setEmail(mail);
                     bean.setRemarks(remark);
                     bean.setCreatTime(TimeUtil.getDate());
-                    list = new ArrayList<>();
-                    list.add(bean);
-                    PlatformConfig.putList(Constant.SpConstant.ADDRESSBOOK, list);
+                    BIUTApplication.addressBookBeanDao.save(bean);
+//                    list = new ArrayList<>();
+//                    list.add(bean);
+//                    PlatformConfig.putList(Constant.SpConstant.ADDRESSBOOK, list);
                     finish();
                 }
                 break;

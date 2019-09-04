@@ -41,7 +41,7 @@
         <!--配置APP版本号 -->
         <meta-data
             android:name="BUGLY_APP_VERSION"
-            android:value="147" />
+            android:value="149" />
 
         <!-- 配置APP渠道号 -->
         <meta-data

@@ -138,12 +138,12 @@
                 android:id="@+id/tv_edit_top_error"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20pt"
                 android:gravity="right"
                 android:paddingRight="36pt"
-                android:layout_marginTop="20pt"
+                android:text=""
                 android:textColor="@color/text_error"
                 android:textSize="18pt"
-                android:text=""
                 android:visibility="gone" />
 
             <EditText
@@ -263,17 +263,22 @@
                         android:textColorHint="#D2D2D2"
                         android:textSize="16pt" />
 
-                    <ImageView
-                        android:id="@+id/iv_clear1"
-                        android:layout_width="26pt"
-                        android:layout_height="26pt"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="16pt"
-                        android:layout_marginRight="16pt"
-                        android:background="@drawable/icon_clear"
-                        android:visibility="gone" />
+                    <LinearLayout
+                        android:id="@+id/ll_clear1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="26pt"
+                            android:layout_height="26pt"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="16pt"
+                            android:layout_marginRight="16pt"
+                            android:background="@drawable/icon_clear" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <RelativeLayout
@@ -336,17 +341,22 @@
                             android:textColorHint="#D2D2D2"
                             android:textSize="16pt" />
 
-                        <ImageView
-                            android:id="@+id/iv_clear2"
-                            android:layout_width="26pt"
-                            android:layout_height="26pt"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="16pt"
-                            android:layout_marginRight="16pt"
-                            android:background="@drawable/icon_clear"
-                            android:visibility="gone" />
+                        <LinearLayout
+                            android:id="@+id/ll_clear2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="26pt"
+                                android:layout_height="26pt"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="16pt"
+                                android:layout_marginRight="16pt"
+                                android:background="@drawable/icon_clear" />
+                        </LinearLayout>
                     </LinearLayout>
                 </RelativeLayout>
 

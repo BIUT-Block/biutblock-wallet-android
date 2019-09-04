@@ -87,15 +87,20 @@
                     android:paddingLeft="@dimen/dimen_20px"
                     android:textSize="@dimen/dimen_28px" />
 
-                <ImageView
-                    android:id="@+id/iv_clear1"
-                    android:layout_width="26pt"
-                    android:layout_height="26pt"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10pt"
-                    android:layout_marginRight="10pt"
-                    android:background="@drawable/icon_clear"
-                    android:visibility="gone" />
+                <LinearLayout
+                    android:id="@+id/ll_clear1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="26pt"
+                        android:layout_height="26pt"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="16pt"
+                        android:layout_marginRight="16pt"
+                        android:background="@drawable/icon_clear" />
+                </LinearLayout>
             </LinearLayout>
 
             <TextView

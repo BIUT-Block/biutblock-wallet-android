@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -141,7 +142,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
         switch (message.what) {
             case GlobalMessageType.MessgeCode.CANCELORERROR:
                 dialogLoading.dismiss();
-                noNetDialog.show();
+//                noNetDialog.show();
                 break;
             case ContainMessage:
                 String resultData = (String) message.obj;
@@ -292,7 +293,6 @@ public class TransactionRecordBiutActivity extends BasicActivity {
 
                 @Override
                 public void onError(Throwable ex, boolean isOnCallback) {
-//                Log.e("web3", ex.toString());
                     sendEmptyMessage(GlobalMessageType.MessgeCode.CANCELORERROR);
                 }
 
@@ -303,7 +303,6 @@ public class TransactionRecordBiutActivity extends BasicActivity {
 
                 @Override
                 public void onFinished() {
-//                Log.e("web3", "onFinished");
                 }
             });
         } else {

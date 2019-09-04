@@ -64,12 +64,12 @@ public class ChangePassActy extends BasicActivity {
     TextView tvTip1;
     @BindView(R.id.tv_tips)
     TextView tvTips;
-    @BindView(R.id.iv_clear1)
-    ImageView ivClear1;
-    @BindView(R.id.iv_clear2)
-    ImageView ivClear2;
-    @BindView(R.id.iv_clear3)
-    ImageView ivClear3;
+    @BindView(R.id.ll_clear1)
+    LinearLayout llClear1;
+    @BindView(R.id.ll_clear2)
+    LinearLayout llClear2;
+    @BindView(R.id.ll_clear3)
+    LinearLayout llClear3;
     @BindView(R.id.iv_red)
     ImageView ivRed;
     @BindView(R.id.iv_yellow)
@@ -183,9 +183,9 @@ public class ChangePassActy extends BasicActivity {
                     edOldPass.setSelection(start);
                 }
                 if (!StringUtils.isEmpty(oldPass)) {
-                    ivClear1.setVisibility(View.VISIBLE);
+                    llClear1.setVisibility(View.VISIBLE);
                 } else {
-                    ivClear1.setVisibility(View.GONE);
+                    llClear1.setVisibility(View.GONE);
                 }
                 check();
             }
@@ -214,9 +214,9 @@ public class ChangePassActy extends BasicActivity {
                     edNewPass.setSelection(start);
                 }
                 if (!StringUtils.isEmpty(newPass)) {
-                    ivClear2.setVisibility(View.VISIBLE);
+                    llClear2.setVisibility(View.VISIBLE);
                 } else {
-                    ivClear2.setVisibility(View.GONE);
+                    llClear2.setVisibility(View.GONE);
                 }
                 check();
             }
@@ -245,9 +245,9 @@ public class ChangePassActy extends BasicActivity {
                     edRePass.setSelection(start);
                 }
                 if (!StringUtils.isEmpty(rePass)) {
-                    ivClear3.setVisibility(View.VISIBLE);
+                    llClear3.setVisibility(View.VISIBLE);
                 } else {
-                    ivClear3.setVisibility(View.GONE);
+                    llClear3.setVisibility(View.GONE);
                 }
 //                checkRePass(rePass);
 //                setBtnClickable();
@@ -397,7 +397,7 @@ public class ChangePassActy extends BasicActivity {
         }
     }
 
-    @OnClick({R.id.tv_right, R.id.ll_import, R.id.iv_clear1, R.id.iv_clear2, R.id.iv_clear3})
+    @OnClick({R.id.tv_right, R.id.ll_import, R.id.ll_clear1, R.id.ll_clear2, R.id.ll_clear3})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_right:
@@ -425,13 +425,13 @@ public class ChangePassActy extends BasicActivity {
             case R.id.ll_import:
                 UiHelper.startActyImportWalletActivity(this);
                 break;
-            case R.id.iv_clear1:
+            case R.id.ll_clear1:
                 edOldPass.setText("");
                 break;
-            case R.id.iv_clear2:
+            case R.id.ll_clear2:
                 edNewPass.setText("");
                 break;
-            case R.id.iv_clear3:
+            case R.id.ll_clear3:
                 edRePass.setText("");
                 break;
         }

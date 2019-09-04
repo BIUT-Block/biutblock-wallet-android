@@ -58,10 +58,10 @@ public class CreateWalletActivity extends BasicActivity {
     EditText edPassReminder;
     @BindView(R.id.cb_agree)
     ImageView cbAgree;
-    @BindView(R.id.iv_clear1)
-    ImageView ivClear1;
-    @BindView(R.id.iv_clear2)
-    ImageView ivClear2;
+    @BindView(R.id.ll_clear1)
+    LinearLayout llClear1;
+    @BindView(R.id.ll_clear2)
+    LinearLayout llClear2;
     @BindView(R.id.btn_create_new)
     TextView btnCreate;
     @BindView(R.id.tv_name)
@@ -100,8 +100,8 @@ public class CreateWalletActivity extends BasicActivity {
     TextView tvIllustration;
     @BindView(R.id.tv_prompt)
     TextView tvPrompt;
-    @BindView(R.id.iv_clear_name)
-    ImageView ivClearName;
+    @BindView(R.id.ll_clear_name)
+    LinearLayout llClearName;
     @BindView(R.id.ll_name)
     LinearLayout llName;
     private boolean iChecked = true;//功能暂时去掉，默认改成true，不影响功能
@@ -164,10 +164,10 @@ public class CreateWalletActivity extends BasicActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 walletName = s.toString().trim();
                 if (StringUtils.isEmpty(walletName)) {
-                    ivClearName.setVisibility(View.GONE);
+                    llClearName.setVisibility(View.GONE);
                     isWallteNameOk = false;
                 } else {
-                    ivClearName.setVisibility(View.VISIBLE);
+                    llClearName.setVisibility(View.VISIBLE);
                 }
                 check();
             }
@@ -196,13 +196,13 @@ public class CreateWalletActivity extends BasicActivity {
                     edPass.setSelection(start);
                 }
                 if (StringUtils.isEmpty(pass)) {
-                    ivClear1.setVisibility(View.GONE);
+                    llClear1.setVisibility(View.GONE);
                     tvPassError.setText("Input Password");
                     tvPassError.setVisibility(View.VISIBLE);
                     rlLevel.setVisibility(View.GONE);
                     isPassOk = false;
                 } else {
-                    ivClear1.setVisibility(View.VISIBLE);
+                    llClear1.setVisibility(View.VISIBLE);
                 }
                 check();
             }
@@ -231,10 +231,10 @@ public class CreateWalletActivity extends BasicActivity {
                     edRepass.setSelection(start);
                 }
                 if (!StringUtils.isEmpty(rePass)) {
-                    ivClear2.setVisibility(View.VISIBLE);
+                    llClear2.setVisibility(View.VISIBLE);
                     tvRePassError.setText("");
                 } else {
-                    ivClear2.setVisibility(View.GONE);
+                    llClear2.setVisibility(View.GONE);
                     isRePassOk = false;
                 }
                 check();
@@ -469,7 +469,7 @@ public class CreateWalletActivity extends BasicActivity {
         }
     }
 
-    @OnClick({R.id.btn_create_new, R.id.tv_right, R.id.cb_agree, R.id.tv_agreement, R.id.iv_clear1, R.id.iv_clear2, R.id.iv_clear_name})
+    @OnClick({R.id.btn_create_new, R.id.tv_right, R.id.cb_agree, R.id.tv_agreement, R.id.ll_clear1, R.id.ll_clear2, R.id.ll_clear_name})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_create_new:
@@ -494,17 +494,17 @@ public class CreateWalletActivity extends BasicActivity {
                 break;
             case R.id.tv_agreement:
                 break;
-            case R.id.iv_clear_name:
+            case R.id.ll_clear_name:
                 edWname.setText("");
                 check();
                 break;
-            case R.id.iv_clear1:
+            case R.id.ll_clear1:
                 edPass.setText("");
                 tvPassError.setText("Input Password");
                 check();
                 rlLevel.setVisibility(View.GONE);
                 break;
-            case R.id.iv_clear2:
+            case R.id.ll_clear2:
                 edRepass.setText("");
                 tvRePassError.setText("Repeat The Password");
                 check();

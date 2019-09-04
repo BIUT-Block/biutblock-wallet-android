@@ -68,7 +68,7 @@ public class ChangeAddressActivity extends BasicActivity {
     RelativeLayout rl_scan;
     private List<AddressBookBean> list;
     private AddressBookBean addressBookBean;
-    private int bookIndex;
+    private long bookIndex;
     private String name,
             phone,
             mail,
@@ -80,7 +80,7 @@ public class ChangeAddressActivity extends BasicActivity {
         super.getIntentForBundle();
         Bundle bundle = getIntent().getExtras();
         if (null != bundle) {
-            bookIndex = bundle.getInt("bookIndex");
+            bookIndex = bundle.getLong("bookIndex");
         }
     }
 
@@ -88,7 +88,7 @@ public class ChangeAddressActivity extends BasicActivity {
     protected void getIntentForSavedInstanceState(Bundle savedInstanceState) {
         super.getIntentForSavedInstanceState(savedInstanceState);
         if (null != savedInstanceState) {
-            bookIndex = savedInstanceState.getInt("bookIndex");
+            bookIndex = savedInstanceState.getLong("bookIndex");
         }
     }
 
@@ -104,7 +104,8 @@ public class ChangeAddressActivity extends BasicActivity {
     private void initView() {
         ImmersionBar.with(this).statusBarColor(R.color.white).init();
         tvRight.setVisibility(View.GONE);
-        list = PlatformConfig.getList(this, Constant.SpConstant.ADDRESSBOOK);
+//        list = PlatformConfig.getList(this, Constant.SpConstant.ADDRESSBOOK);
+        list = BIUTApplication.addressBookBeanDao.loadAll();
         ivBackTop.setImageDrawable(getResources().getDrawable(R.drawable.icon_close_black));
         tvSave.setText("Save");
         edAddress.setEnabled(false);
@@ -112,7 +113,7 @@ public class ChangeAddressActivity extends BasicActivity {
     }
 
     private void setData() {
-        addressBookBean = list.get(bookIndex);
+        addressBookBean = BIUTApplication.addressBookBeanDao.load(bookIndex);
         edName.setHint(addressBookBean.getName());
         edAddress.setHint(addressBookBean.getAddress());
         if (!StringUtils.isEmpty(addressBookBean.getPhone())) {
@@ -172,17 +173,18 @@ public class ChangeAddressActivity extends BasicActivity {
                 remark = edRemark.getText().toString().trim();
                 address = addressBookBean.getAddress();
 
-                AddressBookBean bean = new AddressBookBean();
-                bean.setName(name);
-                bean.setAddress(address);
-                bean.setPhone(StringUtils.isEmpty(phone) == true ? addressBookBean.getPhone() : phone);
-                bean.setEmail(StringUtils.isEmpty(mail) == true ? addressBookBean.getEmail() : mail);
-                bean.setRemarks(StringUtils.isEmpty(remark) == true ? addressBookBean.getRemarks() : remark);
-                bean.setCreatTime(TimeUtil.getDate());
-                int oldIndex = list.indexOf(addressBookBean);
-                bean.setCreatTime(TimeUtil.getDate());
-                list.set(oldIndex, bean);
-                PlatformConfig.putList(Constant.SpConstant.ADDRESSBOOK, list);
+//                AddressBookBean bean = new AddressBookBean();
+                addressBookBean.setName(name);
+                addressBookBean.setAddress(address);
+                addressBookBean.setPhone(StringUtils.isEmpty(phone) == true ? addressBookBean.getPhone() : phone);
+                addressBookBean.setEmail(StringUtils.isEmpty(mail) == true ? addressBookBean.getEmail() : mail);
+                addressBookBean.setRemarks(StringUtils.isEmpty(remark) == true ? addressBookBean.getRemarks() : remark);
+                addressBookBean.setCreatTime(TimeUtil.getDate());
+                addressBookBean.setId(addressBookBean.getId());
+//                int oldIndex = list.indexOf(addressBookBean);
+//                list.set(oldIndex, bean);
+                BIUTApplication.addressBookBeanDao.update(addressBookBean);
+//                PlatformConfig.putList(Constant.SpConstant.ADDRESSBOOK, list);
                 finish();
                 break;
             case R.id.rl_scan:
@@ -229,7 +231,7 @@ public class ChangeAddressActivity extends BasicActivity {
                     edAddress.setText(myGetAdress);
                 }
             } else {
-                DialogUtil.showErrorDialog(this,getString(R.string.scan_error));
+                DialogUtil.showErrorDialog(this, getString(R.string.scan_error));
             }
         }
     }

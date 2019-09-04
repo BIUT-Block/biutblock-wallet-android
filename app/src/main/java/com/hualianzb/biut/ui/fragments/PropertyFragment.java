@@ -415,11 +415,9 @@ public class PropertyFragment extends BasicFragment implements HomePageActivity.
         bean.setMethod("sec_getBalance");
         bean.setParams(list);
         list.add(address);//address
-//        list.add("latest");
         json = JSON.toJSONString(bean);
         requestUrl = RequestHost.biut_url;
         setParams(requestUrl, json);
-        Log.e("web33", json);
     }
 
     private void setParams(String url, String json) {
@@ -430,7 +428,6 @@ public class PropertyFragment extends BasicFragment implements HomePageActivity.
             @Override
             public void onSuccess(String result) {
                 if (!StringUtils.isEmpty(result)) {
-                    Log.e("web33", result);
                     String money = null;
                     BalanceResultBean balanceResultBean = JSON.parseObject(result, BalanceResultBean.class);
                     if (null != balanceResultBean) {

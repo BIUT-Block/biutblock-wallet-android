@@ -75,7 +75,7 @@ public class PoolFragment extends BasicFragment {
             }
         }
         String address = biutBean.getAddress();
-        tvAddress.setText(address.substring(0, 8) + "..." + address.substring(32, 40));
+        tvAddress.setText(address.substring(0, 8) + "…" + address.substring((address.length() - 8), address.length()));
         for (TokenBean tokenBean : BIUTApplication.tokenBeanDao.loadAll()) {
             if (tokenBean.getAddress().equals(address)) {
                 if (tokenBean.getName().equals("BIUT")) {

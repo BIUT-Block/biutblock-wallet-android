@@ -786,7 +786,7 @@ public class TransferActivity extends BasicActivity {
         paramsBean2.setTimestamp(paramsBean.getTimestamp());
         paramsBean2.setTo(paramsBean.getTo());
         paramsBean2.setGas(paramsBean.getGas());
-        paramsBean2.setTxFee(numGas);
+        paramsBean2.setTxFee(numGas.equals("0") ? "0.01" : numGas);
         paramsBean2.setValue(paramsBean.getValue());
         paramsBean2.setNonce(paramsBean.getNonce());
         List<SendRawBean.ParamsBean> list = new ArrayList<>();
@@ -859,7 +859,6 @@ public class TransferActivity extends BasicActivity {
 
             @Override
             public void onFinished() {
-//                Log.e("web3", "onFinished");
             }
         });
 

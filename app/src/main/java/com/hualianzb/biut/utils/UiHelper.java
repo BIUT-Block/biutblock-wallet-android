@@ -204,7 +204,7 @@ public class UiHelper {
         activity.startActivityForResult(intent, 101);
     }
 
-    public static void startChangeAddressBookActys(Context activity, int bookIndex) {
+    public static void startChangeAddressBookActys(Context activity, long bookIndex) {
         Intent intent = new Intent(activity, ChangeAddressActivity.class);
         intent.putExtra("bookIndex", bookIndex);
         activity.startActivity(intent);
