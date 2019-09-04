@@ -6,6 +6,14 @@ bugly {
     appKey = 'e29fb803-a48c-4b4b-855e-3e49c49c26cc' // 注册时分配的App Key
 }
 android {
+    signingConfigs {
+        release {
+            keyAlias 'secblock'
+            keyPassword 'wty123456'
+            storeFile file('D://sec.jks')
+            storePassword 'wty123456'
+        }
+    }
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
     sourceSets {
@@ -18,13 +26,28 @@ android {
         minSdkVersion 18
         targetSdkVersion 28
         versionCode 1
-        versionName "1.4.4"
+        versionName "1.5.1"
         multiDexEnabled true
         lintOptions {
             disable "ResourceType"
         }
+        signingConfig signingConfigs.release
     }
     buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+            signingConfig signingConfigs.release
+        }
+//        debug {
+//            minifyEnabled true
+//            shrinkResources true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            debuggable true
+//            signingConfig signingConfigs.release
+//        }
     }
     dexOptions {
         javaMaxHeapSize "4g"
@@ -74,7 +97,6 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
     //noinspection GradleCompatible
     implementation 'com.orhanobut:logger:2.1.1'
-    //    implementation 'org.web3j:core:3.3.1'
     implementation 'org.web3j:core:3.3.1-android'
     //切记需要java8
     implementation 'com.android.support:design:28.0.0'

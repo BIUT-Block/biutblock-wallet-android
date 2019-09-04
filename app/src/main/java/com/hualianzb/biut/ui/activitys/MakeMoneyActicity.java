@@ -222,13 +222,16 @@ public class MakeMoneyActicity extends BasicActivity implements QrCodeDialogFrag
         if (list.size() == 0) {
             UiHelper.startActyCreateInsertWallet(this);
             finish();
-        } else if (bean.getIsNow()) {
-            RemembBIUT firstBean = list.get(0);
-            firstBean.setIsNow(true);
-            BIUTApplication.dao_remeb.update(firstBean);
-            finish();
+        } else {
+            if (bean.getIsNow()) {
+                RemembBIUT firstBean = list.get(0);
+                firstBean.setIsNow(true);
+                BIUTApplication.dao_remeb.update(firstBean);
+                finish();
+            } else {
+                finish();
+            }
         }
-
     }
 
     //检测钱包名称的合法性

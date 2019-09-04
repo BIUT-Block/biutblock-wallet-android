@@ -76,7 +76,8 @@ public class PagerRecyclerAdapter extends RecyclerView.Adapter<PagerRecyclerAdap
             } else {
                 holder.tvBack.setVisibility(View.GONE);
             }
-            holder.tvAddress.setText(rememberBIUT.getAddress().substring(0, 10) + "…" + (rememberBIUT.getAddress()).substring(32, 42));
+            String addrss = rememberBIUT.getAddress();
+            holder.tvAddress.setText(addrss.substring(0, 10) + "…" + addrss.substring(addrss.length() - 10, addrss.length()));
             money = getMoney();
             if (!StringUtils.isEmpty(money)) {
                 if (money.equals("0")) {
@@ -84,7 +85,7 @@ public class PagerRecyclerAdapter extends RecyclerView.Adapter<PagerRecyclerAdap
                     return;
                 } else {
                     money = Util.getStringFromSN(8, money);
-                    holder.tvProperty.setText(money+ " BIUT");
+                    holder.tvProperty.setText(money + " BIUT");
                 }
             } else {
                 holder.tvProperty.setText("0" + " BIUT");

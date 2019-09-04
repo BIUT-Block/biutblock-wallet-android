@@ -7,13 +7,12 @@
     android:background="@drawable/shape_no_net"
     android:orientation="horizontal">
 
-    <ImageView
+    <TextView
         android:layout_width="46pt"
         android:layout_height="46pt"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="40pt"
-        android:scaleType="centerCrop"
-        android:src="@drawable/icon_no_net" />
+        android:background="@drawable/icon_no_net" />
 
     <TextView
         android:layout_width="wrap_content"
