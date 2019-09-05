@@ -119,7 +119,7 @@ public class DialogUtil {
     }
 
     //提示弹框
-    public static void showErrorDialog(Context context, String content) {
+    public static void showErrorDialog(Activity context, String content) {
         final Dialog dialog = new Dialog(context, R.style.dialogLoading);
         dialog.setContentView(R.layout.layout_loading);
         dialog.setCanceledOnTouchOutside(false);
@@ -127,7 +127,10 @@ public class DialogUtil {
         TextView tv_content = dialog.findViewById(R.id.tv_content);
         tv_content.setText(content);
         Util.setFontType(context, tv_content, 1, LATO_REGULAR_WOFF_TTF);
-        dialog.show();
+        if (!context.isDestroyed() && !context.isFinishing()) {
+            dialog.show();
+        }
+
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {

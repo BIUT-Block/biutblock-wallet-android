@@ -81,23 +81,18 @@ public class Util {
         return date;
     }
 
-    public static List<ResultInChainBeanOrPool> listSortRecord(List<ResultInChainBeanOrPool> list) {
+    public static List<AddressBookBean> listAddressBookSort(List<AddressBookBean> list) {
         Collections.sort(list, (o1, o2) -> {
-            SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             try {
-
-                long t1 = o1.getTimeStamp();
-                long t2 = o2.getTimeStamp();
-
-                String t11 = TimeUtil.getTime1(t1);
-                String t22 = TimeUtil.getTime1(t2);
-
-                Date dt1 = format.parse(t11);
-                Date dt2 = format.parse(t22);
-                if (dt1.getTime() < dt2.getTime()) {
+                Date dt1 = format.parse(o1.getCreatTime());
+                Date dt2 = format.parse(o2.getCreatTime());
+                if (dt1.getTime() > dt2.getTime()) {
                     return 1;
-                } else if (dt1.getTime() > dt2.getTime()) {
+
+                } else if (dt1.getTime() < dt2.getTime()) {
                     return -1;
+
                 } else {
                     return 0;
                 }
@@ -112,60 +107,28 @@ public class Util {
         return list;
     }
 
-    public static List<AddressBookBean> listAddressBookSort(List<AddressBookBean> list) {
-        Collections.sort(list, new Comparator<AddressBookBean>() {
-            @Override
-            public int compare(AddressBookBean o1, AddressBookBean o2) {
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                try {
-                    Date dt1 = format.parse(o1.getCreatTime());
-                    Date dt2 = format.parse(o2.getCreatTime());
-                    if (dt1.getTime() > dt2.getTime()) {
-                        return 1;
-
-                    } else if (dt1.getTime() < dt2.getTime()) {
-                        return -1;
-
-                    } else {
-                        return 0;
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-
-                }
-                return 0;
-
-            }
-        });
-        return list;
-    }
-
     public static List<RemembBIUT> ListSort(List<RemembBIUT> list) {
-        Collections.sort(list, new Comparator<RemembBIUT>() {
-            @Override
-            public int compare(RemembBIUT o1, RemembBIUT o2) {
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                try {
-                    Date dt1 = format.parse(o1.getCreatTime());
-                    Date dt2 = format.parse(o2.getCreatTime());
-                    if (dt1.getTime() > dt2.getTime()) {
-                        return 1;
+        Collections.sort(list, (o1, o2) -> {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            try {
+                Date dt1 = format.parse(o1.getCreatTime());
+                Date dt2 = format.parse(o2.getCreatTime());
+                if (dt1.getTime() > dt2.getTime()) {
+                    return 1;
 
-                    } else if (dt1.getTime() < dt2.getTime()) {
-                        return -1;
+                } else if (dt1.getTime() < dt2.getTime()) {
+                    return -1;
 
-                    } else {
-                        return 0;
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-
+                } else {
+                    return 0;
                 }
-                return 0;
+
+            } catch (Exception e) {
+                e.printStackTrace();
 
             }
+            return 0;
+
         });
         return list;
     }

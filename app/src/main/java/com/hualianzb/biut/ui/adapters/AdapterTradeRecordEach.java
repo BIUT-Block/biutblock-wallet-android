@@ -1,7 +1,6 @@
 package com.hualianzb.biut.ui.adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.alibaba.fastjson.JSON;
 import com.hualianzb.biut.R;
 import com.hualianzb.biut.models.ResultInChainBeanOrPool;
 import com.hualianzb.biut.utils.TimeUtil;
@@ -36,7 +34,7 @@ public class AdapterTradeRecordEach extends BaseAdapter {
     }
 
     public void setData(List<ResultInChainBeanOrPool> listAll) {
-        this.listAll = Util.listSortRecord(listAll);//排序
+        this.listAll = listAll;
         notifyDataSetChanged();
     }
 

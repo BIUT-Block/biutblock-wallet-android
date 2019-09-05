@@ -11,11 +11,14 @@ import android.view.View;
 import com.gyf.barlibrary.ImmersionBar;
 import com.hualianzb.biut.application.BIUTApplication;
 import com.hualianzb.biut.commons.interfaces.GlobalMessageType;
+import com.hualianzb.biut.models.RemembBIUT;
 import com.hualianzb.biut.ui.base.BaseActivity;
 import com.hualianzb.biut.utils.DialogUtil;
 import com.hualianzb.biut.utils.NetBroadcastReceiver;
+import com.hualianzb.biut.utils.UiHelper;
 import com.hysd.android.platform_huanuo.base.manager.MessageCenter;
 
+import java.util.List;
 import java.util.Set;
 
 import static com.hualianzb.biut.commons.interfaces.GlobalMessageType.MainRequest.NET_ERROR;
@@ -38,8 +41,34 @@ public abstract class BasicActivity extends BaseActivity implements View.OnClick
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        BIUTApplication.getInstance().addActivity(this);//应用退出
+        try {
+            inits(savedInstanceState);
+        } catch (Exception e) {
+            e.printStackTrace();
+            List<RemembBIUT> list = BIUTApplication.dao_remeb.loadAll();
+            if (null != list && list.size() > 0) {
+                boolean hasNow = false;
+                for (RemembBIUT remembBIUT : list) {
+                    if (remembBIUT.getIsNow()) {
+                        hasNow = true;
+                        break;
+                    }
+                }
+                if (!hasNow) {
+                    RemembBIUT firstWallet = list.get(0);
+                    firstWallet.setIsNow(true);
+                    BIUTApplication.dao_remeb.update(firstWallet);
+                    UiHelper.startHomaPageAc(this, firstWallet.getAddress());
+                }
 
+            } else {
+                UiHelper.startActyCreateInsertWallet(this);
+            }
+        }
+    }
+
+    public void inits(Bundle savedInstanceState) {
+        BIUTApplication.getInstance().addActivity(this);//应用退出
         if (null != savedInstanceState) {
             getIntentForSavedInstanceState(savedInstanceState);
         } else {
@@ -61,6 +90,8 @@ public abstract class BasicActivity extends BaseActivity implements View.OnClick
         registerReceiver(netBroadcastReceiver, filter);
         noNet = DialogUtil.showNoNetDialog(this);
     }
+
+    ;
 
 
     public void onChangeListener(int status) {

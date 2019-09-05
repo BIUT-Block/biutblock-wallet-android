@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -310,9 +309,8 @@ public class TransactionRecordActy extends BasicActivity {
     public void onResume() {
         super.onResume();
         clearLList();
-
         lastListCache = BIUTApplication.recordResulttDao.queryBuilder()
-                .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).list();
+                .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
         lastSize = lastListCache.size();
         myDates = BIUTApplication.dao_remeb.loadAll();
         for (RemembBIUT remembe : myDates) {
@@ -357,7 +355,7 @@ public class TransactionRecordActy extends BasicActivity {
         }
 
         lastListCache = BIUTApplication.recordResulttDao.queryBuilder()
-                .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).list();
+                .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
         lastSize = lastListCache.size();
         if (listGet.size() == 0) {
             if (lastListCache.size() == 0) {
@@ -379,7 +377,7 @@ public class TransactionRecordActy extends BasicActivity {
                 BIUTApplication.recordResulttDao.save(pool);
             }
             lastListCache = BIUTApplication.recordResulttDao.queryBuilder()
-                    .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).list();
+                    .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
             adapter.setData(lastListCache, address);
             refreshLayout.finishRefresh();
             ll_data.setVisibility(View.VISIBLE);

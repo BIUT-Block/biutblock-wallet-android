@@ -32,7 +32,7 @@ public class AdapterTradeRecordAll extends BaseAdapter {
     }
 
     public void setData(List<ResultInChainBeanOrPool> listAll, String address) {
-        this.listAll = Util.listSortRecord(listAll);//排序
+        this.listAll = listAll;
         this.address = address;
         notifyDataSetChanged();
     }
