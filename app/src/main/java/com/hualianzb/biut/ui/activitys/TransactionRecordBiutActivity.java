@@ -108,7 +108,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
     //    private List<ResultInChainBeanOrPool> listDate;
     private String tag;
     List<ResultInChainBeanOrPool> listLLL = new ArrayList<>();
-    int pageSize = 1;
+    int currentPage = 1;
     private static String ADDMORE = "ADDMORE";
     private static String FRESH = "FRESH";
 
@@ -211,7 +211,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
         tvRight.setVisibility(View.GONE);
         noNetDialog = DialogUtil.noNetTips(this, getString(R.string.net_work_err), () -> {
             clearList();
-            biutRecordRequest();
+            biutRecordRequest(currentPage);
         });
         listChain = new ArrayList<>();
         listPoor = new ArrayList<>();
@@ -245,67 +245,69 @@ public class TransactionRecordBiutActivity extends BasicActivity {
             UiHelper.startTransaAllActivity(TransactionRecordBiutActivity.this, address, theId);
         });
         //首次请求
-        biutRecordRequest();
+        biutRecordRequest(currentPage);
         //下拉刷新
         refreshLayout.setOnRefreshListener(refreshlayout -> {
             tag = FRESH;
-            pageSize = 1;
+            currentPage = 1;
             clearList();
-            biutRecordRequest();
+            biutRecordRequest(currentPage);
             refreshLayout.finishRefresh();
         });
         //上拉加载
         refreshLayout.setOnLoadmoreListener(refreshlayout -> {
             tag = ADDMORE;
-            pageSize++;
-            biutRecordRequest();
+            currentPage++;
+            biutRecordRequest(currentPage);
         });
     }
 
-    private void biutRecordRequest() {
+    private void biutRecordRequest(int currentPage) {
         //首次加载或者刷新
-        if (StringUtils.isEmpty(tag) || tag.equals(FRESH)) {
-            dialogLoading.show();
-            TransRecordTimeRequestBean bean = new TransRecordTimeRequestBean();
-            List<Object> list = new ArrayList<>();
-            bean.setId(1);
-            bean.setJsonrpc("2.0");
-            bean.setMethod("sec_getTransactions");
-            bean.setParams(list);
-            list.add(address.substring(2));//address
-            String json = JSON.toJSONString(bean);
-            String url;
-            if (type.equals("0")) {
-                url = RequestHost.biut_url;
-            } else {
-                url = RequestHost.biu_url;
-            }
-            RequestParams params = new RequestParams(url);
-            params.setAsJsonContent(true);
-            params.setBodyContent(json);
-            x.http().post(params, new Callback.CommonCallback<String>() {
-                @Override
-                public void onSuccess(String result) {
-                    sendMessage(ContainMessage, result);
-                }
-
-                @Override
-                public void onError(Throwable ex, boolean isOnCallback) {
-                    sendEmptyMessage(GlobalMessageType.MessgeCode.CANCELORERROR);
-                }
-
-                @Override
-                public void onCancelled(CancelledException cex) {
-                    sendEmptyMessage(GlobalMessageType.MessgeCode.CANCELORERROR);
-                }
-
-                @Override
-                public void onFinished() {
-                }
-            });
+        dialogLoading.show();
+        TransRecordTimeRequestBean bean = new TransRecordTimeRequestBean();
+        List<Object> list = new ArrayList<>();
+        bean.setId(1);
+        bean.setJsonrpc("2.0");
+        bean.setMethod("sec_getTransactions");
+        bean.setParams(list);
+        list.add(address.substring(2));//address
+        list.add(currentPage);
+        list.add(10);
+        String json = JSON.toJSONString(bean);
+        String url;
+        if (type.equals("0")) {
+            url = RequestHost.biut_url;
         } else {
-            setListDatdToAdapter();
+            url = RequestHost.biu_url;
         }
+        RequestParams params = new RequestParams(url);
+        params.setAsJsonContent(true);
+        params.setBodyContent(json);
+        x.http().post(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                sendMessage(ContainMessage, result);
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                sendEmptyMessage(GlobalMessageType.MessgeCode.CANCELORERROR);
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+                sendEmptyMessage(GlobalMessageType.MessgeCode.CANCELORERROR);
+            }
+
+            @Override
+            public void onFinished() {
+            }
+        });
+//        }
+//        else {
+//            setListDatdToAdapter();
+//        }
     }
 
     private void clearList() {
@@ -388,7 +390,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
                 money = String.valueOf((Double.parseDouble(money) - reduceMoney));
             }
             clearList();
-            biutRecordRequest();
+            biutRecordRequest(currentPage);
         }
         if (requestCode == SWEEP) {
             String result = "";
@@ -463,8 +465,8 @@ public class TransactionRecordBiutActivity extends BasicActivity {
                     .where(ResultInChainBeanOrPoolDao.Properties.Type.eq(type)
                             , ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
             setTvAvailableAndFrozen(listDate);
-            if (listDate.size() > lastSize) {
-                DialogUtil.showErrorDialog(this, (listDate.size() - lastSize) + " data have been updated…");
+            if (null == listGet || listGet.size() == 0) {
+                DialogUtil.showErrorDialog(this, (listDate.size() - lastSize) + " no more data");
             }
             llData.setVisibility(View.VISIBLE);
             ll_none.setVisibility(View.GONE);
@@ -473,22 +475,24 @@ public class TransactionRecordBiutActivity extends BasicActivity {
     }
 
     private void setListDatdToAdapter() {
-        if (StringUtils.isEmpty(tag) || tag.equals(FRESH)) {
-            if (listDate.size() > 7) {
-                listLLL = listDate.subList(0, 7);
-            } else {
-                listLLL = listDate;
-            }
-            adapter.setData(listLLL);
-            refreshLayout.finishRefresh();
-        } else {
-            if (listDate.size() > (7 * pageSize)) {
-                listLLL = listDate.subList(0, 7 * pageSize);
-            } else {
-                listLLL = listDate;
-            }
-            adapter.setData(listLLL);
-            refreshLayout.finishLoadmore();
-        }
+        adapter.setData(listDate);
+        refreshLayout.finishRefresh();
+//        if (StringUtils.isEmpty(tag) || tag.equals(FRESH)) {
+//            if (listDate.size() > 7) {
+//                listLLL = listDate.subList(0, 7);
+//            } else {
+//                listLLL = listDate;
+//            }
+//            adapter.setData(listLLL);
+//            refreshLayout.finishRefresh();
+//        } else {
+//            if (listDate.size() > (7 * currentPage)) {
+//                listLLL = listDate.subList(0, 7 * currentPage);
+//            } else {
+//                listLLL = listDate;
+//            }
+//            adapter.setData(listLLL);
+//            refreshLayout.finishLoadmore();
+//        }
     }
 }

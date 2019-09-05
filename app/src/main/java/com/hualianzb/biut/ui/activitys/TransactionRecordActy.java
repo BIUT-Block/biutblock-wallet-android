@@ -90,6 +90,7 @@ public class TransactionRecordActy extends BasicActivity {
     private Dialog dialogLoading;
     private TransRecordTimeRequestBean bean;
     private String json, requestUrl;
+    private int currentPage = 1;
     Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -222,11 +223,15 @@ public class TransactionRecordActy extends BasicActivity {
         tvWalletName.setText(walletBean.getWalletName());
         //下拉刷新
         refreshLayout.setOnRefreshListener(refreshlay -> {
-            getData(address);
+            currentPage = 1;
+            getData(address, currentPage);
         });
         lv.setOnItemClickListener((parent, view, position, id) -> UiHelper.startTransaAllActivity(TransactionRecordActy.this, address, lastListCache.get(position).getId()));
         //上拉加载
-        refreshLayout.setOnLoadmoreListener(refreshlay -> refreshLayout.finishLoadmore(2000));
+        refreshLayout.setOnLoadmoreListener(refreshlay -> {
+            currentPage++;
+            getData(address, currentPage);
+        });
     }
 
     private void setFontStyle() {
@@ -238,7 +243,7 @@ public class TransactionRecordActy extends BasicActivity {
         Util.setFontType(this, tvNoRecord, 1, LATO_BOLD_TTF);
     }
 
-    private void biutRecordRequest(String nowAddress) {
+    private void biutRecordRequest(String nowAddress, int currentPage) {
         dialogLoading.show();
         bean = new TransRecordTimeRequestBean();
         List<Object> list = new ArrayList<>();
@@ -247,6 +252,8 @@ public class TransactionRecordActy extends BasicActivity {
         bean.setMethod("sec_getTransactions");
         bean.setParams(list);
         list.add(nowAddress.substring(2));//address
+        list.add(currentPage);
+        list.add(5);
         json = JSON.toJSONString(bean);
         requestUrl = RequestHost.biut_url;
         setParams(requestUrl, json, 0);
@@ -323,7 +330,8 @@ public class TransactionRecordActy extends BasicActivity {
         tvWalletName.setText(walletBean.getWalletName());
         lineWallet.setLayoutParams(new RelativeLayout.LayoutParams(25 * (walletBean.getWalletName().length()), 4));
         lineWallet.setBackgroundColor(getResources().getColor(R.color.text_green_increase));
-        getData(address);
+        currentPage = 1;
+        getData(address, currentPage);
     }
 
     private void clearLList() {
@@ -334,9 +342,9 @@ public class TransactionRecordActy extends BasicActivity {
         lastListCache.clear();
     }
 
-    private void getData(String address) {
+    private void getData(String address, int currentPage) {
         clearLList();
-        biutRecordRequest(address);
+        biutRecordRequest(address, currentPage);
     }
 
     private void setDataResult() {
@@ -402,7 +410,8 @@ public class TransactionRecordActy extends BasicActivity {
                                 }
                             }
                             tvWalletName.setText(walletBean.getWalletName());
-                            getData(address);
+                            currentPage = 1;
+                            getData(address, currentPage);
                         }
                     }
                 }
