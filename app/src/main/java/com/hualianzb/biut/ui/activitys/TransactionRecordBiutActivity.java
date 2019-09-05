@@ -226,7 +226,8 @@ public class TransactionRecordBiutActivity extends BasicActivity {
         lvRecord.setAdapter(adapter);
 
         listDate = BIUTApplication.recordResulttDao.queryBuilder()
-                .where(ResultInChainBeanOrPoolDao.Properties.Type.eq(type)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
+                .where(ResultInChainBeanOrPoolDao.Properties.Type.eq(type)
+                        , ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
         adapter.setData(listDate);
 
         if (null != listDate && listDate.size() > 0) {
@@ -433,7 +434,10 @@ public class TransactionRecordBiutActivity extends BasicActivity {
         } else {
             int lastSize = listDate.size();
             if (lastSize > 0) {
-                BIUTApplication.recordResulttDao.deleteAll();
+                for (ResultInChainBeanOrPool bean : listDate) {
+                    BIUTApplication.recordResulttDao.deleteByKey(bean.getId());
+                }
+//                BIUTApplication.recordResulttDao.deleteAll();
             } else {
                 setTvAvailableAndFrozen(listDate);
             }
@@ -451,11 +455,13 @@ public class TransactionRecordBiutActivity extends BasicActivity {
                 resultBean.setTxReceiptStatus(fatherBean.getTxReceiptStatus());
                 resultBean.setTxTo(fatherBean.getTxTo());
                 resultBean.setValue(fatherBean.getValue());
+                resultBean.setTheAddress(address);
                 resultBean.setType(type);
                 BIUTApplication.recordResulttDao.save(resultBean);
             }
             listDate = BIUTApplication.recordResulttDao.queryBuilder()
-                    .where(ResultInChainBeanOrPoolDao.Properties.Type.eq(type)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
+                    .where(ResultInChainBeanOrPoolDao.Properties.Type.eq(type)
+                            , ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
             setTvAvailableAndFrozen(listDate);
             if (listDate.size() > lastSize) {
                 DialogUtil.showErrorDialog(this, (listDate.size() - lastSize) + " data have been updated…");
