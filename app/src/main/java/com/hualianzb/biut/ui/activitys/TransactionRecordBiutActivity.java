@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -94,7 +93,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
     @BindView(R.id.tv_receipt)
     TextView tvReceipt;
     private AdapterTradeRecordEach adapter;
-    private List<ResultInChainBeanOrPool> lastListCache;//本地缓存的数据
+    private List<ResultInChainBeanOrPool> listDate;//本地缓存的数据
     private List<BiutTransactionBean.ResultBean.FatherBean> listChain;
     private List<BiutTransactionBean.ResultBean.FatherBean> listPoor;
     private List<BiutTransactionBean.ResultBean.FatherBean> listGet;//获取到的数据
@@ -106,7 +105,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
     private Dialog dialogLoading, noNetDialog;
     private String type;
     private double gas = 0;
-    private List<ResultInChainBeanOrPool> listDate;
+    //    private List<ResultInChainBeanOrPool> listDate;
     private String tag;
     List<ResultInChainBeanOrPool> listLLL = new ArrayList<>();
     int pageSize = 1;
@@ -217,7 +216,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
         listChain = new ArrayList<>();
         listPoor = new ArrayList<>();
         listGet = new CopyOnWriteArrayList<>();
-        lastListCache = new ArrayList<>();
+        listDate = new ArrayList<>();
         listDate = new ArrayList<>();
 
         adapter = new AdapterTradeRecordEach(this, address, title);
@@ -227,7 +226,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
         lvRecord.setAdapter(adapter);
 
         listDate = BIUTApplication.recordResulttDao.queryBuilder()
-                .where(ResultInChainBeanOrPoolDao.Properties.Type.eq(type)).list();
+                .where(ResultInChainBeanOrPoolDao.Properties.Type.eq(type)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
         adapter.setData(listDate);
 
         if (null != listDate && listDate.size() > 0) {
@@ -261,8 +260,6 @@ public class TransactionRecordBiutActivity extends BasicActivity {
             biutRecordRequest();
         });
     }
-
-    boolean isNoMore;
 
     private void biutRecordRequest() {
         //首次加载或者刷新
@@ -424,13 +421,13 @@ public class TransactionRecordBiutActivity extends BasicActivity {
         }
 
         if (listGet.size() == 0) {
-            if (lastListCache.size() == 0) {
+            if (listDate.size() == 0) {
                 refreshLayout.finishRefresh();
                 llData.setVisibility(View.GONE);
                 ll_none.setVisibility(View.VISIBLE);
                 setTextMoney(tvAvailable, money);
             } else {
-                setTvAvailableAndFrozen(lastListCache);
+                setTvAvailableAndFrozen(listDate);
             }
             dialogLoading.dismiss();
         } else {
@@ -438,7 +435,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
             if (lastSize > 0) {
                 BIUTApplication.recordResulttDao.deleteAll();
             } else {
-                setTvAvailableAndFrozen(lastListCache);
+                setTvAvailableAndFrozen(listDate);
             }
             for (BiutTransactionBean.ResultBean.FatherBean fatherBean : listGet) {
                 ResultInChainBeanOrPool resultBean = new ResultInChainBeanOrPool();
@@ -458,7 +455,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
                 BIUTApplication.recordResulttDao.save(resultBean);
             }
             listDate = BIUTApplication.recordResulttDao.queryBuilder()
-                    .where(ResultInChainBeanOrPoolDao.Properties.Type.eq(type)).list();
+                    .where(ResultInChainBeanOrPoolDao.Properties.Type.eq(type)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
             setTvAvailableAndFrozen(listDate);
             if (listDate.size() > lastSize) {
                 DialogUtil.showErrorDialog(this, (listDate.size() - lastSize) + " data have been updated…");
@@ -488,6 +485,4 @@ public class TransactionRecordBiutActivity extends BasicActivity {
             refreshLayout.finishLoadmore();
         }
     }
-
-
 }

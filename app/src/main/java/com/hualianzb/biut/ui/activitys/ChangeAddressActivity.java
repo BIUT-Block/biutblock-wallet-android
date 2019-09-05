@@ -25,14 +25,11 @@ import com.google.zxing.activity.CaptureActivity;
 import com.gyf.barlibrary.ImmersionBar;
 import com.hualianzb.biut.R;
 import com.hualianzb.biut.application.BIUTApplication;
-import com.hualianzb.biut.commons.constants.Constant;
 import com.hualianzb.biut.models.AddressBookBean;
 import com.hualianzb.biut.ui.basic.BasicActivity;
 import com.hualianzb.biut.utils.DialogUtil;
 import com.hualianzb.biut.utils.StringUtils;
 import com.hualianzb.biut.utils.TimeUtil;
-import com.hualianzb.biut.utils.ToastUtil;
-import com.hysd.android.platform_huanuo.base.config.PlatformConfig;
 
 import java.util.List;
 
@@ -104,7 +101,6 @@ public class ChangeAddressActivity extends BasicActivity {
     private void initView() {
         ImmersionBar.with(this).statusBarColor(R.color.white).init();
         tvRight.setVisibility(View.GONE);
-//        list = PlatformConfig.getList(this, Constant.SpConstant.ADDRESSBOOK);
         list = BIUTApplication.addressBookBeanDao.loadAll();
         ivBackTop.setImageDrawable(getResources().getDrawable(R.drawable.icon_close_black));
         tvSave.setText("Save");
@@ -135,15 +131,8 @@ public class ChangeAddressActivity extends BasicActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 name = s.toString().trim();
                 if (!StringUtils.isEmpty(name)) {
-                    for (int i = 0; i < list.size(); i++) {
-                        if (name.equals(list.get(i).getName())) {
-                            tvSave.setEnabled(false);
-                            tvSave.setBackgroundResource(R.drawable.bg_btn_cannot);
-                        } else {
-                            tvSave.setEnabled(true);
-                            tvSave.setBackgroundResource(R.drawable.bg_btn);
-                        }
-                    }
+                    tvSave.setEnabled(true);
+                    tvSave.setBackgroundResource(R.drawable.bg_btn);
                 } else {
                     tvSave.setEnabled(false);
                     tvSave.setBackgroundResource(R.drawable.bg_btn_cannot);
@@ -172,8 +161,6 @@ public class ChangeAddressActivity extends BasicActivity {
                 mail = edEmail.getText().toString().trim();
                 remark = edRemark.getText().toString().trim();
                 address = addressBookBean.getAddress();
-
-//                AddressBookBean bean = new AddressBookBean();
                 addressBookBean.setName(name);
                 addressBookBean.setAddress(address);
                 addressBookBean.setPhone(StringUtils.isEmpty(phone) == true ? addressBookBean.getPhone() : phone);
@@ -181,10 +168,7 @@ public class ChangeAddressActivity extends BasicActivity {
                 addressBookBean.setRemarks(StringUtils.isEmpty(remark) == true ? addressBookBean.getRemarks() : remark);
                 addressBookBean.setCreatTime(TimeUtil.getDate());
                 addressBookBean.setId(addressBookBean.getId());
-//                int oldIndex = list.indexOf(addressBookBean);
-//                list.set(oldIndex, bean);
                 BIUTApplication.addressBookBeanDao.update(addressBookBean);
-//                PlatformConfig.putList(Constant.SpConstant.ADDRESSBOOK, list);
                 finish();
                 break;
             case R.id.rl_scan:
