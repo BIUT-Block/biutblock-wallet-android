@@ -58,8 +58,6 @@ public class TransactionRecordActy extends BasicActivity {
     ImageView ivBackTop;
     @BindView(R.id.ll_none)
     LinearLayout llNone;
-    @BindView(R.id.ll_data)
-    LinearLayout ll_data;
     @BindView(R.id.refreshLayout)
     SmartRefreshLayout refreshLayout;
     @BindView(R.id.tv_right)
@@ -121,7 +119,7 @@ public class TransactionRecordActy extends BasicActivity {
                             } else {
                                 dialogLoading.dismiss();
                                 refreshLayout.finishRefresh();
-                                ll_data.setVisibility(View.GONE);
+                                refreshLayout.setVisibility(View.GONE);
                                 llNone.setVisibility(View.VISIBLE);
                             }
                         } else {
@@ -316,7 +314,8 @@ public class TransactionRecordActy extends BasicActivity {
     public void onResume() {
         super.onResume();
         clearLList();
-        lastListCache = BIUTApplication.recordResulttDao.queryBuilder()
+        currentPage = 1;
+        lastListCache = BIUTApplication.recordResulttAllDao.queryBuilder()
                 .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
         lastSize = lastListCache.size();
         myDates = BIUTApplication.dao_remeb.loadAll();
@@ -343,6 +342,9 @@ public class TransactionRecordActy extends BasicActivity {
     }
 
     private void getData(String address, int currentPage) {
+        if (currentPage == 1) {
+            clearCanch();
+        }
         clearLList();
         biutRecordRequest(address, currentPage);
     }
@@ -362,33 +364,34 @@ public class TransactionRecordActy extends BasicActivity {
             e.printStackTrace();
         }
 
-        lastListCache = BIUTApplication.recordResulttDao.queryBuilder()
+        lastListCache = BIUTApplication.recordResulttAllDao.queryBuilder()
                 .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
         lastSize = lastListCache.size();
         if (listGet.size() == 0) {
             if (lastListCache.size() == 0) {
                 dialogLoading.dismiss();
                 refreshLayout.finishRefresh();
-                ll_data.setVisibility(View.GONE);
+                refreshLayout.setVisibility(View.GONE);
                 llNone.setVisibility(View.VISIBLE);
             } else {
                 adapter.setData(lastListCache, address);
+                refreshLayout.finishRefresh();
             }
         } else {
             if (listGet.size() > lastSize) {
                 DialogUtil.showErrorDialog(this, (listGet.size() - lastSize) + " data have been updated…");
             }
             //删除本地址钱包的交易记录，然后重新存储
-            BIUTApplication.recordResulttDao.queryBuilder().where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).buildDelete().executeDeleteWithoutDetachingEntities();
+//            BIUTApplication.recordResulttAllDao.queryBuilder().where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).buildDelete().executeDeleteWithoutDetachingEntities();
 
             for (ResultInChainBeanOrPool pool : listGet) {
-                BIUTApplication.recordResulttDao.save(pool);
+                BIUTApplication.recordResulttAllDao.save(pool);
             }
-            lastListCache = BIUTApplication.recordResulttDao.queryBuilder()
+            lastListCache = BIUTApplication.recordResulttAllDao.queryBuilder()
                     .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
             adapter.setData(lastListCache, address);
             refreshLayout.finishRefresh();
-            ll_data.setVisibility(View.VISIBLE);
+            refreshLayout.setVisibility(View.VISIBLE);
             llNone.setVisibility(View.GONE);
         }
     }
@@ -419,4 +422,13 @@ public class TransactionRecordActy extends BasicActivity {
         }
     }
 
+    private void clearCanch() {
+        lastListCache = BIUTApplication.recordResulttAllDao.queryBuilder()
+                .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).orderDesc(ResultInChainBeanOrPoolDao.Properties.TimeStamp).list();
+        if (null != lastListCache && lastListCache.size() > 0) {
+            for (ResultInChainBeanOrPool beanOrPool : lastListCache) {
+                BIUTApplication.recordResulttAllDao.deleteByKey(beanOrPool.getId());
+            }
+        }
+    }
 }

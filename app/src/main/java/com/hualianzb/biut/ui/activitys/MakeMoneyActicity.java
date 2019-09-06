@@ -19,6 +19,8 @@ import com.hualianzb.biut.application.BIUTApplication;
 import com.hualianzb.biut.biutUtil.SECBlockJavascriptAPI;
 import com.hualianzb.biut.models.BiutBean;
 import com.hualianzb.biut.models.RemembBIUT;
+import com.hualianzb.biut.models.ResultInChainBeanOrPool;
+import com.hualianzb.biut.models.ResultInChainBeanOrPoolDao;
 import com.hualianzb.biut.ui.basic.BasicActivity;
 import com.hualianzb.biut.ui.fragments.ExportKeystoreAttentionDialogFragment;
 import com.hualianzb.biut.ui.fragments.ExportKeystoreDialogFragment;
@@ -219,6 +221,13 @@ public class MakeMoneyActicity extends BasicActivity implements QrCodeDialogFrag
     private void IntentMove() {
         BIUTApplication.dao_remeb.deleteByKey(walletId);
         list = BIUTApplication.dao_remeb.loadAll();
+        List<ResultInChainBeanOrPool> listBean = BIUTApplication.recordResulttAllDao.queryBuilder()
+                .where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).list();
+        if (null != listBean && listBean.size() > 0) {
+            for (ResultInChainBeanOrPool beanOrPool : listBean) {
+                BIUTApplication.recordResulttAllDao.deleteByKey(beanOrPool.getId());
+            }
+        }
         if (list.size() == 0) {
             UiHelper.startActyCreateInsertWallet(this);
             finish();

@@ -786,7 +786,8 @@ public class TransferActivity extends BasicActivity {
         paramsBean2.setTimestamp(paramsBean.getTimestamp());
         paramsBean2.setTo(paramsBean.getTo());
         paramsBean2.setGas(paramsBean.getGas());
-        paramsBean2.setTxFee(numGas.equals("0") ? "0.01" : numGas);
+        String fei = ((TextView) dialog.findViewById(R.id.tv_gas)).getText().toString();
+        paramsBean2.setTxFee(fei.substring(0, fei.length() - 3).trim());
         paramsBean2.setValue(paramsBean.getValue());
         paramsBean2.setNonce(paramsBean.getNonce());
         List<SendRawBean.ParamsBean> list = new ArrayList<>();
@@ -806,10 +807,12 @@ public class TransferActivity extends BasicActivity {
         RequestParams params = new RequestParams(url);
         params.setAsJsonContent(true);
         params.setBodyContent(json);
+        Log.e("web33", json);
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 if (!StringUtils.isEmpty(result)) {
+                    Log.e("web33", result);
                     BIUTTransResponseBean transResponseBean = JSON.parseObject(result, BIUTTransResponseBean.class);
                     if (null != transResponseBean) {
                         BIUTTransResponseBean.ResultBean resultBean = transResponseBean.getResult();

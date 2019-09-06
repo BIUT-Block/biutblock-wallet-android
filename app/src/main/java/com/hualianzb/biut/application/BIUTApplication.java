@@ -58,6 +58,10 @@ public class BIUTApplication extends BaseApplication {
     public static ResultInChainBeanOrPoolDao recordResulttDao;
     public static Query<ResultInChainBeanOrPool> queryRecord;
 
+    //总交易记录相关
+    public static ResultInChainBeanOrPoolDao recordResulttAllDao;
+    public static Query<ResultInChainBeanOrPool> queryRecordAll;
+
     //联系人相关
     public static AddressBookBeanDao addressBookBeanDao;
     public static Query<AddressBookBean> queryContact;
@@ -115,6 +119,10 @@ public class BIUTApplication extends BaseApplication {
         //初始化数据信息--交易记录
         recordResulttDao = daoSession.getResultInChainBeanOrPoolDao();
         queryRecord = recordResulttDao.queryBuilder().build();
+        //all
+        recordResulttAllDao = daoSession.getResultInChainBeanOrPoolDao();
+        queryRecordAll = recordResulttAllDao.queryBuilder().build();
+
 
         //初始化数据信息--联系人
         addressBookBeanDao = daoSession.getAddressBookBeanDao();
