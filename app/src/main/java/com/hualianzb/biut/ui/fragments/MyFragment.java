@@ -13,6 +13,7 @@ import com.hualianzb.biut.R;
 import com.hualianzb.biut.ui.activitys.HomePageActivity;
 import com.hualianzb.biut.ui.basic.BasicFragment;
 import com.hualianzb.biut.utils.ClickUtil;
+import com.hualianzb.biut.utils.DialogUtil;
 import com.hualianzb.biut.utils.UiHelper;
 import com.hualianzb.biut.utils.Util;
 import com.hysd.android.platform_huanuo.utils.ActivityUtil;
@@ -108,7 +109,12 @@ public class MyFragment extends BasicFragment {
                 break;
             case R.id.ll_transaction_record:
                 ClickUtil.checkFisrtAndNet(getActivity());
-                UiHelper.startTransactionRecordActy(getActivity(), address);
+                boolean netWorkOk = isNetworkAvailable(getActivity());
+                if (netWorkOk == false) {
+                    DialogUtil.showErrorDialog(getActivity(), "No Network");
+                } else {
+                    UiHelper.startTransactionRecordActy(getActivity(), address);
+                }
                 break;
             case R.id.ll_addressbook:
                 UiHelper.startAddressBookActy(getActivity(), true);

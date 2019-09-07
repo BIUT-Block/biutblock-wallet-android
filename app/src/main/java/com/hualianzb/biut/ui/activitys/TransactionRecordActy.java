@@ -251,7 +251,7 @@ public class TransactionRecordActy extends BasicActivity {
         bean.setParams(list);
         list.add(nowAddress.substring(2));//address
         list.add(currentPage);
-        list.add(5);
+        list.add(4);
         json = JSON.toJSONString(bean);
         requestUrl = RequestHost.biut_url;
         setParams(requestUrl, json, 0);
@@ -378,12 +378,6 @@ public class TransactionRecordActy extends BasicActivity {
                 refreshLayout.finishRefresh();
             }
         } else {
-            if (listGet.size() > lastSize) {
-                DialogUtil.showErrorDialog(this, (listGet.size() - lastSize) + " data have been updated…");
-            }
-            //删除本地址钱包的交易记录，然后重新存储
-//            BIUTApplication.recordResulttAllDao.queryBuilder().where(ResultInChainBeanOrPoolDao.Properties.TheAddress.eq(address)).buildDelete().executeDeleteWithoutDetachingEntities();
-
             for (ResultInChainBeanOrPool pool : listGet) {
                 BIUTApplication.recordResulttAllDao.save(pool);
             }

@@ -320,6 +320,7 @@ public class TransactionRecordBiutActivity extends BasicActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_transfer://转账
+                boolean netWorkOk = isNetworkAvailable(this);
                 ClickUtil.checkFisrtAndNet(this);
                 boolean canGo = true;
                 switch (type) {
@@ -340,7 +341,11 @@ public class TransactionRecordBiutActivity extends BasicActivity {
                         break;
                 }
                 if (canGo) {
-                    UiHelper.startTransferActivity(this, title, address, money, biuAmount);
+                    if (netWorkOk == false) {
+                        DialogUtil.showErrorDialog(this, "No Network");
+                    } else {
+                        UiHelper.startTransferActivity(this, title, address, money, biuAmount);
+                    }
                 }
                 break;
             case R.id.tv_receipt://收款

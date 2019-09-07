@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -16,17 +15,13 @@ import com.hualianzb.biut.utils.StringUtils;
 import com.hualianzb.biut.utils.UiHelper;
 import com.hualianzb.biut.utils.Util;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.hualianzb.biut.commons.interfaces.GlobalMessageType.TextFontType.LATO_BOLD_TTF;
 import static com.hualianzb.biut.commons.interfaces.GlobalMessageType.TextFontType.LATO_REGULAR_WOFF_TTF;
-import static com.hualianzb.biut.commons.interfaces.GlobalMessageType.TextFontType.MONTSERRAT_BOLD_OTF;
 import static com.hualianzb.biut.commons.interfaces.GlobalMessageType.TextFontType.MONTSERRAT_MEDIUM_PFB_TTF;
 
 /**
@@ -91,7 +86,7 @@ public class PagerRecyclerAdapter extends RecyclerView.Adapter<PagerRecyclerAdap
                 holder.tvProperty.setText("0" + " BIUT");
             }
         }
-        holder.ivCode.setOnClickListener(v -> UiHelper.startMakeCodeActivity(context, rememberBIUTList.get(position).getAddress(), 0));
+        holder.reCode.setOnClickListener(v -> UiHelper.startMakeCodeActivity(context, rememberBIUTList.get(position).getAddress(), 0));
         holder.ll_base.setOnClickListener(v -> UiHelper.startManagerWalletActy(context));
     }
 
@@ -117,8 +112,8 @@ public class PagerRecyclerAdapter extends RecyclerView.Adapter<PagerRecyclerAdap
         TextView tvBack;
         @BindView(R.id.tv_address)
         TextView tvAddress;
-        @BindView(R.id.iv_code)
-        ImageView ivCode;
+        @BindView(R.id.rl_code)
+        RelativeLayout reCode;
         @BindView(R.id.tv_property)
         TextView tvProperty;
         @BindView(R.id.ll_base)

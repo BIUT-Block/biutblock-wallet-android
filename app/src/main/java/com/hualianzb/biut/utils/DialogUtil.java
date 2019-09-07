@@ -136,7 +136,7 @@ public class DialogUtil {
             public void run() {
                 dialog.dismiss();
             }
-        }, 1200);
+        }, 1500);
     }
 
     //提示弹框

@@ -13,7 +13,6 @@ import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -144,6 +143,7 @@ public class TransferActivity extends BasicActivity {
     private double gas = 0;
     private String numGas = "0";
     private String nonce;//签名和转账时候的参数，需获取
+    private String feiGas = "0";
     /**
      * 屏幕宽度
      */
@@ -786,8 +786,10 @@ public class TransferActivity extends BasicActivity {
         paramsBean2.setTimestamp(paramsBean.getTimestamp());
         paramsBean2.setTo(paramsBean.getTo());
         paramsBean2.setGas(paramsBean.getGas());
-        String fei = ((TextView) dialog.findViewById(R.id.tv_gas)).getText().toString();
-        paramsBean2.setTxFee(fei.substring(0, fei.length() - 3).trim());
+        feiGas = ((TextView) dialog.findViewById(R.id.tv_gas)).getText().toString();
+        feiGas = feiGas.substring(0, feiGas.length() - 3).trim();
+        feiGas = feiGas.equals("0") ? "0.01" : feiGas;
+        paramsBean2.setTxFee(feiGas);
         paramsBean2.setValue(paramsBean.getValue());
         paramsBean2.setNonce(paramsBean.getNonce());
         List<SendRawBean.ParamsBean> list = new ArrayList<>();
@@ -807,12 +809,10 @@ public class TransferActivity extends BasicActivity {
         RequestParams params = new RequestParams(url);
         params.setAsJsonContent(true);
         params.setBodyContent(json);
-        Log.e("web33", json);
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 if (!StringUtils.isEmpty(result)) {
-                    Log.e("web33", result);
                     BIUTTransResponseBean transResponseBean = JSON.parseObject(result, BIUTTransResponseBean.class);
                     if (null != transResponseBean) {
                         BIUTTransResponseBean.ResultBean resultBean = transResponseBean.getResult();
@@ -832,7 +832,7 @@ public class TransferActivity extends BasicActivity {
                                     }
                                     Intent intent = new Intent(TransferActivity.this, TransactionRecordBiutActivity.class);
                                     intent.putExtra("reduceMoney", paramsBean.getValue());
-                                    intent.putExtra("gas", numGas);
+                                    intent.putExtra("gas", feiGas);
                                     setResult(100, intent);
                                     finish();
                                 } else {
